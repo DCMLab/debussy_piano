@@ -13,6 +13,7 @@ import seaborn as sns
 import statsmodels.api as sm
 import pandas as pd
 import statsmodels.formula.api as smf
+import os
 
 import networkx as nx
 from networkx.algorithms.components import connected_components
@@ -450,9 +451,11 @@ def partititions_entropy(adj_list):
 ########################################
 
 
-def make_plots(metadata_metrics, save_name, title, cols,
-               figsize=(20, 25), unified=False,
-               scatter=False, boxplot=False, ordinal=False, ordinal_col='years_ordinal'):
+def make_plots(metadata_metrics : pd.DataFrame, save_name : str, title : str, cols : list,
+               figsize : tuple=(20, 25), 
+               unified : bool=False, scatter : bool=False, 
+               boxplot : bool=False, ordinal: bool=False, 
+               ordinal_col: str='years_ordinal'):
     """Creates custom plots to show the evolution of the metrics.
 
     Args:
@@ -497,10 +500,10 @@ def make_plots(metadata_metrics, save_name, title, cols,
         if not unified:
             if len_cols > 7:
                 ax = axs[i-2]
+                ax.set_title(f"Coefficient {i-2}")
             else:
                 ax = axs[i-1]
-
-            ax.set_title(f"Coefficient {i}")
+                ax.set_title(f"Coefficient {i-1}")
             if boxplot:
                 sns.boxplot(x=x_col, y=col, data=metadata_metrics, ax=ax)
             else:
@@ -510,15 +513,20 @@ def make_plots(metadata_metrics, save_name, title, cols,
                 sns.boxplot(x=x_col, y=col, data=metadata_metrics)
             else:
                 p = sns.regplot(x=x_col, y=col, data=metadata_metrics,
-                            scatter=scatter, label=f"Coefficient {i+3}")
+                            scatter=scatter, label=f"Coefficient {i}")
         
             plt.legend()
     if unified and not boxplot:
         p.set_ylabel(col[:-2])
+    
+    if not os.path.isdir('figures/'):
+        os.makedirs('figures/')
     plt.savefig(f'figures/{save_name}.png')
 
 
-def testing_ols(metadata_matrix, cols, ordinal=False, ordinal_col='years_ordinal', melted=True):
+def testing_ols(metadata_matrix : pd.DataFrame, cols : list, 
+                ordinal : bool=False, melted : bool=True,
+                ordinal_col : str='years_ordinal'):
     """Function used to test the predictiveness of each measure with respect to 
        the time period.
 
@@ -545,10 +553,6 @@ def testing_ols(metadata_matrix, cols, ordinal=False, ordinal_col='years_ordinal
         metadata_sm = metadata_sm.reset_index()
         metadata_sm['fname'] = metadata_sm['index']
         metadata_sm = pd.melt(metadata_sm, id_vars=['fname', 'length_qb', 'year', 'last_mc'], value_vars=cols)
-        metadata_sm.to_csv('results/MOI_melted.csv', float_format='%.20f')
-        print(metadata_sm.head(1))
-        #metadata_sm = metadata_sm[~metadata_sm['variable'].str.endswith('2')]
-        #print(metadata_sm)
         results = smf.ols(formula='value ~ year * C(variable) + last_mc + 1 ', data=metadata_sm).fit()
         print('testing results')
         print(results.summary())
@@ -563,10 +567,9 @@ def testing_ols(metadata_matrix, cols, ordinal=False, ordinal_col='years_ordinal
 
     if ordinal:
         print(ordinal_col) # use ordinal col
-    #return metadata_sm
     
 
-def add_to_metrics(metrics_df, dict_metric, name_metrics):
+def add_to_metrics(metrics_df : pd.DataFrame, dict_metric : dict, name_metrics):
     """Function to add the newly computed metrics to the dataframe.
 
     Args:

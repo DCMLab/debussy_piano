@@ -6,6 +6,7 @@ import re
 import gzip
 import json
 from fractions import Fraction as frac
+from xmlrpc.client import boolean
 import pandas as pd
 import numpy as np
 from IPython.display import display, HTML
@@ -338,7 +339,7 @@ def get_metadata(debussy_repo='.'):
         debussy_repo, 'durations/spotify_median_durations.json')
     metadata = pd.read_csv(md_path, sep='\t', index_col=1)
     print(f"Metadata for {metadata.shape[0]} files.")
-    with open('durations/spotify_median_durations.json', 'r', encoding='utf-8') as f:
+    with open(os.path.join(debussy_repo, 'durations/spotify_median_durations.json'), 'r', encoding='utf-8') as f:
         durations = json.load(f)
     idx2key = pd.Series(metadata.index.str.split('_').map(
         lambda l: l[0][1:] if l[0] != 'l000' else l[1]), index=metadata.index)
@@ -509,49 +510,53 @@ def resolve_dir(d):
 
 
 
-def get_metric(metric_type, metadata_matrix,
-               mag_phase_mx_dict=False,
-               max_mags=False,
-               max_coeffs=False,
-               inv_entropies=False,
-               store_matrix=False, cols=[],
-               testing=False,
-               show_plot=False, save_name=False, title=False, figsize=(20, 25), scatter=False,
-               unified=False, boxplot=False, ordinal=False, ordinal_col=False
+def get_metric(metric_type : str, metadata_matrix : pd.DataFrame, cols : list,
+               mag_phase_mx_dict : np.array=None,
+               max_mags : np.array=None,
+               max_coeffs : np.array=None,
+               inv_entropies : np.array=None,
+               store_matrix : bool=False,
+               testing : bool=False,
+               show_plot : bool=False, 
+               save_name : bool=False, 
+               scatter : bool=False,
+               unified : bool=False, 
+               boxplot : bool=False, 
+               ordinal : bool=False, 
+               figsize: tuple=(20, 25), 
+               title : str=None, 
+               ordinal_col : str=None,
                ):
     """Wrapper that allows to compute the desired metric on the whole data, store it in a
        dataframe, produce the desired visualization and print the desired test.
 
     Args:
-        metric_type (str): name of the metric. Should be one of:
-                                                                center_of_mass, mean_resonance, moment_of_inertia,
-                                                                percentage_resonance, percentage_resonance_entropy,
-                                                                partition_entropy, inverse_coherence
-        metadata_matrix (pd.DataFrame): df in which to store the computed metric
-        mag_phase_mx_dict (np.array, optional): _description_. Defaults to False.
-        max_mags (np.array, optional): _description_. Defaults to False.
-        max_coeffs (np.array, optional): _description_. Defaults to False.
-        inv_entropies (np.array, optional): _description_. Defaults to False.
-        store_matrix (bool, optional): Whether to store the metrics in the df. Defaults to False.
-        cols (list): list of column names
-        testing (bool, optional): Whether to print the test. Defaults to False.
-        show_plot (bool, optional): Whether to plot. Defaults to False.
-        save_name (str): name used for saving the visualization
-        title (str): title of the visualization
-        figsize (tuple, optional): size of the plot. Defaults to (20,25).
-        scatter (bool, optional): whether to scatter the points in the unified plot. Defaults to False.
-        unified (bool, optional): whether the metrics for each coefficient should be plotted in only one axis. Defaults to False.
-        boxplot (bool, optional): to use boxplots instead of regplots (suggested for ordinal plots). Defaults to False.
-        ordinal (bool, optional): whether to show the time evolution as an ordinal number. Defaults to False.
-        ordinal_col (str, optional): the column that should be used as ordinal values. Defaults to 'years_ordinal'.
+        metric_type (str): _description_
+        metadata_matrix (pd.DataFrame): _description_
+        cols (list): _description_
+        mag_phase_mx_dict (np.array, optional): _description_. Defaults to None.
+        max_mags (np.array, optional): _description_. Defaults to None.
+        max_coeffs (np.array, optional): _description_. Defaults to None.
+        inv_entropies (np.array, optional): _description_. Defaults to None.
+        store_matrix (bool, optional): _description_. Defaults to False.
+        testing (bool, optional): _description_. Defaults to False.
+        show_plot (bool, optional): _description_. Defaults to False.
+        save_name (bool, optional): _description_. Defaults to False.
+        scatter (bool, optional): _description_. Defaults to False.
+        unified (bool, optional): _description_. Defaults to False.
+        boxplot (bool, optional): _description_. Defaults to False.
+        ordinal (bool, optional): _description_. Defaults to False.
+        figsize (tuple, optional): _description_. Defaults to (20, 25).
+        title (str, optional): _description_. Defaults to None.
+        ordinal_col (str, optional): _description_. Defaults to None.
 
     Returns:
-        dict/pd.DataFrame: either the dictionary name:metric or the dataframe (if store_matrix=True)
+        _type_: _description_
     """
     if metric_type == 'center_of_mass':
         metric = {fname: center_of_mass(
             mag_phase_mx[..., 0]) for fname, mag_phase_mx in mag_phase_mx_dict.items()}
-    elif metric_type == 'center_of_mass_2':
+    elif metric_type == 'center_of_mass_most_resonant':
         metric = {fname: np.divide(np.array(
             [
                 (
@@ -618,50 +623,3 @@ def get_metric(metric_type, metadata_matrix,
         return metadata_matrix
     else:
         return metric
-
-
-
-
-########################################
-# deprecated
-########################################
-
-
-def get_partition_entropy(max_coeffs):
-    return {fname: partititions_entropy(make_adj_list(max_coeff)) for fname, max_coeff in
-            max_coeffs.items()}
-
-
-def get_non_coherence(max_mags):
-    return {fname: np.polyfit(np.arange(max_mag.shape[1]), np.mean(max_mag, axis=0), 1)[1] for fname, max_mag in
-            max_mags.items()}
-
-
-def get_percentage_resonance(max_coeffs, entropy_mat=False):
-    if entropy_mat == False:
-        return {fname: np.divide(np.array([(max_coeff == i).sum() for i in range(6)]),
-                                 max_coeff.shape[0] * max_coeff.shape[1]) for fname, max_coeff in
-                max_coeffs.items()}
-    else:
-        return {fname: np.divide(
-            np.array([(entropy_mat[fname] * (max_coeff == i)).sum()
-                     for i in range(6)]),
-            max_coeff.shape[0] * max_coeff.shape[1]) for fname, max_coeff in max_coeffs.items()}
-
-
-def get_moment_of_inertia(max_coeffs, max_mags):
-    return {fname: np.divide(np.array(
-        [
-            (
-                max_mags[fname][max_coeff == i] *
-                (np.flip(np.square(
-                    np.divide(np.indices(max_mags[fname].shape)[0], max_coeff.shape[1]))))[
-                    max_coeff == i]
-
-            ).sum()
-            for i in range(6)
-        ]),
-        max_coeff.shape[0] * max_coeff.shape[1])
-        for fname, max_coeff in max_coeffs.items()
-
-    }
