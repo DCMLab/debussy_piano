@@ -1,0 +1,11 @@
+*.DS_Store
+# MuseScore
+*.mscx,
+*.mscz,
+.mscbackup
+.~*
+*.ipynb_checkpoints
+__pycache__
+.vscode/
+.idea
+data/
