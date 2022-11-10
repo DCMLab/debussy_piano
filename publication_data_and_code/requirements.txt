@@ -2,3 +2,5 @@ git+https://github.com/DCMLab/wavescapes.git@3a69d34
 ipykernel
 networkx
 tqdm
+seaborn
+statsmodels

@@ -1,27 +1,25 @@
+import math
 import multiprocessing as mp
 import os
 import warnings
 from functools import lru_cache
 from itertools import accumulate, islice
-from typing import Callable, Iterable, Collection, Optional
+from typing import Callable, Iterable, Collection, Optional, Tuple
 
-from matplotlib import pyplot as plt
-from tqdm import tqdm
-from wavescapes import legend_decomposition
-from wavescapes.color import circular_hue
+import networkx as nx
 import numpy as np
-import math
+from numpy.typing import NDArray
+import pandas as pd
+import seaborn as sns
+import statsmodels.formula.api as smf
+from matplotlib import pyplot as plt
+from networkx.algorithms.components import connected_components
 from scipy import ndimage
 from scipy.stats import entropy
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
-import seaborn as sns
-import pandas as pd
-import statsmodels.formula.api as smf
-import os
-
-import networkx as nx
-from networkx.algorithms.components import connected_components
-
+from tqdm import tqdm
+from wavescapes import legend_decomposition
+from wavescapes.color import circular_hue
 
 NORM_METHODS = ['0c', 'post_norm', 'max_weighted', 'max']
 
@@ -30,19 +28,22 @@ NORM_METHODS = ['0c', 'post_norm', 'max_weighted', 'max']
 ########################################
 
 
-def utm2long(utm):
+def utm2long(utm: NDArray) -> NDArray:
+    """(N, N, ...) upper triangle matrix to (N(N+1)/2, ...) long matrix."""
     n, m = utm.shape[:2]
     assert n == m, f"Upper triangular matrix is expected to be square, not ({n}, {m})."
     return utm[np.triu_indices(n)]
 
 
-def longn2squaren(n):
+def longn2squaren(n: int) -> int:
+    """From the length of a long matrix, compute the size of the corresponding square matrix."""
     square_n = np.sqrt(0.25 + 2 * n) - 0.5
     assert square_n % 1. == 0, f"Length {n} does not correspond to an upper triangular matrix in long format."
     return int(square_n)
 
 
-def long2utm(long):
+def long2utm(long: NDArray) -> NDArray:
+    """(N(N+1)/2, ...) long matrix to upper triangle matrix where the lower left triangle beneath the diagonal is 0-padded."""
     n, *m = long.shape
     square_n = longn2squaren(n)
     A = np.zeros_like(long, shape=(square_n, square_n, *m))
@@ -51,24 +52,19 @@ def long2utm(long):
 
 
 @lru_cache
-def longix2squareix(ix, n, from_to=False):
-    """ Turn the index of a long format UTM (upper triangle matrix) into
-    coordinates of a square format UTM.
+def longix2squareix(ix: int, n: int, from_to: bool = False) -> Tuple[int, int]:
+    """
+    Turn the index of a N(N+1)/2 long format UTM (upper triangle matrix) into
+    coordinates of a NxN square format UTM.
 
-    Parameters
-    ----------
-    ix : int
-        Index to convert.
-    n : int
-        Side length of the square matrix.
-    from_to : bool, optional
-        By default, the returned coordinates signify (segment_length, last_segment).
-        Pass True to return (first_segment, last_segment) instead.
+    Args:
+        ix: Index to convert.
+        n: Side length of the square matrix.
+        from_to:
+            By default, the returned coordinates signify (segment_length, last_segment).
+            Pass True to return (first_segment, last_segment) instead.
 
-
-    Returns
-    -------
-    (int, int)
+    Returns:
         See `from_to`.
     """
     for x, diag_ix in enumerate(accumulate(range(n, 1, -1))):
@@ -85,75 +81,17 @@ def longix2squareix(ix, n, from_to=False):
 
 
 @lru_cache
-def squareix2longix(x, y, n):
+def squareix2longix(x, y, n) -> int:
     assert x < n and y < n, "Coordinates need to be smaller than n."
     assert y >= x, f"Coordinates ({x}, {y}) are not within an upper triangular matrix."
     return sum(islice(range(n, -1, -1), x)) + y - x
-
-
-def get_from_to(arr, from_qb, to_qb, long=True):
-    """ This auxiliary function does the indexing for you if you need to retrieve a particular
-    value from a matrix, i.e. the upper node of one triangle.
-
-    Parameters
-    ----------
-    arr : np.array
-        Matrix from which you want to retrieve one entry.
-    from_qb : int
-        First (leftmost) quarterbeat covered by the triangle.
-    to_qb : int
-        First quarterbeat to the right not covered by the triangle, i.e. exclusive right interval border.
-    long : bool, optional
-        If True, the matrix is assumed to be in long format, otherwise square format.
-
-    Returns
-    -------
-
-    """
-    assert to_qb > from_qb, f"to_qb ({to_qb}) needs to be larger than from_qb ({from_qb}) because it is an exclusive interval boundary, i.e. not part of the selected triangle"
-    x = to_qb - from_qb - 1
-    y = to_qb - 1
-    if long:
-        n = longn2squaren(arr.shape[0])
-        long_ix = squareix2longix(x, y, n)
-        return arr[long_ix]
-    return arr[x, y]
-
-
-def get_all_from_to(arr, from_qb, to_qb, long=True):
-    """ This auxiliary function does the indexing for you if you need to retrieve from a matrix
-    the entries for all entries contained in a given interval.
-
-    Parameters
-    ----------
-    arr : np.array
-        Matrix from which you want to retrieve one entry.
-    from_qb : int
-        First (leftmost) quarterbeat covered by the triangle.
-    to_qb : int
-        First quarterbeat to the right not covered by the triangle, i.e. exclusive right interval border.
-    long : bool, optional
-        If True, the matrix is assumed to be in long format and long format is returned. Otherwise square format.
-
-    Returns
-    -------
-
-    """
-    assert to_qb > from_qb, f"to_qb ({to_qb}) needs to be larger than from_qb ({from_qb}) because it is an exclusive interval boundary, i.e. not part of the selected triangle"
-    length = to_qb - from_qb
-    if long:
-        arr = long2utm(arr)
-    slice = arr[:length, from_qb:to_qb]
-    if long:
-        return utm2long(slice)
-    return slice
 
 
 ########################################
 # Inspecting complex matrices
 ########################################
 
-def comp2str(c, dec=2):
+def comp2str(c: complex, dec: int = 2) -> int:
     """Interpret a complex number as magnitude and phase and convert into a human-readable string."""
     magn = np.round(abs(c), dec)
     ang = -round(np.angle(c, True)) % 360
@@ -161,38 +99,38 @@ def comp2str(c, dec=2):
 
 
 comp2str_vec = np.vectorize(comp2str)
+"""Vectorized version of comp2str() that can be applied to numpy arrays."""
 
 
-def comp2mag_phase(c, dec=2):
+def comp2mag_phase(c: complex, dec: int = 2) -> Tuple[int, int]:
+    """Convert a complex DFT coefficient into magnitude and phase."""
     magn = np.round(abs(c), dec)
     ang = np.round(np.angle(c), dec)
     return magn, ang
 
 
-def get_coeff(dft, x, y, coeff=None, deg=False, from_to=False):
+def get_coeff(dft: NDArray,
+              x: int,
+              y: int,
+              coeff: Optional[int] = None,
+              deg: bool = False,
+              from_to: bool = False) -> NDArray:
     """View magnitude and phase of a particular point in the matrix.
 
-    Parameters
-    ----------
-    dft : np.array
-        (NxNx7) complex square matrix or (Nx7) complex long matrix.
-    x : int
-        By default, x designates the row of the wavescape ('length-to notation'). If `from_to` is
-        set to True, x is the leftmost index of the selected interval ('from-to notation').
-    y : int
-        y-1 is the rightmost index of the selected interval.
-    coeff : int, optional
-        If you want to look at a single coefficient, pass a number between 0 and 6, otherwise all
-        7 will be returned.
-    deg : bool, optional
-        By default, the complex number will be converted into a string containing the rounded
-        magnitude and the angle in degrees. Pass false to get the raw complex number.
-    from_to : bool, optional
-        See `x`.
+    Args:
+        dft: (NxNx7) complex square matrix or (Nx7) complex long matrix.
+        x:
+            By default, x designates the row of the wavescape ('length-to notation'). If `from_to` is
+            set to True, x is the leftmost index of the selected interval ('from-to notation').
+        y: y-1 is the rightmost index of the selected interval.
+        coeff: If you want to look at a single coefficient, pass a number between 0 and 6, otherwise all 7 will be returned.
+        deg:
+            By default, the complex number will be converted into a string containing the rounded
+            magnitude and the angle in degrees. Pass false to get the raw complex number.
+        from_to:
+            See `x`.
 
-    Returns
-    -------
-    np.array[str or complex]
+    Returns:
         Shape 1 or 7 depending on `coeff`, dtype depends on `deg`.
     """
     assert dft.ndim in (2, 3), f"2D or 3D, not {dft.ndim}D"
@@ -226,12 +164,18 @@ def get_coeff(dft, x, y, coeff=None, deg=False, from_to=False):
 # Summary wavescapes
 ########################################
 
-def most_resonant(mag_mx, add_one=False):
-    """ Inpute: NxNx6 matrix of magnitudes or N(N+1)/2x6 long format
-    Computes 3 NxNx1 matrices containing:
-        the inverse entropy of the 6 coefficients at each point of the matrix
-        the maximum value among the 6 coefficients
-        the max coefficient
+def most_resonant(mag_mx: NDArray, add_one: bool = False) -> Tuple[NDArray, NDArray, NDArray]:
+    """ Takes a NxNx6 square or N(N+1)/2x6 long matrix of magnitudes and computes three matrices of shape NxN or N(N+1)/2
+    for plotting summary wavescapes.
+
+    Args:
+        mag_mx: Matrix of magnitudes in square or long format.
+        add_one: By default the most resonant coefficients are numbers between 0 and 5. Pass True to return numbers between 1 and 6 instead.
+
+    Returns:
+        most_resonant_coeff (NxN) matrix where indices between 0 and 5 or 1 and 6 (depending on ``add_one``) correspond to the six DFT coefficients 1 through 6.
+        maximum_magnitude (NxN) matrix containing the most resonant coefficients' magnitudes.
+        inverse_entropy (NxN) matrix where each value corresponds to the inverse normalized entropy of the 6 magnitudes.
     """
     is_square = mag_mx.ndim == 3
     utm_max = np.max(mag_mx, axis=-1)
@@ -254,7 +198,22 @@ def most_resonant(mag_mx, add_one=False):
     return utm_argmax, utm_max, utm_entropy
 
 
-def most_resonant2color(max_coeff, opacity, hue_segments=6, **kwargs):
+def most_resonant2color(max_coeff: NDArray,
+                        opacity: NDArray,
+                        hue_segments: int = 6,
+                        **kwargs) -> NDArray:
+    """ Computes a color matrix by dividing the hue circle into ``hue_segments`` segments, selecting these colors according to
+    the indices in ``max_coeff``, and weighting the opacity by the ``opacity`` matrix.
+
+    Args:
+        max_coeff: Array of integers within [0, hue_segments).
+        opacity: Corresponding opacity values.
+        hue_segments: Into how many equidistant segments to divide the hue circle.
+        **kwargs: Keyword arguments passed on to wavescapes.circular_hue()
+
+    Returns:
+
+    """
     if hue_segments is None:
         hue_segments = max_coeff.max()
     hue_segment = math.tau / hue_segments
@@ -268,8 +227,12 @@ def most_resonant2color(max_coeff, opacity, hue_segments=6, **kwargs):
     return circular_hue(mag_phase_mx, **kwargs)
 
 
-def make_color_legend(file_path=None):
-    """Produce a circular legend for the most_resonant summary wavescapes."""
+def store_color_legend(file_path: str = None) -> None:
+    """ Produce a circular legend for the most_resonant summary wavescapes.
+
+    Args:
+        file_path: Where to store the legend.
+    """
     def make_pcv(position_of_one):
         return [0] * position_of_one + [1] + [0] * (11 - position_of_one)
     legend = {f'c{i + 1}': (make_pcv(6 - i), [2]) for i in range(0, 6)}
@@ -602,125 +565,6 @@ def add_to_metrics(metrics_df : pd.DataFrame, dict_metric : dict, name_metrics):
         df_tmp.columns = name_metrics
     metrics_df = metrics_df.merge(df_tmp, left_index=True, right_index=True)
     return metrics_df
-
-
-########################################
-# utils for penta dia classification
-########################################
-
-
-def make_training_set(analyses_df, ninefold_dict, full=True, normalize=True, clean=True, binary=True, extend=False, pcms=False):
-
-    to_df_ext = []
-
-    if full:
-        for i in range(len(analyses_df)):
-            for j in range(int(analyses_df['to_qb'][i]) - int(analyses_df['from_qb'][i]) - 1):
-                for z in range(j):
-                    if extend:
-                        try:
-                            to_df_ext.append(
-                                [analyses_df['fname'][i]] +
-                                list(ninefold_dict[analyses_df['fname'][i]][squareix2longix(int(analyses_df['to_qb'][i]) - int(analyses_df['from_qb'][i]) - 1 - j, int(analyses_df['to_qb'][i]) - z, int(analyses_df['length_qb'][i]))]) +
-                                list(pcms[analyses_df['fname'][i]][squareix2longix(int(analyses_df['to_qb'][i]) - int(analyses_df['from_qb'][i]) - 1 - j, int(analyses_df['to_qb'][i]) - z, int(analyses_df['length_qb'][i]))]) +
-                                [analyses_df['structure'][i]]
-                            )
-                        except Exception as e:
-                            print('Not found', e)
-                    else:
-                        try:
-                            to_df_ext.append(
-                                [analyses_df['fname'][i]] +
-                                list(ninefold_dict[analyses_df['fname'][i]][squareix2longix(int(analyses_df['to_qb'][i]) - int(analyses_df['from_qb'][i]) - 1 - j, int(analyses_df['to_qb'][i]) - z, int(analyses_df['length_qb'][i]))]) +
-                                [squareix2longix(int(analyses_df['to_qb'][i]) - int(analyses_df['from_qb'][i]) - 1 - j, int(analyses_df['to_qb'][i]) - z, int(analyses_df['length_qb'][i]))] + 
-                                [analyses_df['structure'][i]]
-                            )
-                        except Exception as e:
-                            print('Not found', e)
-    else:
-        for i in range(len(analyses_df)):
-            try:
-                to_df_ext.append(
-                    [analyses_df['fname'][i]] +
-                    list(ninefold_dict[analyses_df['fname'][i]][squareix2longix(int(analyses_df['to_qb'][i]) - int(analyses_df['from_qb'][i]) - 1, int(analyses_df['to_qb'][i]), int(analyses_df['length_qb'][i]))]) +
-                    [analyses_df['structure'][i]]
-                )
-            except Exception as e:
-                print('Not found', e)
-
-    if extend:
-        ground_truth_train = pd.DataFrame(to_df_ext,
-                                        columns=['fname', 'coeff1', 'coeff2', 'coeff3', 'coeff4',
-                                                'coeff5', 'coeff6', 'major', 'minor', 'tritone', 
-                                                0,1,2,3,4,5,6,7,8,9,10,11,
-                                                'structure']
-                                        )
-
-    else:
-        ground_truth_train = pd.DataFrame(to_df_ext,
-                                        columns=['fname', 'coeff1', 'coeff2', 'coeff3', 'coeff4',
-                                                'coeff5', 'coeff6', 'major', 'minor', 'tritone', 
-                                                'point', 'structure']
-                                        )
-
-    if normalize:
-        ground_truth_train['tritone'] = ground_truth_train[[
-            'tritone']] / ground_truth_train[['tritone']].apply(np.max, axis=0)
-
-    ground_truth_train = ground_truth_train.drop_duplicates()
-    ground_truth_train = ground_truth_train[ground_truth_train['structure'].notnull(
-    )]
-
-    if clean:
-        ground_truth_train = ground_truth_train[ground_truth_train['structure'].isin(
-            ['majmin', 'penta', 'octa', 'wt'])]
-
-    if binary:
-        ground_truth_train['diatonic'] = [1 if 'majmin' in str(
-            x) else 0 for x in ground_truth_train['structure']]
-        ground_truth_train['pentatonic'] = [1 if 'penta' in str(
-            x) else 0 for x in ground_truth_train['structure']]
-        ground_truth_train['octatonic'] = [1 if 'octa' in str(
-            x) else 0 for x in ground_truth_train['structure']]
-        ground_truth_train['wholetone'] = [1 if 'wt' in str(
-            x) else 0 for x in ground_truth_train['structure']]
-
-    return ground_truth_train
-
-
-def most_resonant_penta_dia(mag_mx, ninefold_mat, clf, add_one=False):
-    """ Inpute: NxNx6 matrix of magnitudes or N(N+1)/2x6 long format
-        Computes 3 NxNx1 matrices containing:
-        the inverse entropy of the 6 coefficients at each point of the matrix
-        the maximum value among the 6 coefficients
-        the max coefficient
-    """
-    is_square = mag_mx.ndim == 3
-    utm_max = np.max(mag_mx, axis=-1)
-    utm_argmax = np.argmax(mag_mx, axis=-1)
-    if add_one:
-        utm_argmax = np.triu(utm_argmax + 1)
-    if is_square:
-        # so we don't apply entropy to zero-vectors
-        mag_mx = utm2long(mag_mx)
-
-        is_long = ninefold_mat.ndim == 2
-
-        if is_long:
-            ninefold_mat = long2utm(ninefold_mat)
-
-    to_predict = ninefold_mat[utm_argmax == 4]
-    predictions = clf.predict(to_predict)
-    utm_argmax[utm_argmax == 4] = [
-        6 if pred == 0 else 4 for pred in predictions]
-
-    # entropy and np.log have same base e
-    utm_entropy = 1 - (entropy(mag_mx, axis=-1) / np.log(mag_mx.shape[-1]))
-    utm_entropy = MinMaxScaler().fit_transform(
-        utm_entropy.reshape(-1, 1)).reshape(-1)
-    if is_square:
-        utm_entropy = long2utm(utm_entropy)
-    return utm_argmax, utm_max, utm_entropy
 
 
 def do_it(func: Callable, params: Iterable[tuple], n: Optional[int] = None, cores: int = 0) -> Collection:
