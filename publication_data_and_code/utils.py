@@ -1,7 +1,12 @@
+import multiprocessing as mp
+import os
+import warnings
 from functools import lru_cache
 from itertools import accumulate, islice
+from typing import Callable, Iterable, Collection, Optional
 
 from matplotlib import pyplot as plt
+from tqdm import tqdm
 from wavescapes import legend_decomposition
 from wavescapes.color import circular_hue
 import numpy as np
@@ -10,13 +15,15 @@ from scipy import ndimage
 from scipy.stats import entropy
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 import seaborn as sns
-import statsmodels.api as sm
 import pandas as pd
 import statsmodels.formula.api as smf
 import os
 
 import networkx as nx
 from networkx.algorithms.components import connected_components
+
+
+NORM_METHODS = ['0c', 'post_norm', 'max_weighted', 'max']
 
 ########################################
 # SQUARE <-> LONG matrix transformations
@@ -235,7 +242,11 @@ def most_resonant(mag_mx, add_one=False):
         # so we don't apply entropy to zero-vectors
         mag_mx = utm2long(mag_mx)
     # entropy and np.log have same base e
-    utm_entropy = 1 - (entropy(mag_mx, axis=-1) / np.log(mag_mx.shape[-1]))
+    with warnings.catch_warnings():
+        # suppress warnings for 0-vectors representing rests in the music
+        warnings.simplefilter("ignore")
+        utm_entropy = 1 - (entropy(mag_mx, axis=-1) / np.log(mag_mx.shape[-1]))
+    utm_entropy = np.nan_to_num(utm_entropy) # replace nan by 0
     utm_entropy = MinMaxScaler().fit_transform(
         utm_entropy.reshape(-1, 1)).reshape(-1)
     if is_square:
@@ -710,3 +721,72 @@ def most_resonant_penta_dia(mag_mx, ninefold_mat, clf, add_one=False):
     if is_square:
         utm_entropy = long2utm(utm_entropy)
     return utm_argmax, utm_max, utm_entropy
+
+
+def do_it(func: Callable, params: Iterable[tuple], n: Optional[int] = None, cores: int = 0) -> Collection:
+    """Call a function on a list of argument tuples, potentially parallelized, and return the result.
+
+    Args:
+        func: Function to map on ``params``.
+        params:
+            Collection or Iterator of tuples where each tuple corresponds to a set of arguments passed to ``func``.
+            The arguments need to be in the right order to match the signature of ``func``.
+        n: Number of function calls for displaying the progress bar. Needed only if ``params`` is an Iterator.
+        cores: On how many CPU cores to perform the operation in parallel. Defaults to 0, meaning no parallelization.
+
+    Returns:
+        _description_
+    """
+    if n is None:
+        n = len(list(params))
+    if cores == 0:
+        return [func(*p) for p in tqdm(params, total=n)]
+    pool = mp.Pool(cores)
+    result = pool.starmap(func, tqdm(params, total=n))
+    pool.close()
+    pool.join()
+    return result
+
+
+def make_filename(fname, how, indulge_prototypes, coeff=None, summary_by_entropy=None, ext=None) -> str:
+    result = fname
+    if coeff is not None:
+        result += f"-c{coeff}"
+    result += f"-{how}"
+    if indulge_prototypes:
+        result += "+indulge"
+    if summary_by_entropy is not None:
+        result += "-summary-by-ent" if summary_by_entropy else "-summary-by-mag"
+    if ext is not None:
+        result += ext
+    return result
+
+
+def resolve_dir(d):
+    """ Resolves '~' to HOME directory and turns ``d`` into an absolute path.
+    """
+    if d is None:
+        return None
+    if '~' in d:
+        return os.path.expanduser(d)
+    return os.path.abspath(d)
+
+
+
+
+def make_wavescape_label(fname: str, how: str, indulge: bool, coeff: Optional[int] = None, by_entropy: Optional[bool] = None) -> str:
+    label = f"{fname}: "
+    normalization = f"Normalization: {how}{'+' if indulge else ''}"
+    if coeff is None:
+        if by_entropy is not None:
+            # summary wavescape
+            label += f"summary\n{normalization}\n"
+            if by_entropy:
+                label += "Opacity: inverse entropy"
+            else:
+                label += "Opacity: magnitude"
+        else:
+            label += f"all coefficients\n{normalization}"
+    else:
+        label += f"c{coeff}\n{normalization}"
+    return label
