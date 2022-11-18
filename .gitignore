@@ -10,3 +10,5 @@ __pycache__
 .idea
 *figures
 *results
+*data
+*pickled_magnitude_phase_matrices

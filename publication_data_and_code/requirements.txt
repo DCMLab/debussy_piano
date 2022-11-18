@@ -4,3 +4,6 @@ networkx
 tqdm
 seaborn
 statsmodels
+numpy
+pandas
+matplotlib

@@ -117,7 +117,7 @@ if __name__ == "__main__":
         "--repo",
         metavar="DIR",
         type=check_dir,
-        default=os.getcwd(),
+        default='..', #os.getcwd()
         help="Local clone of the debussy repository. Defaults to current working directory.",
     )
 
