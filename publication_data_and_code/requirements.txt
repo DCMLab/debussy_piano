@@ -1,4 +1,4 @@
-git+https://github.com/DCMLab/wavescapes.git@3a69d34
+wavescapes>=1.2.0
 ipykernel
 networkx
 tqdm
