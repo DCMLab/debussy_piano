@@ -1,3 +1,12 @@
+<!-- TOC -->
+* [Code for reproducing results and figures](#code-for-reproducing-results-and-figures)
+  * [Running the Python code](#running-the-python-code)
+    * [Installing requirements](#installing-requirements)
+    * [Running the code](#running-the-code)
+  * [Running the R code](#running-the-r-code)
+* [Generating a file with Pitch Class Vectors (PCVs) for all pieces](#generating-a-file-with-pitch-class-vectors--pcvs--for-all-pieces)
+<!-- TOC -->
+
 # Code for reproducing results and figures
 
 The code consists of two components, namely
@@ -42,3 +51,7 @@ In order to execute the interactive notebook instead, you need to have [Jupyter]
 
 
 ## Running the R code
+
+# Generating a file with Pitch Class Vectors (PCVs) for all pieces
+
+`dimcat pcvs -q 1.0 -p pc -w 0.5 --fillna 0.0 --round 5`
