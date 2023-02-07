@@ -367,7 +367,8 @@ def get_pcvs(debussy_repo: str = '..', pandas: bool = False) -> Dict[str, NDArra
         the IntervalIndex reflects each slice's position in the piece.
     """
     pcvs_path = os.path.join(debussy_repo, 'publication_data_and_code',
-                             'debussy-1.0q_sliced-w0.5-pc-pcvs.tsv')
+                             'l123-08_preludes_ondine_37-45-1.0q_sliced-w0.5-pc-pcvs.tsv')
+                             #'debussy-1.0q_sliced-w0.5-pc-pcvs.tsv')
     pcvs = pd.read_csv(pcvs_path, sep='\t', index_col=[0, 1, 2])
     pcv_dfs = {fname: pcv_df.reset_index(
         level=[0, 1], drop=True) for fname, pcv_df in pcvs.groupby(level=1)}
