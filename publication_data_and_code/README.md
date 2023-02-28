@@ -52,6 +52,10 @@ In order to execute the interactive notebook instead, you need to have [Jupyter]
 
 ## Running the R code
 
+The code can be executed in RStudio after loading the required libraries. In order to run the Bayesian models, it is necessary to install [`brms`](https://cran.r-project.org/web/packages/brms/readme/README.html) and [`rstan`](https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started).
+
+The code can be used to reproduce the analyses as reported in the paper (by setting `retrain_models <- FALSE`), or to train the models from scratch (`retrain_models <- TRUE`).
+
 # Generating a file with Pitch Class Vectors (PCVs) for all pieces
 
 `dimcat pcvs -q 1.0 -p pc -w 0.5 --fillna 0.0 --round 5`

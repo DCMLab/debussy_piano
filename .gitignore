@@ -9,6 +9,5 @@ __pycache__
 .vscode
 .idea
 *figures
-*results
 *data
 *pickled_magnitude_phase_matrices
