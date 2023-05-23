@@ -1,0 +1,1477 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Cadences &#8212; The Claude Debussy Solo Piano Corpus 0.4.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/cadences';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Notes" href="notes_stats.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">The Claude Debussy Solo Piano Corpus 0.4.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../introduction.html">
+                        How to use
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../analyses.html">
+                        Analyses
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../introduction.html">
+                        How to use
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../analyses.html">
+                        Analyses
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notes_stats.html">Notes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Cadences</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../analyses.html" class="nav-link">Analyses</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Cadences</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="cadences">
+<h1>Cadences<a class="headerlink" href="#cadences" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span><span class="p">,</span> <span class="n">Counter</span>
+
+<span class="kn">from</span> <span class="nn">git</span> <span class="kn">import</span> <span class="n">Repo</span>
+<span class="kn">import</span> <span class="nn">dimcat</span> <span class="k">as</span> <span class="nn">dc</span>
+<span class="kn">import</span> <span class="nn">ms3</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">STD_LAYOUT</span><span class="p">,</span> <span class="n">CADENCE_COLORS</span><span class="p">,</span> <span class="n">color_background</span><span class="p">,</span> <span class="n">value_count_df</span><span class="p">,</span> <span class="n">get_repo_name</span><span class="p">,</span> <span class="n">resolve_dir</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CORPUS_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;CORPUS_PATH&#39;</span><span class="p">,</span> <span class="s2">&quot;~/dcml_corpora&quot;</span><span class="p">)</span>
+<span class="n">CORPUS_PATH</span> <span class="o">=</span> <span class="n">resolve_dir</span><span class="p">(</span><span class="n">CORPUS_PATH</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="n">CORPUS_PATH</span><span class="p">)</span>
+<span class="n">notebook_repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">search_parent_directories</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Notebook repository &#39;</span><span class="si">{</span><span class="n">get_repo_name</span><span class="p">(</span><span class="n">notebook_repo</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39; @ </span><span class="si">{</span><span class="n">notebook_repo</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">hexsha</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data repo &#39;</span><span class="si">{</span><span class="n">get_repo_name</span><span class="p">(</span><span class="n">CORPUS_PATH</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39; @ </span><span class="si">{</span><span class="n">repo</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">hexsha</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dimcat version </span><span class="si">{</span><span class="n">dc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ms3 version </span><span class="si">{</span><span class="n">ms3</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Notebook repository &#39;data_reports&#39; @ ec5e964
+Data repo &#39;debussy_piano&#39; @ 0da391f
+dimcat version 0.2.0
+ms3 version 1.1.2
+</pre></div>
+</div>
+</div>
+</div>
+<section id="data-loading">
+<h2>Data loading<a class="headerlink" href="#data-loading" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">CORPUS_PATH</span><span class="p">)</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dataset</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">CORPUS_PATH</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span>
+
+<span class="ne">AttributeError</span>: module &#39;dimcat&#39; has no attribute &#39;Dataset&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="filtering-out-pieces-without-cadence-annotations">
+<h3>Filtering out pieces without cadence annotations<a class="headerlink" href="#filtering-out-pieces-without-cadence-annotations" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hascadence</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">HasCadenceAnnotationsFilter</span><span class="p">()</span><span class="o">.</span><span class="n">process_data</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Before: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">indices</span><span class="p">[()])</span><span class="si">}</span><span class="s2"> pieces; after removing those without cadence labels: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">hascadence</span><span class="o">.</span><span class="n">indices</span><span class="p">[()])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hascadence</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">HasCadenceAnnotationsFilter</span><span class="p">()</span><span class="o">.</span><span class="n">process_data</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Before: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">indices</span><span class="p">[()])</span><span class="si">}</span><span class="s2"> pieces; after removing those without cadence labels: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">hascadence</span><span class="o">.</span><span class="n">indices</span><span class="p">[()])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: module &#39;dimcat&#39; has no attribute &#39;HasCadenceAnnotationsFilter&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="show-corpora-containing-pieces-with-cadence-annotations">
+<h3>Show corpora containing pieces with cadence annotations<a class="headerlink" href="#show-corpora-containing-pieces-with-cadence-annotations" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grouped_by_dataset</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">CorpusGrouper</span><span class="p">()</span><span class="o">.</span><span class="n">process_data</span><span class="p">(</span><span class="n">hascadence</span><span class="p">)</span>
+<span class="n">corpora</span> <span class="o">=</span> <span class="p">{</span><span class="n">group</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ixs</span><span class="p">)</span><span class="si">}</span><span class="s2"> pieces&quot;</span> <span class="k">for</span> <span class="n">group</span><span class="p">,</span> <span class="n">ixs</span> <span class="ow">in</span>  <span class="n">grouped_by_dataset</span><span class="o">.</span><span class="n">indices</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">corpora</span><span class="p">)</span><span class="si">}</span><span class="s2"> corpora with </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span><span class="w"> </span><span class="n">grouped_by_dataset</span><span class="o">.</span><span class="n">indices</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span><span class="si">}</span><span class="s2"> pieces containing cadence annotations:&quot;</span><span class="p">)</span>
+<span class="n">corpora</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">grouped_by_dataset</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">CorpusGrouper</span><span class="p">()</span><span class="o">.</span><span class="n">process_data</span><span class="p">(</span><span class="n">hascadence</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">corpora</span> <span class="o">=</span> <span class="p">{</span><span class="n">group</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ixs</span><span class="p">)</span><span class="si">}</span><span class="s2"> pieces&quot;</span> <span class="k">for</span> <span class="n">group</span><span class="p">,</span> <span class="n">ixs</span> <span class="ow">in</span>  <span class="n">grouped_by_dataset</span><span class="o">.</span><span class="n">indices</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">corpora</span><span class="p">)</span><span class="si">}</span><span class="s2"> corpora with </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span><span class="w"> </span><span class="n">grouped_by_dataset</span><span class="o">.</span><span class="n">indices</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span><span class="si">}</span><span class="s2"> pieces containing cadence annotations:&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;hascadence&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="all-annotation-labels-from-the-selected-pieces">
+<h3>All annotation labels from the selected pieces<a class="headerlink" href="#all-annotation-labels-from-the-selected-pieces" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_labels</span> <span class="o">=</span> <span class="n">hascadence</span><span class="o">.</span><span class="n">get_facet</span><span class="p">(</span><span class="s1">&#39;expanded&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_labels</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="si">}</span><span class="s2"> hand-annotated harmony labels:&quot;</span><span class="p">)</span>
+<span class="n">all_labels</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">,</span> <span class="mi">14</span><span class="p">:]</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">color_background</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="s2">&quot;chord&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">all_labels</span> <span class="o">=</span> <span class="n">hascadence</span><span class="o">.</span><span class="n">get_facet</span><span class="p">(</span><span class="s1">&#39;expanded&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_labels</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="si">}</span><span class="s2"> hand-annotated harmony labels:&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">all_labels</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">,</span> <span class="mi">14</span><span class="p">:]</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">color_background</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="s2">&quot;chord&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;hascadence&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="metadata">
+<h3>Metadata<a class="headerlink" href="#metadata" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset_metadata</span> <span class="o">=</span> <span class="n">hascadence</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">metadata</span><span class="p">()</span>
+<span class="n">hascadence_metadata</span> <span class="o">=</span> <span class="n">dataset_metadata</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">hascadence</span><span class="o">.</span><span class="n">indices</span><span class="p">[()]]</span>
+<span class="n">hascadence_metadata</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">hascadence_metadata</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dataset_metadata</span> <span class="o">=</span> <span class="n">hascadence</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">metadata</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">hascadence_metadata</span> <span class="o">=</span> <span class="n">dataset_metadata</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">hascadence</span><span class="o">.</span><span class="n">indices</span><span class="p">[()]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">hascadence_metadata</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;hascadence&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_composition_years</span> <span class="o">=</span> <span class="n">hascadence_metadata</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">composed_end</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+<span class="n">chronological_order</span> <span class="o">=</span> <span class="n">mean_composition_years</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="n">bar_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">mean_composition_years</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">),</span> 
+                      <span class="n">hascadence_metadata</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;dataset&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;pieces&#39;</span><span class="p">)],</span>
+                     <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+                    <span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bar_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;pieces&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Pieces contained in the dataset&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mean_composition_years</span> <span class="o">=</span> <span class="n">hascadence_metadata</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">composed_end</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">chronological_order</span> <span class="o">=</span> <span class="n">mean_composition_years</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">bar_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">mean_composition_years</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">),</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                       <span class="n">hascadence_metadata</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;dataset&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;pieces&#39;</span><span class="p">)],</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                      <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                     <span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;hascadence_metadata&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="overall">
+<h2>Overall<a class="headerlink" href="#overall" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>PAC</strong>: Perfect Authentic Cadence</p></li>
+<li><p><strong>IAC</strong>: Imperfect Authentic Cadence</p></li>
+<li><p><strong>HC</strong>: Half Cadence</p></li>
+<li><p><strong>DC</strong>: Deceptive Cadence</p></li>
+<li><p><strong>EC</strong>: Evaded Cadence</p></li>
+<li><p><strong>PC</strong>: Plagal Cadence</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">all_labels</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> cadence labels.&quot;</span><span class="p">)</span>
+<span class="n">value_count_df</span><span class="p">(</span><span class="n">all_labels</span><span class="o">.</span><span class="n">cadence</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">all_labels</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> cadence labels.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">value_count_df</span><span class="p">(</span><span class="n">all_labels</span><span class="o">.</span><span class="n">cadence</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;all_labels&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">all_labels</span><span class="p">[</span><span class="n">all_labels</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">notna</span><span class="p">()],</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;cadence&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;cadence&quot;</span><span class="p">,</span> <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">CADENCE_COLORS</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">all_labels</span><span class="p">[</span><span class="n">all_labels</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">notna</span><span class="p">()],</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;cadence&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;cadence&quot;</span><span class="p">,</span> <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">CADENCE_COLORS</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;all_labels&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="per-dataset">
+<h2>Per dataset<a class="headerlink" href="#per-dataset" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cadence_count_per_dataset</span> <span class="o">=</span> <span class="n">all_labels</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;corpus&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">cadence_fraction_per_dataset</span> <span class="o">=</span> <span class="n">cadence_count_per_dataset</span> <span class="o">/</span> <span class="n">cadence_count_per_dataset</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">cadence_fraction_per_dataset</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;corpus&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cadence&#39;</span><span class="p">,</span>
+      <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">CADENCE_COLORS</span><span class="p">,</span> <span class="n">category_orders</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">chronological_order</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cadence_count_per_dataset</span> <span class="o">=</span> <span class="n">all_labels</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;corpus&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">cadence_fraction_per_dataset</span> <span class="o">=</span> <span class="n">cadence_count_per_dataset</span> <span class="o">/</span> <span class="n">cadence_count_per_dataset</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">cadence_fraction_per_dataset</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;corpus&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cadence&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>       <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">CADENCE_COLORS</span><span class="p">,</span> <span class="n">category_orders</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">chronological_order</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;all_labels&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">cadence_count_per_dataset</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;cadence&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cadence&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> 
+       <span class="n">facet_col</span><span class="o">=</span><span class="s1">&#39;corpus&#39;</span><span class="p">,</span> <span class="n">facet_col_wrap</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">CADENCE_COLORS</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">for_each_annotation</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="o">**</span><span class="n">STD_LAYOUT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">cadence_count_per_dataset</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;cadence&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cadence&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">2</span>        <span class="n">facet_col</span><span class="o">=</span><span class="s1">&#39;corpus&#39;</span><span class="p">,</span> <span class="n">facet_col_wrap</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">CADENCE_COLORS</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">fig</span><span class="o">.</span><span class="n">for_each_annotation</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="o">**</span><span class="n">STD_LAYOUT</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;cadence_count_per_dataset&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="per-phrase">
+<h2>Per phrase<a class="headerlink" href="#per-phrase" title="Permalink to this heading">#</a></h2>
+<section id="number-of-cadences-per-phrase">
+<h3>Number of cadences per phrase<a class="headerlink" href="#number-of-cadences-per-phrase" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">segmented</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">PhraseSlicer</span><span class="p">()</span><span class="o">.</span><span class="n">process_data</span><span class="p">(</span><span class="n">grouped_by_dataset</span><span class="p">)</span>
+<span class="n">phrases</span> <span class="o">=</span> <span class="n">segmented</span><span class="o">.</span><span class="n">get_slice_info</span><span class="p">()</span>
+<span class="n">phrase_segments</span> <span class="o">=</span> <span class="n">segmented</span><span class="o">.</span><span class="n">get_facet</span><span class="p">(</span><span class="s2">&quot;expanded&quot;</span><span class="p">)</span>
+<span class="n">phrase_gpb</span> <span class="o">=</span> <span class="n">phrase_segments</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">local_keys_per_phrase</span> <span class="o">=</span> <span class="n">phrase_gpb</span><span class="o">.</span><span class="n">localkey</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">tuple</span><span class="p">)</span>
+<span class="n">n_local_keys_per_phrase</span> <span class="o">=</span> <span class="n">local_keys_per_phrase</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="n">phrases_with_keys</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">n_local_keys_per_phrase</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;n_local_keys&#39;</span><span class="p">),</span>
+                               <span class="n">local_keys_per_phrase</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;local_keys&#39;</span><span class="p">),</span>
+                               <span class="n">phrases</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">phrases_with_cadences</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span>
+    <span class="n">phrase_gpb</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;n_cadences&#39;</span><span class="p">),</span>
+    <span class="n">phrase_gpb</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;cadences&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">l</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">e</span><span class="p">))),</span>
+    <span class="n">phrases_with_keys</span>
+<span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">value_count_df</span><span class="p">(</span><span class="n">phrases_with_cadences</span><span class="o">.</span><span class="n">n_cadences</span><span class="p">,</span> <span class="n">counts</span><span class="o">=</span><span class="s2">&quot;#phrases&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">segmented</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">PhraseSlicer</span><span class="p">()</span><span class="o">.</span><span class="n">process_data</span><span class="p">(</span><span class="n">grouped_by_dataset</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">phrases</span> <span class="o">=</span> <span class="n">segmented</span><span class="o">.</span><span class="n">get_slice_info</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">phrase_segments</span> <span class="o">=</span> <span class="n">segmented</span><span class="o">.</span><span class="n">get_facet</span><span class="p">(</span><span class="s2">&quot;expanded&quot;</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: module &#39;dimcat&#39; has no attribute &#39;PhraseSlicer&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_cad</span> <span class="o">=</span> <span class="n">phrases_with_cadences</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;corpus&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">n_cadences</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;counts&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;n_cadences&#39;</span><span class="p">)</span>
+<span class="n">n_cad</span><span class="o">.</span><span class="n">n_cadences</span> <span class="o">=</span> <span class="n">n_cad</span><span class="o">.</span><span class="n">n_cadences</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">n_cad</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;corpus&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;counts&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;n_cadences&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">barmode</span><span class="o">=</span><span class="s1">&#39;group&#39;</span><span class="p">,</span>
+             <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">n_cadences</span><span class="o">=</span><span class="s2">&quot;#cadences in a phrase&quot;</span><span class="p">),</span>
+             <span class="n">category_orders</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">chronological_order</span><span class="p">)</span>
+      <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">n_cad</span> <span class="o">=</span> <span class="n">phrases_with_cadences</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;corpus&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">n_cadences</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;counts&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;n_cadences&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">n_cad</span><span class="o">.</span><span class="n">n_cadences</span> <span class="o">=</span> <span class="n">n_cad</span><span class="o">.</span><span class="n">n_cadences</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">n_cad</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;corpus&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;counts&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;n_cadences&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">barmode</span><span class="o">=</span><span class="s1">&#39;group&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>              <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">n_cadences</span><span class="o">=</span><span class="s2">&quot;#cadences in a phrase&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>              <span class="n">category_orders</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">chronological_order</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>       <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;phrases_with_cadences&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="combinations-of-cadence-types-for-phrases-with-more-than-one-cadence">
+<h3>Combinations of cadence types for phrases with more than one cadence<a class="headerlink" href="#combinations-of-cadence-types-for-phrases-with-more-than-one-cadence" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value_count_df</span><span class="p">(</span><span class="n">phrases_with_cadences</span><span class="p">[</span><span class="n">phrases_with_cadences</span><span class="o">.</span><span class="n">n_cadences</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">cadences</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">value_count_df</span><span class="p">(</span><span class="n">phrases_with_cadences</span><span class="p">[</span><span class="n">phrases_with_cadences</span><span class="o">.</span><span class="n">n_cadences</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">cadences</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;phrases_with_cadences&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="positioning-of-cadences-within-phrases">
+<h3>Positioning of cadences within phrases<a class="headerlink" href="#positioning-of-cadences-within-phrases" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_rows</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">y_position</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="n">phrases_with_cadences</span><span class="p">[</span><span class="n">phrases_with_cadences</span><span class="o">.</span><span class="n">n_cadences</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;duration_qb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">phrase_segments</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">ix</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="n">interval</span> <span class="o">=</span> <span class="n">ix</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">df_rows</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">y_position</span><span class="p">,</span> <span class="n">interval</span><span class="o">.</span><span class="n">length</span><span class="p">,</span> <span class="s2">&quot;end of phrase&quot;</span><span class="p">,</span> <span class="n">description</span><span class="p">))</span>
+        <span class="n">start_pos</span> <span class="o">=</span> <span class="n">interval</span><span class="o">.</span><span class="n">left</span>
+        <span class="n">cadences</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">notna</span><span class="p">(),</span> <span class="p">[</span><span class="s1">&#39;quarterbeats&#39;</span><span class="p">,</span> <span class="s1">&#39;cadence&#39;</span><span class="p">]]</span>
+        <span class="n">cadences</span><span class="o">.</span><span class="n">quarterbeats</span> <span class="o">-=</span> <span class="n">start_pos</span>
+        <span class="k">for</span> <span class="n">cadence_x</span><span class="p">,</span> <span class="n">cadence_type</span> <span class="ow">in</span> <span class="n">cadences</span><span class="o">.</span><span class="n">itertuples</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+            <span class="n">df_rows</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">y_position</span><span class="p">,</span> <span class="n">cadence_x</span><span class="p">,</span> <span class="n">cadence_type</span><span class="p">,</span> <span class="n">description</span><span class="p">))</span>
+        <span class="n">y_position</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1">#else:</span>
+    <span class="c1">#    df_rows.append((y_position, pd.NA, pd.NA, description))</span>
+    
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_rows</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;phrase_ix&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;marker&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">df_rows</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y_position</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="n">phrases_with_cadences</span><span class="p">[</span><span class="n">phrases_with_cadences</span><span class="o">.</span><span class="n">n_cadences</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;duration_qb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">df</span> <span class="o">=</span> <span class="n">phrase_segments</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">description</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">ix</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;phrases_with_cadences&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">notna</span><span class="p">()],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;phrase_ix&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;marker&quot;</span><span class="p">,</span> <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;description&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span>
+                <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;legend&#39;</span><span class="p">),</span> <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">CADENCE_COLORS</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">autorange</span><span class="o">=</span><span class="s2">&quot;reversed&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">notna</span><span class="p">()],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;phrase_ix&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;marker&quot;</span><span class="p">,</span> <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;description&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                 <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;legend&#39;</span><span class="p">),</span> <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">CADENCE_COLORS</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">autorange</span><span class="o">=</span><span class="s2">&quot;reversed&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;data&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="cadence-ultima">
+<h2>Cadence ultima<a class="headerlink" href="#cadence-ultima" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phrase_segments</span> <span class="o">=</span> <span class="n">segmented</span><span class="o">.</span><span class="n">get_facet</span><span class="p">(</span><span class="s2">&quot;expanded&quot;</span><span class="p">)</span>
+<span class="n">cadence_selector</span> <span class="o">=</span> <span class="n">phrase_segments</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span>
+<span class="n">missing_chord_selector</span> <span class="o">=</span> <span class="n">phrase_segments</span><span class="o">.</span><span class="n">chord</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
+<span class="n">cadence_with_missing_chord_selector</span> <span class="o">=</span> <span class="n">cadence_selector</span> <span class="o">&amp;</span> <span class="n">missing_chord_selector</span>
+<span class="n">missing</span> <span class="o">=</span> <span class="n">phrase_segments</span><span class="p">[</span><span class="n">cadence_with_missing_chord_selector</span><span class="p">]</span>
+<span class="n">expanded</span> <span class="o">=</span> <span class="n">ms3</span><span class="o">.</span><span class="n">expand_dcml</span><span class="o">.</span><span class="n">expand_labels</span><span class="p">(</span><span class="n">phrase_segments</span><span class="p">[</span><span class="n">cadence_with_missing_chord_selector</span><span class="p">],</span> <span class="n">propagate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">chord_tones</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">skip_checks</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">phrase_segments</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cadence_with_missing_chord_selector</span><span class="p">]</span> <span class="o">=</span> <span class="n">expanded</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ultima harmony missing for </span><span class="si">{</span><span class="p">(</span><span class="n">phrase_segments</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">phrase_segments</span><span class="o">.</span><span class="n">bass_note</span><span class="o">.</span><span class="n">isna</span><span class="p">())</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> cadence labels.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">phrase_segments</span> <span class="o">=</span> <span class="n">segmented</span><span class="o">.</span><span class="n">get_facet</span><span class="p">(</span><span class="s2">&quot;expanded&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">cadence_selector</span> <span class="o">=</span> <span class="n">phrase_segments</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">missing_chord_selector</span> <span class="o">=</span> <span class="n">phrase_segments</span><span class="o">.</span><span class="n">chord</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;segmented&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<section id="ultimae-as-roman-numeral">
+<h3>Ultimae as Roman numeral<a class="headerlink" href="#ultimae-as-roman-numeral" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">highlight</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#ffffb3&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">counts</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;background-color: </span><span class="si">{color}</span><span class="s2">;&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span>
+
+<span class="n">cadence_counts</span> <span class="o">=</span> <span class="n">all_labels</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">ultima_root</span> <span class="o">=</span> <span class="n">phrase_segments</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;localkey_is_minor&#39;</span><span class="p">,</span> <span class="s1">&#39;cadence&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">numeral</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;counts&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">ultima_root</span><span class="o">.</span><span class="n">localkey_is_minor</span> <span class="o">=</span> <span class="n">ultima_root</span><span class="o">.</span><span class="n">localkey_is_minor</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="kc">False</span><span class="p">:</span> <span class="s1">&#39;in major&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span> <span class="s1">&#39;in minor&#39;</span><span class="p">})</span>
+<span class="c1">#ultima_root.style.apply(highlight, axis=1)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;background-color: </span><span class="si">{color}</span><span class="s2">;&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">cadence_counts</span> <span class="o">=</span> <span class="n">all_labels</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">ultima_root</span> <span class="o">=</span> <span class="n">phrase_segments</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;localkey_is_minor&#39;</span><span class="p">,</span> <span class="s1">&#39;cadence&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">numeral</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;counts&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">ultima_root</span><span class="o">.</span><span class="n">localkey_is_minor</span> <span class="o">=</span> <span class="n">ultima_root</span><span class="o">.</span><span class="n">localkey_is_minor</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="kc">False</span><span class="p">:</span> <span class="s1">&#39;in major&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span> <span class="s1">&#39;in minor&#39;</span><span class="p">})</span>
+
+<span class="ne">NameError</span>: name &#39;all_labels&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">ultima_root</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;numeral&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;counts&#39;</span><span class="p">,</span> 
+             <span class="n">facet_row</span><span class="o">=</span><span class="s1">&#39;cadence&#39;</span><span class="p">,</span> <span class="n">facet_col</span><span class="o">=</span><span class="s1">&#39;localkey_is_minor&#39;</span><span class="p">,</span> 
+             <span class="n">height</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span>
+             <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;cadence&#39;</span><span class="p">:</span> <span class="n">cadence_counts</span><span class="o">.</span><span class="n">index</span><span class="p">},</span>
+            <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">for_each_annotation</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s1">&#39;inside&#39;</span><span class="p">,</span> <span class="n">textinfo</span><span class="o">=</span><span class="s1">&#39;percent+label&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="o">**</span><span class="n">STD_LAYOUT</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">ultima_root</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;numeral&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;counts&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">2</span>              <span class="n">facet_row</span><span class="o">=</span><span class="s1">&#39;cadence&#39;</span><span class="p">,</span> <span class="n">facet_col</span><span class="o">=</span><span class="s1">&#39;localkey_is_minor&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span>              <span class="n">height</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>              <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;cadence&#39;</span><span class="p">:</span> <span class="n">cadence_counts</span><span class="o">.</span><span class="n">index</span><span class="p">},</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>             <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">fig</span><span class="o">.</span><span class="n">for_each_annotation</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s1">&#39;inside&#39;</span><span class="p">,</span> <span class="n">textinfo</span><span class="o">=</span><span class="s1">&#39;percent+label&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;ultima_root&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#phrase_segments.groupby(level=[0,1,2], group_keys=False).apply(lambda df: df if ((df.cadence == &#39;PAC&#39;) &amp; (df.numeral == &#39;V&#39;)).any() else None)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ultimae-bass-note-as-scale-degree">
+<h3>Ultimae bass note as scale degree<a class="headerlink" href="#ultimae-bass-note-as-scale-degree" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ultima_bass</span> <span class="o">=</span> <span class="n">phrase_segments</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;localkey_is_minor&#39;</span><span class="p">,</span><span class="s1">&#39;cadence&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">bass_note</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;counts&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">ultima_bass</span><span class="o">.</span><span class="n">bass_note</span> <span class="o">=</span> <span class="n">ms3</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">ultima_bass</span><span class="p">,</span> <span class="n">ms3</span><span class="o">.</span><span class="n">fifths2sd</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fifths</span><span class="o">=</span><span class="s1">&#39;bass_note&#39;</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="s1">&#39;localkey_is_minor&#39;</span><span class="p">))</span>
+<span class="n">ultima_bass</span><span class="o">.</span><span class="n">localkey_is_minor</span> <span class="o">=</span> <span class="n">ultima_bass</span><span class="o">.</span><span class="n">localkey_is_minor</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="kc">False</span><span class="p">:</span> <span class="s1">&#39;in major&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span> <span class="s1">&#39;in minor&#39;</span><span class="p">})</span>
+<span class="c1">#ultima_bass.style.apply(highlight, axis=1)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ultima_bass</span> <span class="o">=</span> <span class="n">phrase_segments</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;localkey_is_minor&#39;</span><span class="p">,</span><span class="s1">&#39;cadence&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">bass_note</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;counts&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ultima_bass</span><span class="o">.</span><span class="n">bass_note</span> <span class="o">=</span> <span class="n">ms3</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">ultima_bass</span><span class="p">,</span> <span class="n">ms3</span><span class="o">.</span><span class="n">fifths2sd</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">fifths</span><span class="o">=</span><span class="s1">&#39;bass_note&#39;</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="s1">&#39;localkey_is_minor&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ultima_bass</span><span class="o">.</span><span class="n">localkey_is_minor</span> <span class="o">=</span> <span class="n">ultima_bass</span><span class="o">.</span><span class="n">localkey_is_minor</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="kc">False</span><span class="p">:</span> <span class="s1">&#39;in major&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span> <span class="s1">&#39;in minor&#39;</span><span class="p">})</span>
+
+<span class="ne">NameError</span>: name &#39;phrase_segments&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">ultima_bass</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;bass_note&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;counts&#39;</span><span class="p">,</span> 
+             <span class="n">facet_row</span><span class="o">=</span><span class="s1">&#39;cadence&#39;</span><span class="p">,</span> <span class="n">facet_col</span><span class="o">=</span><span class="s1">&#39;localkey_is_minor&#39;</span><span class="p">,</span> 
+             <span class="n">height</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span> 
+             <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;cadence&#39;</span><span class="p">:</span> <span class="n">cadence_counts</span><span class="o">.</span><span class="n">index</span><span class="p">},</span>
+            <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">for_each_annotation</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s1">&#39;inside&#39;</span><span class="p">,</span> <span class="n">textinfo</span><span class="o">=</span><span class="s1">&#39;percent+label&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="o">**</span><span class="n">STD_LAYOUT</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">ultima_bass</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;bass_note&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;counts&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">2</span>              <span class="n">facet_row</span><span class="o">=</span><span class="s1">&#39;cadence&#39;</span><span class="p">,</span> <span class="n">facet_col</span><span class="o">=</span><span class="s1">&#39;localkey_is_minor&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span>              <span class="n">height</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span>              <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;cadence&#39;</span><span class="p">:</span> <span class="n">cadence_counts</span><span class="o">.</span><span class="n">index</span><span class="p">},</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>             <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">fig</span><span class="o">.</span><span class="n">for_each_annotation</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">textposition</span><span class="o">=</span><span class="s1">&#39;inside&#39;</span><span class="p">,</span> <span class="n">textinfo</span><span class="o">=</span><span class="s1">&#39;percent+label&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;ultima_bass&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="chord-progressions">
+<h2>Chord progressions<a class="headerlink" href="#chord-progressions" title="Permalink to this heading">#</a></h2>
+<section id="pacs-with-ultima-i-i">
+<h3>PACs with ultima I/i<a class="headerlink" href="#pacs-with-ultima-i-i" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pac_on_i = phrase_segments.groupby(level=[0,1,2], group_keys=False).apply(lambda df: df if ((df.cadence == &#39;PAC&#39;) &amp; (df.numeral.isin((&#39;I&#39;, &#39;i&#39;)))).any() else None)</span>
+<span class="c1">#pac_on_i.cadence.value_counts()</span>
+<span class="c1">#pac_on_i.droplevel(-1).index.nunique()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_progressions</span><span class="p">(</span><span class="n">selected</span><span class="o">=</span><span class="s1">&#39;PAC&#39;</span><span class="p">,</span> <span class="n">last_row</span><span class="o">=</span><span class="p">{},</span> <span class="n">feature</span><span class="o">=</span><span class="s1">&#39;chord&#39;</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">as_series</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Uses the nonlocal variable phrase_segments.&quot;&quot;&quot;</span>
+    <span class="n">last_row</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">v</span><span class="p">,)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">last_row</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="n">progressions</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">corp</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">),</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">phrase_segments</span><span class="p">[</span><span class="n">phrase_segments</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">dataset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">dataset</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">corp</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">cadence</span> <span class="o">==</span> <span class="n">selected</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="c1"># remove chords after the last cadence label</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;bfill&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+            <span class="c1"># group segments leading up to a cadence label</span>
+            <span class="n">cadence_groups</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">cadence</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">shift</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cadence</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">cadence_groups</span><span class="p">):</span>
+                <span class="n">last_r</span> <span class="o">=</span> <span class="n">cadence</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">typ</span> <span class="o">=</span> <span class="n">last_r</span><span class="o">.</span><span class="n">cadence</span>
+                <span class="k">if</span> <span class="n">typ</span> <span class="o">!=</span> <span class="n">selected</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">last_r</span><span class="p">[</span><span class="n">feat</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">values</span> <span class="k">for</span> <span class="n">feat</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">last_row</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+                    <span class="k">continue</span>
+                <span class="n">progressions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">cadence</span><span class="p">[</span><span class="n">feature</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="n">as_series</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">progressions</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">progressions</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chord_progressions</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;PAC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">numeral</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">)),</span> <span class="s1">&#39;chord&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Progressions for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">chord_progressions</span><span class="p">)</span><span class="si">}</span><span class="s2"> cadences:&quot;</span><span class="p">)</span>
+<span class="n">value_count_df</span><span class="p">(</span><span class="n">chord_progressions</span><span class="p">,</span> <span class="s2">&quot;chord progressions&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">chord_progressions</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;PAC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">numeral</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">)),</span> <span class="s1">&#39;chord&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Progressions for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">chord_progressions</span><span class="p">)</span><span class="si">}</span><span class="s2"> cadences:&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">value_count_df</span><span class="p">(</span><span class="n">chord_progressions</span><span class="p">,</span> <span class="s2">&quot;chord progressions&quot;</span><span class="p">)</span>
+
+<span class="nn">Cell In[26], line 6,</span> in <span class="ni">get_progressions</span><span class="nt">(selected, last_row, feature, dataset, as_series)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">last_row</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">v</span><span class="p">,)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">last_row</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">progressions</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">for</span> <span class="p">(</span><span class="n">corp</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">),</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">phrase_segments</span><span class="p">[</span><span class="n">phrase_segments</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]):</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">if</span> <span class="n">dataset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">dataset</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">corp</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">continue</span>
+
+<span class="ne">NameError</span>: name &#39;phrase_segments&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numeral_progressions</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;PAC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">numeral</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">)),</span> <span class="s1">&#39;numeral&#39;</span><span class="p">)</span>
+<span class="n">value_count_df</span><span class="p">(</span><span class="n">numeral_progressions</span><span class="p">,</span> <span class="s2">&quot;numeral progressions&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">numeral_progressions</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;PAC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">numeral</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">)),</span> <span class="s1">&#39;numeral&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">value_count_df</span><span class="p">(</span><span class="n">numeral_progressions</span><span class="p">,</span> <span class="s2">&quot;numeral progressions&quot;</span><span class="p">)</span>
+
+<span class="nn">Cell In[26], line 6,</span> in <span class="ni">get_progressions</span><span class="nt">(selected, last_row, feature, dataset, as_series)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">last_row</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">v</span><span class="p">,)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">last_row</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">progressions</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">for</span> <span class="p">(</span><span class="n">corp</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">),</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">phrase_segments</span><span class="p">[</span><span class="n">phrase_segments</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]):</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">if</span> <span class="n">dataset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">dataset</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">corp</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">continue</span>
+
+<span class="ne">NameError</span>: name &#39;phrase_segments&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_immediate_duplicates</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">)</span> <span class="o">+</span> <span class="n">l</span><span class="p">)</span> <span class="k">if</span> <span class="n">a</span> <span class="o">!=</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="n">numeral_prog_no_dups</span> <span class="o">=</span> <span class="n">numeral_progressions</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">remove_immediate_duplicates</span><span class="p">)</span>
+<span class="n">value_count_df</span><span class="p">(</span><span class="n">numeral_prog_no_dups</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">remove_immediate_duplicates</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+<span class="nn">      2     return tuple(a for a, b</span> in <span class="ni">zip(l, </span><span class="nt">(None, ) + l) if a != b)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">numeral_prog_no_dups</span> <span class="o">=</span> <span class="n">numeral_progressions</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">remove_immediate_duplicates</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">value_count_df</span><span class="p">(</span><span class="n">numeral_prog_no_dups</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;numeral_progressions&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pacs-ending-on-scale-degree-1">
+<h3>PACs ending on scale degree 1<a class="headerlink" href="#pacs-ending-on-scale-degree-1" title="Permalink to this heading">#</a></h3>
+<p><strong>Scale degrees expressed w.r.t. major scale, regardless of actual key.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bass_progressions</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;PAC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bass_note</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;bass_note&#39;</span><span class="p">)</span>
+<span class="n">bass_prog</span> <span class="o">=</span> <span class="n">bass_progressions</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">ms3</span><span class="o">.</span><span class="n">fifths2sd</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Progressions for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">bass_progressions</span><span class="p">)</span><span class="si">}</span><span class="s2"> cadences:&quot;</span><span class="p">)</span>
+<span class="n">value_count_df</span><span class="p">(</span><span class="n">bass_prog</span><span class="p">,</span> <span class="s2">&quot;bass progressions&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">bass_progressions</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;PAC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bass_note</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;bass_note&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">bass_prog</span> <span class="o">=</span> <span class="n">bass_progressions</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">ms3</span><span class="o">.</span><span class="n">fifths2sd</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Progressions for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">bass_progressions</span><span class="p">)</span><span class="si">}</span><span class="s2"> cadences:&quot;</span><span class="p">)</span>
+
+<span class="nn">Cell In[26], line 6,</span> in <span class="ni">get_progressions</span><span class="nt">(selected, last_row, feature, dataset, as_series)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">last_row</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">v</span><span class="p">,)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">last_row</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">progressions</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">for</span> <span class="p">(</span><span class="n">corp</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">),</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">phrase_segments</span><span class="p">[</span><span class="n">phrase_segments</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]):</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">if</span> <span class="n">dataset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">dataset</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">corp</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">continue</span>
+
+<span class="ne">NameError</span>: name &#39;phrase_segments&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bass_prog_no_dups</span> <span class="o">=</span> <span class="n">bass_prog</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">remove_immediate_duplicates</span><span class="p">)</span>
+<span class="n">value_count_df</span><span class="p">(</span><span class="n">bass_prog_no_dups</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">bass_prog_no_dups</span> <span class="o">=</span> <span class="n">bass_prog</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">remove_immediate_duplicates</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">value_count_df</span><span class="p">(</span><span class="n">bass_prog_no_dups</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;bass_prog&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_sankey</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">node_pos</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;l&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span> <span class="n">pad</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">color</span><span class="o">==</span><span class="s1">&#39;auto&#39;</span><span class="p">:</span>
+        <span class="n">unique_labels</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+        <span class="n">color_step</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_labels</span><span class="p">)</span>
+        <span class="n">unique_colors</span> <span class="o">=</span> <span class="p">{</span><span class="n">label</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;hsv(</span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">color_step</span><span class="p">)</span><span class="si">}</span><span class="s1">%,100%,100%)&#39;</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">unique_labels</span><span class="p">)}</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">unique_colors</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">labels</span><span class="p">))</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Sankey</span><span class="p">(</span>
+        <span class="n">arrangement</span> <span class="o">=</span> <span class="s1">&#39;snap&#39;</span><span class="p">,</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+          <span class="n">pad</span> <span class="o">=</span> <span class="n">pad</span><span class="p">,</span>
+          <span class="c1">#thickness = 20,</span>
+          <span class="c1">#line = dict(color = &quot;black&quot;, width = 0.5),</span>
+          <span class="n">label</span> <span class="o">=</span> <span class="n">labels</span><span class="p">,</span>
+          <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">node_pos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">node_pos</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))]</span> <span class="k">if</span> <span class="n">node_pos</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+          <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">node_pos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">node_pos</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">))]</span> <span class="k">if</span> <span class="n">node_pos</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+          <span class="n">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">,</span>
+          <span class="p">),</span>
+        <span class="n">link</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+          <span class="n">source</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">source</span><span class="p">,</span>
+          <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
+          <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">value</span>
+          <span class="p">),</span>
+        <span class="p">),</span>
+     <span class="p">)</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">margin</span><span class="o">=</span><span class="n">margin</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span>
+
+<span class="k">def</span> <span class="nf">progressions2graph_data</span><span class="p">(</span><span class="n">progressions</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">stage_nodes</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="n">edge_weights</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+    <span class="n">node_counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">progression</span> <span class="ow">in</span> <span class="n">progressions</span><span class="p">:</span>
+        <span class="n">previous_node</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">stage</span><span class="p">,</span> <span class="n">current</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">progression</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">cut_at_stage</span> <span class="ow">and</span> <span class="n">stage</span> <span class="o">&gt;</span> <span class="n">cut_at_stage</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="k">if</span> <span class="n">current</span> <span class="ow">in</span> <span class="n">stage_nodes</span><span class="p">[</span><span class="n">stage</span><span class="p">]:</span>
+                <span class="n">current_node</span> <span class="o">=</span> <span class="n">stage_nodes</span><span class="p">[</span><span class="n">stage</span><span class="p">][</span><span class="n">current</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">stage_nodes</span><span class="p">[</span><span class="n">stage</span><span class="p">][</span><span class="n">current</span><span class="p">]</span> <span class="o">=</span> <span class="n">node_counter</span>
+                <span class="n">current_node</span> <span class="o">=</span> <span class="n">node_counter</span>
+                <span class="n">node_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">previous_node</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">edge_weights</span><span class="o">.</span><span class="n">update</span><span class="p">([(</span><span class="n">current_node</span><span class="p">,</span> <span class="n">previous_node</span><span class="p">)])</span>
+            <span class="n">previous_node</span> <span class="o">=</span> <span class="n">current_node</span>
+    <span class="k">return</span> <span class="n">stage_nodes</span><span class="p">,</span> <span class="n">edge_weights</span>
+
+<span class="k">def</span> <span class="nf">graph_data2sankey</span><span class="p">(</span><span class="n">stage_nodes</span><span class="p">,</span> <span class="n">edge_weights</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">),</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edge_weights</span><span class="o">.</span><span class="n">items</span><span class="p">()],</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">])</span>
+    <span class="n">node2label</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="n">label</span> <span class="k">for</span> <span class="n">stage</span><span class="p">,</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">stage_nodes</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">node2label</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">node2label</span><span class="p">))]</span>
+    <span class="k">return</span> <span class="n">make_sankey</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_progressions</span><span class="p">(</span><span class="n">progressions</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">stage_nodes</span><span class="p">,</span> <span class="n">edge_weights</span> <span class="o">=</span> <span class="n">progressions2graph_data</span><span class="p">(</span><span class="n">progressions</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="n">cut_at_stage</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">graph_data2sankey</span><span class="p">(</span><span class="n">stage_nodes</span><span class="p">,</span> <span class="n">edge_weights</span><span class="p">)</span>
+
+<span class="n">plot_progressions</span><span class="p">(</span><span class="n">numeral_prog_no_dups</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span> <span class="n">line</span> <span class="mi">59</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="n">stage_nodes</span><span class="p">,</span> <span class="n">edge_weights</span> <span class="o">=</span> <span class="n">progressions2graph_data</span><span class="p">(</span><span class="n">progressions</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="n">cut_at_stage</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span>     <span class="k">return</span> <span class="n">graph_data2sankey</span><span class="p">(</span><span class="n">stage_nodes</span><span class="p">,</span> <span class="n">edge_weights</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">59</span> <span class="n">plot_progressions</span><span class="p">(</span><span class="n">numeral_prog_no_dups</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;numeral_prog_no_dups&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chord_progressions_minor</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;PAC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">numeral</span><span class="o">=</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">localkey_is_minor</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="s1">&#39;root&#39;</span><span class="p">)</span>
+<span class="n">chord_progressions_minor</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">33</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">chord_progressions_minor</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;PAC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">numeral</span><span class="o">=</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">localkey_is_minor</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="s1">&#39;root&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">chord_progressions_minor</span>
+
+<span class="nn">Cell In[26], line 6,</span> in <span class="ni">get_progressions</span><span class="nt">(selected, last_row, feature, dataset, as_series)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">last_row</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">v</span><span class="p">,)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">last_row</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">progressions</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">for</span> <span class="p">(</span><span class="n">corp</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">),</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">phrase_segments</span><span class="p">[</span><span class="n">phrase_segments</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]):</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">if</span> <span class="n">dataset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">dataset</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">corp</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">continue</span>
+
+<span class="ne">NameError</span>: name &#39;phrase_segments&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pac_major</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;PAC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">numeral</span><span class="o">=</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="n">localkey_is_minor</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="s1">&#39;chord&#39;</span><span class="p">)</span>
+<span class="n">plot_progressions</span><span class="p">(</span><span class="n">pac_major</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">34</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pac_major</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;PAC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">numeral</span><span class="o">=</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="n">localkey_is_minor</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="s1">&#39;chord&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plot_progressions</span><span class="p">(</span><span class="n">pac_major</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nn">Cell In[26], line 6,</span> in <span class="ni">get_progressions</span><span class="nt">(selected, last_row, feature, dataset, as_series)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">last_row</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">v</span><span class="p">,)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">last_row</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">progressions</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">for</span> <span class="p">(</span><span class="n">corp</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">),</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">phrase_segments</span><span class="p">[</span><span class="n">phrase_segments</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]):</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">if</span> <span class="n">dataset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">dataset</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">corp</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">continue</span>
+
+<span class="ne">NameError</span>: name &#39;phrase_segments&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deceptive</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;DC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">localkey_is_minor</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="s1">&#39;chord&#39;</span><span class="p">)</span>
+<span class="n">deceptive</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">deceptive</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;DC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">localkey_is_minor</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="s1">&#39;chord&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">deceptive</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="nn">Cell In[26], line 6,</span> in <span class="ni">get_progressions</span><span class="nt">(selected, last_row, feature, dataset, as_series)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">last_row</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">v</span><span class="p">,)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">last_row</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">progressions</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">for</span> <span class="p">(</span><span class="n">corp</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">),</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">phrase_segments</span><span class="p">[</span><span class="n">phrase_segments</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]):</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">if</span> <span class="n">dataset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">dataset</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">corp</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">continue</span>
+
+<span class="ne">NameError</span>: name &#39;phrase_segments&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_progressions</span><span class="p">(</span><span class="n">deceptive</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">36</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plot_progressions</span><span class="p">(</span><span class="n">deceptive</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;deceptive&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_progressions</span><span class="p">(</span><span class="n">bass_prog_no_dups</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">37</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plot_progressions</span><span class="p">(</span><span class="n">bass_prog_no_dups</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;bass_prog_no_dups&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_sd_accidentals</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">sd</span><span class="p">:</span> <span class="n">sd</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">t</span><span class="p">))</span>
+                  
+<span class="n">bass_prog_no_acc_no_dup</span> <span class="o">=</span> <span class="n">bass_prog</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">remove_sd_accidentals</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">remove_immediate_duplicates</span><span class="p">)</span>
+<span class="n">plot_progressions</span><span class="p">(</span><span class="n">bass_prog_no_acc_no_dup</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">remove_sd_accidentals</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">sd</span><span class="p">:</span> <span class="n">sd</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">t</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">bass_prog_no_acc_no_dup</span> <span class="o">=</span> <span class="n">bass_prog</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">remove_sd_accidentals</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">remove_immediate_duplicates</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plot_progressions</span><span class="p">(</span><span class="n">bass_prog_no_acc_no_dup</span><span class="p">,</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;bass_prog&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="hcs-ending-on-v">
+<h3>HCs ending on V<a class="headerlink" href="#hcs-ending-on-v" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">half</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;HC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">numeral</span><span class="o">=</span><span class="s1">&#39;V&#39;</span><span class="p">),</span> <span class="s1">&#39;bass_note&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">ms3</span><span class="o">.</span><span class="n">fifths2sd</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Progressions for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">half</span><span class="p">)</span><span class="si">}</span><span class="s2"> cadences:&quot;</span><span class="p">)</span>
+<span class="n">plot_progressions</span><span class="p">(</span><span class="n">half</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">remove_immediate_duplicates</span><span class="p">),</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">39</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">half</span> <span class="o">=</span> <span class="n">get_progressions</span><span class="p">(</span><span class="s1">&#39;HC&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">numeral</span><span class="o">=</span><span class="s1">&#39;V&#39;</span><span class="p">),</span> <span class="s1">&#39;bass_note&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">ms3</span><span class="o">.</span><span class="n">fifths2sd</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Progressions for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">half</span><span class="p">)</span><span class="si">}</span><span class="s2"> cadences:&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plot_progressions</span><span class="p">(</span><span class="n">half</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">remove_immediate_duplicates</span><span class="p">),</span> <span class="n">cut_at_stage</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nn">Cell In[26], line 6,</span> in <span class="ni">get_progressions</span><span class="nt">(selected, last_row, feature, dataset, as_series)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">last_row</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">v</span><span class="p">,)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">last_row</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">progressions</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">for</span> <span class="p">(</span><span class="n">corp</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">),</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">phrase_segments</span><span class="p">[</span><span class="n">phrase_segments</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]):</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">if</span> <span class="n">dataset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">dataset</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">corp</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">continue</span>
+
+<span class="ne">NameError</span>: name &#39;phrase_segments&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="notes_stats.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Notes</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading">Data loading</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-out-pieces-without-cadence-annotations">Filtering out pieces without cadence annotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#show-corpora-containing-pieces-with-cadence-annotations">Show corpora containing pieces with cadence annotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-annotation-labels-from-the-selected-pieces">All annotation labels from the selected pieces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">Metadata</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall">Overall</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#per-dataset">Per dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#per-phrase">Per phrase</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-cadences-per-phrase">Number of cadences per phrase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinations-of-cadence-types-for-phrases-with-more-than-one-cadence">Combinations of cadence types for phrases with more than one cadence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positioning-of-cadences-within-phrases">Positioning of cadences within phrases</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cadence-ultima">Cadence ultima</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ultimae-as-roman-numeral">Ultimae as Roman numeral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ultimae-bass-note-as-scale-degree">Ultimae bass note as scale degree</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chord-progressions">Chord progressions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pacs-with-ultima-i-i">PACs with ultima I/i</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pacs-ending-on-scale-degree-1">PACs ending on scale degree 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hcs-ending-on-v">HCs ending on V</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/notebooks/cadences.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, Johannes Hentschel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

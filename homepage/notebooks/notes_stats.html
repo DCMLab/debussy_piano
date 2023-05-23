@@ -1,0 +1,973 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Notes &#8212; The Claude Debussy Solo Piano Corpus 0.4.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/notes_stats';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Cadences" href="cadences.html" />
+    <link rel="prev" title="Analyses" href="../analyses.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">The Claude Debussy Solo Piano Corpus 0.4.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../introduction.html">
+                        How to use
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../analyses.html">
+                        Analyses
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../introduction.html">
+                        How to use
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../analyses.html">
+                        Analyses
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cadences.html">Cadences</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../analyses.html" class="nav-link">Analyses</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Notes</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="notes">
+<h1>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span><span class="p">,</span> <span class="n">Counter</span>
+
+<span class="kn">from</span> <span class="nn">git</span> <span class="kn">import</span> <span class="n">Repo</span>
+<span class="kn">import</span> <span class="nn">dimcat</span> <span class="k">as</span> <span class="nn">dc</span>
+<span class="kn">import</span> <span class="nn">ms3</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">STD_LAYOUT</span><span class="p">,</span> <span class="n">CADENCE_COLORS</span><span class="p">,</span> <span class="n">CORPUS_COLOR_SCALE</span><span class="p">,</span> <span class="n">color_background</span><span class="p">,</span> <span class="n">get_repo_name</span><span class="p">,</span> <span class="n">resolve_dir</span><span class="p">,</span> <span class="n">value_count_df</span><span class="p">,</span> <span class="n">get_repo_name</span><span class="p">,</span> <span class="n">resolve_dir</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CORPUS_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;CORPUS_PATH&#39;</span><span class="p">,</span> <span class="s2">&quot;~/dcml_corpora&quot;</span><span class="p">)</span>
+<span class="n">CORPUS_PATH</span> <span class="o">=</span> <span class="n">resolve_dir</span><span class="p">(</span><span class="n">CORPUS_PATH</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="n">CORPUS_PATH</span><span class="p">)</span>
+<span class="n">notebook_repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">search_parent_directories</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Notebook repository &#39;</span><span class="si">{</span><span class="n">get_repo_name</span><span class="p">(</span><span class="n">notebook_repo</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39; @ </span><span class="si">{</span><span class="n">notebook_repo</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">hexsha</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data repo &#39;</span><span class="si">{</span><span class="n">get_repo_name</span><span class="p">(</span><span class="n">CORPUS_PATH</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39; @ </span><span class="si">{</span><span class="n">repo</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span><span class="o">.</span><span class="n">hexsha</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dimcat version </span><span class="si">{</span><span class="n">dc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ms3 version </span><span class="si">{</span><span class="n">ms3</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Notebook repository &#39;data_reports&#39; @ ec5e964
+Data repo &#39;debussy_piano&#39; @ 0da391f
+dimcat version 0.2.0
+ms3 version 1.1.2
+</pre></div>
+</div>
+</div>
+</div>
+<section id="data-loading">
+<h2>Data loading<a class="headerlink" href="#data-loading" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">CORPUS_PATH</span><span class="p">)</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dataset</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">CORPUS_PATH</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span>
+
+<span class="ne">AttributeError</span>: module &#39;dimcat&#39; has no attribute &#39;Dataset&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_metadata</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">metadata</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Concatenated &#39;metadata.tsv&#39; files cover </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_metadata</span><span class="p">)</span><span class="si">}</span><span class="s2"> of the </span><span class="si">{</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">n_pieces</span><span class="si">}</span><span class="s2"> scores.&quot;</span><span class="p">)</span>
+<span class="n">all_metadata</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">nth</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">all_metadata</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">metadata</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Concatenated &#39;metadata.tsv&#39; files cover </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_metadata</span><span class="p">)</span><span class="si">}</span><span class="s2"> of the </span><span class="si">{</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">n_pieces</span><span class="si">}</span><span class="s2"> scores.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">all_metadata</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">nth</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;dataset&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annotated</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">IsAnnotatedFilter</span><span class="p">()</span><span class="o">.</span><span class="n">process_data</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Before: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">indices</span><span class="p">[()])</span><span class="si">}</span><span class="s2"> IDs, after filtering: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">annotated</span><span class="o">.</span><span class="n">indices</span><span class="p">[()])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">annotated</span> <span class="o">=</span> <span class="n">dc</span><span class="o">.</span><span class="n">IsAnnotatedFilter</span><span class="p">()</span><span class="o">.</span><span class="n">process_data</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Before: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">indices</span><span class="p">[()])</span><span class="si">}</span><span class="s2"> IDs, after filtering: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">annotated</span><span class="o">.</span><span class="n">indices</span><span class="p">[()])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;dataset&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Choose here if you want to see stats for all or only for annotated scores.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#selected = dataset</span>
+<span class="n">selected</span> <span class="o">=</span> <span class="n">annotated</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#selected = dataset</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">selected</span> <span class="o">=</span> <span class="n">annotated</span>
+
+<span class="ne">NameError</span>: name &#39;annotated&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Compute chronological order</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary</span> <span class="o">=</span> <span class="n">all_metadata</span><span class="p">[</span><span class="n">all_metadata</span><span class="o">.</span><span class="n">label_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Selected metadata rows cover </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span><span class="si">}</span><span class="s2"> of the </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">ixs</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">ixs</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">selected</span><span class="o">.</span><span class="n">iter_groups</span><span class="p">()),</span><span class="w"> </span><span class="n">start</span><span class="o">=</span><span class="p">[]))</span><span class="si">}</span><span class="s2"> scores.&quot;</span><span class="p">)</span>
+<span class="n">mean_composition_years</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">composed_end</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+<span class="n">chronological_order</span> <span class="o">=</span> <span class="n">mean_composition_years</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="n">dataset_colors</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">chronological_order</span><span class="p">,</span> <span class="n">CORPUS_COLOR_SCALE</span><span class="p">))</span>
+<span class="n">chronological_order</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">summary</span> <span class="o">=</span> <span class="n">all_metadata</span><span class="p">[</span><span class="n">all_metadata</span><span class="o">.</span><span class="n">label_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nn">      2 print(f&quot;Selected metadata rows cover {len(summary)} of the {len(sum((ixs for _, ixs</span> in <span class="ni">selected.iter_groups</span><span class="nt">()), start=[]))} scores.&quot;)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">mean_composition_years</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">composed_end</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;all_metadata&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_notes</span> <span class="o">=</span> <span class="n">selected</span><span class="o">.</span><span class="n">get_facet</span><span class="p">(</span><span class="s1">&#39;notes&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_notes</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="si">}</span><span class="s2"> notes over </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_notes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span><span class="si">}</span><span class="s2"> files.&quot;</span><span class="p">)</span>
+<span class="n">all_notes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">all_notes</span> <span class="o">=</span> <span class="n">selected</span><span class="o">.</span><span class="n">get_facet</span><span class="p">(</span><span class="s1">&#39;notes&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_notes</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="si">}</span><span class="s2"> notes over </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_notes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span><span class="si">}</span><span class="s2"> files.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">all_notes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;selected&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">weight_notes</span><span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="n">group_col</span><span class="o">=</span><span class="s1">&#39;midi&#39;</span><span class="p">,</span> <span class="n">precise</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">summed_durations</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">group_col</span><span class="p">)</span><span class="o">.</span><span class="n">duration_qb</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">summed_durations</span> <span class="o">/=</span> <span class="n">summed_durations</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="c1"># normalize such that the shortest duration results in 1 occurrence</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">precise</span><span class="p">:</span>
+        <span class="c1"># This simple trick reduces compute time but also precision:</span>
+        <span class="c1"># The rationale is to have the smallest value be slightly larger than 0.5 because</span>
+        <span class="c1"># if it was exactly 0.5 it would be rounded down by repeat_notes_according_to_weights()</span>
+        <span class="n">summed_durations</span> <span class="o">/=</span> <span class="mf">1.9999999</span>
+    <span class="k">return</span> <span class="n">repeat_notes_according_to_weights</span><span class="p">(</span><span class="n">summed_durations</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">repeat_notes_according_to_weights</span><span class="p">(</span><span class="n">weights</span><span class="p">):</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">round</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">counts_reflecting_weights</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">counts</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+        <span class="n">counts_reflecting_weights</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">pitch</span><span class="p">]</span><span class="o">*</span><span class="n">count</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">counts_reflecting_weights</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corpus_names</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">corelli</span><span class="o">=</span><span class="s1">&#39;Corelli Trio Sonatas&#39;</span><span class="p">,</span>
+    <span class="n">mozart_piano_sonatas</span><span class="o">=</span><span class="s1">&#39;Mozart Piano Sonatas&#39;</span><span class="p">,</span>
+    <span class="n">ABC</span><span class="o">=</span><span class="s1">&#39;Beethoven String Quartets&#39;</span><span class="p">,</span>
+    <span class="n">beethoven_piano_sonatas</span><span class="o">=</span><span class="s1">&#39;Beethoven Sonatas&#39;</span><span class="p">,</span>
+    <span class="n">chopin_mazurkas</span><span class="o">=</span><span class="s1">&#39;Chopin Mazurkas&#39;</span><span class="p">,</span>
+    <span class="n">debussy_suite_bergamasque</span><span class="o">=</span><span class="s1">&#39;Debussy Suite&#39;</span><span class="p">,</span>
+    <span class="n">dvorak_silhouettes</span><span class="o">=</span><span class="s2">&quot;Dvořák Silhouettes&quot;</span><span class="p">,</span>
+    <span class="n">grieg_lyric_pieces</span><span class="o">=</span><span class="s2">&quot;Grieg Lyric Pieces&quot;</span><span class="p">,</span>
+    <span class="n">liszt_pelerinage</span><span class="o">=</span><span class="s2">&quot;Liszt Années&quot;</span><span class="p">,</span>
+    <span class="n">medtner_tales</span><span class="o">=</span><span class="s2">&quot;Medtner Tales&quot;</span><span class="p">,</span>
+    <span class="n">schumann_kinderszenen</span><span class="o">=</span><span class="s2">&quot;Schumann Kinderszenen&quot;</span><span class="p">,</span>
+    <span class="n">tchaikovsky_seasons</span><span class="o">=</span><span class="s2">&quot;Tchaikovsky Seasons&quot;</span>
+<span class="p">)</span>
+<span class="n">dataset_name_colors</span> <span class="o">=</span> <span class="p">{</span><span class="n">corpus_names</span><span class="p">[</span><span class="n">corp</span><span class="p">]:</span> <span class="n">color</span> <span class="k">for</span> <span class="n">corp</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">dataset_colors</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="n">chronological_corpus_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">corpus_names</span><span class="p">[</span><span class="n">corp</span><span class="p">]</span> <span class="k">for</span> <span class="n">corp</span> <span class="ow">in</span> <span class="n">chronological_order</span><span class="p">]</span>
+<span class="n">all_notes</span><span class="p">[</span><span class="s1">&#39;dataset_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_notes</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">corpus_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">corpus_names</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">corelli</span><span class="o">=</span><span class="s1">&#39;Corelli Trio Sonatas&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">mozart_piano_sonatas</span><span class="o">=</span><span class="s1">&#39;Mozart Piano Sonatas&#39;</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">tchaikovsky_seasons</span><span class="o">=</span><span class="s2">&quot;Tchaikovsky Seasons&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">dataset_name_colors</span> <span class="o">=</span> <span class="p">{</span><span class="n">corpus_names</span><span class="p">[</span><span class="n">corp</span><span class="p">]:</span> <span class="n">color</span> <span class="k">for</span> <span class="n">corp</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">dataset_colors</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">chronological_corpus_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">corpus_names</span><span class="p">[</span><span class="n">corp</span><span class="p">]</span> <span class="k">for</span> <span class="n">corp</span> <span class="ow">in</span> <span class="n">chronological_order</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">all_notes</span><span class="p">[</span><span class="s1">&#39;dataset_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_notes</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">corpus_names</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;dataset_colors&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grouped_notes</span> <span class="o">=</span> <span class="n">all_notes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;dataset_name&#39;</span><span class="p">)</span>
+<span class="n">weighted_midi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">weight_notes</span><span class="p">(</span><span class="n">nl</span><span class="p">,</span> <span class="s1">&#39;midi&#39;</span><span class="p">,</span> <span class="n">precise</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">nl</span> <span class="ow">in</span> <span class="n">grouped_notes</span><span class="p">],</span> <span class="n">keys</span><span class="o">=</span><span class="n">grouped_notes</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">weighted_midi</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;midi&#39;</span><span class="p">]</span>
+<span class="n">weighted_midi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">grouped_notes</span> <span class="o">=</span> <span class="n">all_notes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;dataset_name&#39;</span><span class="p">)</span>
+<span class="nn">      2 weighted_midi = pd.concat([weight_notes(nl, &#39;midi&#39;, precise=False) for _, nl</span> in <span class="ni">grouped_notes], keys=grouped_notes.groups.keys()).reset_index</span><span class="nt">(level=0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">weighted_midi</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;midi&#39;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;all_notes&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">tickmode</span><span class="o">=</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span>
+           <span class="n">tickvals</span><span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">96</span><span class="p">],</span>
+           <span class="n">ticktext</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="s2">&quot;C2&quot;</span><span class="p">,</span> <span class="s2">&quot;C3&quot;</span><span class="p">,</span> <span class="s2">&quot;C4&quot;</span><span class="p">,</span> <span class="s2">&quot;C5&quot;</span><span class="p">,</span> <span class="s2">&quot;C6&quot;</span><span class="p">,</span> <span class="s2">&quot;C7&quot;</span><span class="p">],</span>
+           <span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span>
+           <span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">violin</span><span class="p">(</span><span class="n">weighted_midi</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;midi&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+                    <span class="n">dataset</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="n">midi</span><span class="o">=</span><span class="s1">&#39;distribution of pitches by duration&#39;</span>
+                <span class="p">),</span>
+                <span class="n">category_orders</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">chronological_corpus_names</span><span class="p">),</span>
+                <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">dataset_name_colors</span><span class="p">,</span>
+                <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+               <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">spanmode</span><span class="o">=</span><span class="s1">&#39;hard&#39;</span><span class="p">)</span> <span class="c1"># do not extend beyond outliers</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">yaxis</span><span class="o">=</span><span class="n">yaxis</span><span class="p">,</span> <span class="o">**</span><span class="n">STD_LAYOUT</span><span class="p">,</span>
+                 <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">tickmode</span><span class="o">=</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>            <span class="n">tickvals</span><span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">96</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>            <span class="n">ticktext</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="s2">&quot;C2&quot;</span><span class="p">,</span> <span class="s2">&quot;C3&quot;</span><span class="p">,</span> <span class="s2">&quot;C4&quot;</span><span class="p">,</span> <span class="s2">&quot;C5&quot;</span><span class="p">,</span> <span class="s2">&quot;C6&quot;</span><span class="p">,</span> <span class="s2">&quot;C7&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>            <span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>            <span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">violin</span><span class="p">(</span><span class="n">weighted_midi</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;midi&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                 <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>                     <span class="n">dataset</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>                     <span class="n">midi</span><span class="o">=</span><span class="s1">&#39;distribution of pitches by duration&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>                 <span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>                 <span class="n">category_orders</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">chronological_corpus_names</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>                 <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">dataset_name_colors</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>                 <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>                <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">spanmode</span><span class="o">=</span><span class="s1">&#39;hard&#39;</span><span class="p">)</span> <span class="c1"># do not extend beyond outliers</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">yaxis</span><span class="o">=</span><span class="n">yaxis</span><span class="p">,</span> <span class="o">**</span><span class="n">STD_LAYOUT</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>                  <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;weighted_midi&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bar_data</span> <span class="o">=</span> <span class="n">all_notes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;tpc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">duration_qb</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">x_values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">bar_data</span><span class="o">.</span><span class="n">tpc</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">bar_data</span><span class="o">.</span><span class="n">tpc</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">x_names</span> <span class="o">=</span> <span class="n">ms3</span><span class="o">.</span><span class="n">fifths2name</span><span class="p">(</span><span class="n">x_values</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bar_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;tpc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;duration_qb&#39;</span><span class="p">,</span>
+             <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">tpc</span><span class="o">=</span><span class="s1">&#39;Named pitch class&#39;</span><span class="p">,</span>
+                             <span class="n">duration_qb</span><span class="o">=</span><span class="s1">&#39;Duration in quarter notes&#39;</span>
+                            <span class="p">),</span>
+             <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">CORPUS_COLOR_SCALE</span><span class="p">,</span>
+             <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+             <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="o">**</span><span class="n">STD_LAYOUT</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">zerolinecolor</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">tickmode</span><span class="o">=</span><span class="s1">&#39;array&#39;</span><span class="p">,</span> 
+                 <span class="n">tickvals</span><span class="o">=</span><span class="n">x_values</span><span class="p">,</span> <span class="n">ticktext</span> <span class="o">=</span> <span class="n">x_names</span><span class="p">,</span> <span class="n">dtick</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="s1">&#39;outside&#39;</span><span class="p">,</span> <span class="n">tickcolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+                 <span class="n">minor</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">dtick</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">showgrid</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+                <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">bar_data</span> <span class="o">=</span> <span class="n">all_notes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;tpc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">duration_qb</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">x_values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">bar_data</span><span class="o">.</span><span class="n">tpc</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">bar_data</span><span class="o">.</span><span class="n">tpc</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">x_names</span> <span class="o">=</span> <span class="n">ms3</span><span class="o">.</span><span class="n">fifths2name</span><span class="p">(</span><span class="n">x_values</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;all_notes&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scatter_data</span> <span class="o">=</span> <span class="n">all_notes</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;dataset_name&#39;</span><span class="p">,</span> <span class="s1">&#39;tpc&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">duration_qb</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">scatter_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;tpc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;duration_qb&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dataset_name&#39;</span><span class="p">,</span> 
+                 <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+                     <span class="n">duration_qb</span><span class="o">=</span><span class="s1">&#39;duration&#39;</span><span class="p">,</span>
+                     <span class="n">tpc</span><span class="o">=</span><span class="s1">&#39;named pitch class&#39;</span><span class="p">,</span>
+                 <span class="p">),</span>
+                 <span class="n">category_orders</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">chronological_corpus_names</span><span class="p">),</span>
+                 <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">dataset_name_colors</span><span class="p">,</span>
+                 <span class="n">facet_col</span><span class="o">=</span><span class="s1">&#39;dataset_name&#39;</span><span class="p">,</span> <span class="n">facet_col_wrap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">facet_col_spacing</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span>
+                 <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+                <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">for_each_annotation</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="o">**</span><span class="n">STD_LAYOUT</span><span class="p">,</span> <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">zerolinecolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">tickmode</span><span class="o">=</span><span class="s1">&#39;array&#39;</span><span class="p">,</span> <span class="n">tickvals</span><span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">18</span><span class="p">],</span>
+    <span class="n">ticktext</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Dbb&quot;</span><span class="p">,</span> <span class="s2">&quot;Gb&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;F#&quot;</span><span class="p">,</span> <span class="s2">&quot;B#&quot;</span><span class="p">,</span> <span class="s2">&quot;E##&quot;</span><span class="p">],</span> <span class="n">visible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">zeroline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">matches</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">showticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">scatter_data</span> <span class="o">=</span> <span class="n">all_notes</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;dataset_name&#39;</span><span class="p">,</span> <span class="s1">&#39;tpc&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">duration_qb</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">scatter_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;tpc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;duration_qb&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dataset_name&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                  <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                      <span class="n">duration_qb</span><span class="o">=</span><span class="s1">&#39;duration&#39;</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>                  <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;all_notes&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">scatter_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;tpc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;duration_qb&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dataset_name&#39;</span><span class="p">,</span> 
+                 <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+                     <span class="n">duration_qb</span><span class="o">=</span><span class="s1">&#39;duration&#39;</span><span class="p">,</span>
+                     <span class="n">tpc</span><span class="o">=</span><span class="s1">&#39;named pitch class&#39;</span><span class="p">,</span>
+                 <span class="p">),</span>
+                 <span class="n">category_orders</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">chronological_corpus_names</span><span class="p">),</span>
+                 <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">dataset_name_colors</span><span class="p">,</span>
+                 <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+                <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">scatter_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;tpc&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;duration_qb&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dataset_name&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                  <span class="n">labels</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                      <span class="n">duration_qb</span><span class="o">=</span><span class="s1">&#39;duration&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                      <span class="n">tpc</span><span class="o">=</span><span class="s1">&#39;named pitch class&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                  <span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                  <span class="n">category_orders</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">chronological_corpus_names</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                  <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">dataset_name_colors</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>                  <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>                 <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;scatter_data&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">no_accidental</span> <span class="o">=</span> <span class="n">bar_data</span><span class="p">[</span><span class="n">bar_data</span><span class="o">.</span><span class="n">tpc</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span><span class="o">.</span><span class="n">duration_qb</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">with_accidental</span> <span class="o">=</span> <span class="n">bar_data</span><span class="p">[</span><span class="o">~</span><span class="n">bar_data</span><span class="o">.</span><span class="n">tpc</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span><span class="o">.</span><span class="n">duration_qb</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">no_accidental</span> <span class="o">=</span> <span class="n">bar_data</span><span class="p">[</span><span class="n">bar_data</span><span class="o">.</span><span class="n">tpc</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span><span class="o">.</span><span class="n">duration_qb</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">with_accidental</span> <span class="o">=</span> <span class="n">bar_data</span><span class="p">[</span><span class="o">~</span><span class="n">bar_data</span><span class="o">.</span><span class="n">tpc</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span><span class="o">.</span><span class="n">duration_qb</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;bar_data&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entire</span> <span class="o">=</span> <span class="n">no_accidental</span> <span class="o">+</span> <span class="n">with_accidental</span>
+<span class="sa">f</span><span class="s2">&quot;Fraction of note duration without accidental of the entire durations: </span><span class="si">{</span><span class="n">no_accidental</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">entire</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">no_accidental</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">entire</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">entire</span> <span class="o">=</span> <span class="n">no_accidental</span> <span class="o">+</span> <span class="n">with_accidental</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="sa">f</span><span class="s2">&quot;Fraction of note duration without accidental of the entire durations: </span><span class="si">{</span><span class="n">no_accidental</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">entire</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">no_accidental</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">entire</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="ne">NameError</span>: name &#39;no_accidental&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<section id="notes-and-staves">
+<h3>Notes and staves<a class="headerlink" href="#notes-and-staves" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distribution of notes over staves:&quot;</span><span class="p">)</span>
+<span class="n">all_notes</span><span class="o">.</span><span class="n">staff</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Distribution of notes over staves:
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distribution of notes over staves:&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">all_notes</span><span class="o">.</span><span class="n">staff</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;all_notes&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distribution of notes over staves for all pieces with more than two staves</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">group</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">all_notes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">staff</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">staff</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Distribution of notes over staves for all pieces with more than two staves
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distribution of notes over staves for all pieces with more than two staves</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">for</span> <span class="n">group</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">all_notes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]):</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">if</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">staff</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="nb">print</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;all_notes&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_notes</span><span class="p">[</span><span class="n">all_notes</span><span class="o">.</span><span class="n">staff</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">staff</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">all_notes</span><span class="p">[</span><span class="n">all_notes</span><span class="o">.</span><span class="n">staff</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">staff</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;all_notes&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../analyses.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Analyses</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="cadences.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cadences</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading">Data loading</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-and-staves">Notes and staves</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/notebooks/notes_stats.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023, Johannes Hentschel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
