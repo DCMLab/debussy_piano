@@ -32,7 +32,7 @@ import etl
 import utils
 
 # %% [markdown]
-# Configuring the notebook to produce the defaults from the paper. For more information on available normalization methods see the section "Loading magnitude-phase matrices" below.
+# Configuring the notebook to produce the defaults from the paper. For more information on available normalization methods (variable `how` below) see the section "Loading magnitude-phase matrices" below.
 
 # %% jupyter={"outputs_hidden": false}
 DEBUSSY_REPO = '..'
@@ -188,7 +188,7 @@ colors = utils.most_resonant2color(max_coeffs[EXAMPLE_FNAME], max_mags[EXAMPLE_F
 by_entropy = False
 label = etl.make_wavescape_label(EXAMPLE_FNAME, how, indulge, by_entropy=by_entropy)
 ws = wavescapes.Wavescape(colors, width=DEFAULT_FIGURE_SIZE)
-ws.draw(aw_per_tick=10, tick_factor=10, label=label, label_size=15) #subparts_highlighted=[37*4,45*4]
+ws.draw(aw_per_tick=10, tick_factor=10, label=label, label_size=15)#, subparts_highlighted=[110,134])
 path = os.path.join('figures', etl.make_filename(EXAMPLE_FNAME, how, indulge, summary_by_entropy=by_entropy, ext='.png'))
 plt.savefig(path)
 
@@ -200,7 +200,7 @@ colors = utils.most_resonant2color(max_coeffs[EXAMPLE_FNAME], inv_entropies[EXAM
 by_entropy = True
 label = etl.make_wavescape_label(EXAMPLE_FNAME, how, indulge, by_entropy=by_entropy)
 ws = wavescapes.Wavescape(colors, width=DEFAULT_FIGURE_SIZE)
-ws.draw(aw_per_tick=10, tick_factor=10, label=label, label_size=15)
+ws.draw(aw_per_tick=10, tick_factor=10, label=label, label_size=15) #, subparts_highlighted=[110,134]
 path = os.path.join('figures', etl.make_filename(EXAMPLE_FNAME, how, indulge, summary_by_entropy=by_entropy, ext='.png'))
 plt.savefig(path)
 
@@ -337,11 +337,17 @@ moi_cols = [f"moments_of_inertia_{i}" for i in range(1,7)]
 
 metadata_res = pd.melt(metadata_metrics, id_vars=['fname', 'length_qb', 'year', 'last_mc', 'partition_entropy', 'inverse_coherence'], value_vars=resonances_cols, 
                        var_name='variable_resonance', value_name='value_resonance')
+print(metadata_res.shape)
 metadata_res_ent = pd.melt(metadata_metrics, id_vars=['fname', 'length_qb', 'year', 'last_mc', 'partition_entropy', 'inverse_coherence'], value_vars=entropy_cols, 
                        var_name='variable_resonance_entropy', value_name='value_resonance_entropy')
+print(metadata_res_ent.shape)
 metadata_moi = pd.melt(metadata_metrics, id_vars=['fname', 'length_qb', 'year', 'last_mc', 'partition_entropy', 'inverse_coherence'], value_vars=moi_cols, 
                        var_name='variable_inertia', value_name='value_inertia')
+print(metadata_moi.shape)
 
-metadata_melted = metadata_res.merge(metadata_res_ent, on=['fname', 'length_qb', 'year', 'last_mc', 'partition_entropy', 'inverse_coherence']).merge(metadata_moi, on=['fname', 'length_qb', 'year', 'last_mc', 'partition_entropy', 'inverse_coherence'])
+metadata_melted = pd.concat([metadata_res[['fname', 'length_qb', 'year', 'last_mc', 'partition_entropy', 'inverse_coherence', 'variable_resonance', 'value_resonance']],
+                             metadata_res_ent[['variable_resonance_entropy', 'value_resonance_entropy']], 
+                             metadata_moi[['variable_inertia', 'value_inertia']]], axis=1)
+print(metadata_melted.shape)
 metadata_melted.reset_index().to_csv(os.path.join('results','results_melted.csv'), index=False)
-metadata_melted.sample(5)
+metadata_melted.head()
