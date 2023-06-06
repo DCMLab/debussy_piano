@@ -16,6 +16,7 @@ authors:
       family-names: Cecchetti
       email: gabriele.cecchetti@epfl.ch
       affiliation: "École Polytechnique Fédérale de Lausanne"
+      orcid: "https://orcid.org/0000-0002-1486-1886"
     - given-names: Johannes
       family-names: Hentschel
       email: johannes.hentschel@epfl.ch
@@ -29,11 +30,18 @@ authors:
 version: 1.0
 date-released: 2023-06-06
 keywords:
+  - "music research"
   - "music theory"
-  - "corpus studies"
   - "music history"
-  - "claude debussy"
+  - "corpus studies"
+  - corpora
+  - "symbolic datasets"
+  - "scores"
   - "piano music"
+  - "claude debussy"
+  - "extended tonality"
+  - modernism
+  - impressionism
   - "discrete fourier transform"
 license: "CC-BY-NC-SA-4.0"
 repository: https://github.com/DCMLab/debussy_piano
