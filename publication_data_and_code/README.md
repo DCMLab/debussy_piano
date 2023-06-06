@@ -7,7 +7,7 @@
 * [Re-generating auxiliary files](#re-generating-auxiliary-files)
   * [Re-generating the file with Pitch Class Vectors (PCVs) for all pieces](#re-generating-the-file-with-pitch-class-vectors-pcvs-for-all-pieces)
   * [Re-generating (and inspecting) median durations of matching Spotify recordings](#re-generating-and-inspecting-median-durations-of-matching-spotify-recordings)
-* [Commandline script for creating all wavescapes, including other normalization methods](#commandline-script-for-creating-all-wavescapes-including-other-normalization-methods)
+* [Extra: Commandline script for creating all wavescapes, including other normalization methods](#extra-commandline-script-for-creating-all-wavescapes-including-other-normalization-methods)
 <!-- TOC -->
 
 # Code for reproducing data, results, and figures
