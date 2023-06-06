@@ -155,8 +155,8 @@ def get_metadata(debussy_repo: str = '..', ) -> pd.DataFrame:
     """Reads in the metadata table and enriches it with information from the pieces' median
     recording duration.
     """
-    md_path = os.path.join(debussy_repo, 'metadata.tsv')
-    metadata = pd.read_csv(md_path, sep='\t', index_col=0)
+    md_path = os.path.join(debussy_repo, 'concatenated_metadata.tsv')
+    metadata = pd.read_csv(md_path, sep='\t', index_col="fname")
     fname2year = ((metadata.composed_end + metadata.composed_start) / 2).rename('year')
     metadata = pd.concat([metadata, fname2year], axis=1)
     print(f"Metadata for {metadata.shape[0]} files.")
