@@ -10,6 +10,11 @@ from utils import resolve_dir, NORM_METHODS
 def check_and_create(d):
     """ Turn input into an existing, absolute directory path.
     """
+    if os.path.basename(d) == 'wavescapes':
+        excl = '!' * 80
+        print(f"{excl}\nPLEASE USE ANOTHER NAME THAN 'wavescapes' to avoid the folder to be "
+                         f"mistaken as the Python package with the same name.\n{excl}")
+        raise ValueError(d)
     if not os.path.isdir(d):
         d = resolve_dir(os.path.join(os.getcwd(), d))
         if not os.path.isdir(d):
@@ -103,7 +108,9 @@ if __name__ == "__main__":
         type=int,
         metavar="N",
         help="Defaults to 0, meaning that all available CPU cores are used in parallel to speed up "
-             "the computation. Pass the desired number of cores or a negative number to deactivate."
+             "the computation. Pass the desired number of cores or a negative number to deactivate. "
+             "For long pieces (N > 1000) parallel computation may fill up your memory and make your "
+             "computer crash."
     )
     parser.add_argument(
         "-s",

@@ -92,4 +92,43 @@ The parameters correspond to the following configuration of PCVs (and could be a
 * `--fillna 0.0` fills empty fields (=non-occurrent pitch classes) with 0.0
 * `--round 5` rounds the output to 5 (maximum available precision).
 
-The documentation of all parameter options can be accssed via `dimcat pcvs -h`.
+The documentation of all parameter options can be accessed via `dimcat pcvs -h`.
+
+# Commandline script for creating all wavescapes, including other normalization methods
+
+This script is an additional gimmick and lets you create wavescape figures for all pieces and with settings of your own choice.
+Technically, wavescapes are visualizations of what we call "magnitude-phase matrices" which correspond to upper-triangle matrices (UTM)
+containing the six Fourier coefficients for each slice and for each possible sum of adjacent slices, with one of the eight 
+possible normalization methods applied. Therefore, when you run the script, these matrices are computed and pickled to disk first.
+
+If you have run the code from the previous section, the mag-phase matrices for the `0c+indulge` normalization have already been 
+written to the folder `pickled_magnitude_phase_matrices`. They correspond to what you get by navigating to the `publication_data_and_code`
+folder and executing the following command:
+
+    python create_data.py pickled_magnitude_phase_matrices/ -n 4
+
+(only that here you're getting 82 additional files containing the correlation of all PCV UTMs with the durational pitch-class profiles 
+computed from the [Mozart Piano Sonatas](https://github.com/DCMLab/mozart_piano_sonatas/)).
+
+
+Add `-w wavescape_plots` to additionally create wavescapes in the folder `wavescape_plots` (or whatever name you want to pick), too.
+
+**Please be warned that, by default, all your CPU cores will be used in parallel to speed up the computation but that this will 
+likely fill up your entire working memory which might slow down or even crash your computer. Reduce the number of cores using
+the `-c` option, or even set it to -1 to use a for-loop (very slow).**
+
+You will get 1148 plots for normalization methods 0-3 or 984 plots for normalization methods 4-7:
+
+For each of the 82 pieces, the script will generate a greyscale and a colored wavescape for each of the 6 coefficients, plus two different
+summary wavescapes, i.e. 82 * (2 * 6 + 2) = 1148. The reason why methods 4-7 yield only 82 * (2 * 5 + 2) wavescapes is that they add 
+the "indulge-prototypes" normalization which does not change the wavescapes for the sixth coefficient. In the example above, the 164 
+missing wavescapes can be addid via `python create_data.py pickled_magnitude_phase_matrices/ -n 0 -w wavescape_plots --coeffs 6`, 
+i.e. only normalization method 0 for coefficient 6.
+
+The documentation of all parameter options can be accessed via `python create_data.py -h`. The four normalization methods and their
+`indulge_prototypes` variants are documented in the 
+[`normalize_dft()` docstring](https://github.com/DCMLab/wavescapes/blob/master/wavescapes/dft.py#L202) of the 
+wavescapes package.
+
+
+

@@ -45,6 +45,8 @@ def longn2squaren(n: int) -> int:
 def long2utm(long: NDArray) -> NDArray:
     """(N(N+1)/2, ...) long matrix to upper triangle matrix where the lower left triangle beneath the diagonal is 0-padded."""
     n, *m = long.shape
+    if len(m) > 0 and m[0] == n:
+        return long
     square_n = longn2squaren(n)
     A = np.zeros_like(long, shape=(square_n, square_n, *m))
     A[np.triu_indices(square_n)] = long
