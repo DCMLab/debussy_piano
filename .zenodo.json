@@ -1,0 +1,48 @@
+{
+    "license": "CC-BY-NC-SA-4.0",
+    "description": "<p>This dataset originates from the <a href=\"https://github.com/DCMLab/dcml_corpora\">DCML corpus initiative</a> and contains musicological research data. For more information, please refer to its documentation page <a href=\"https://dcmlab.github.io/debussy_piano\">https://dcmlab.github.io/debussy_piano</a></p>\n\n<p>&nbsp;</p>", 
+    "title": "The Claude Debussy Solo Piano Corpus",
+    "keywords": [
+        "music research",
+        "corpora",
+        "symbolic datasets",
+        "scores",
+        "piano",
+        "extended tonality",
+        "modernism",
+        "impressionism"
+    ],
+    "grants": [
+        {
+            "id": "10.13039/501100001711::105216_182811"
+        }
+    ],
+    "upload_type": "dataset",
+    "version": "v0.9.1",
+    "communities": [
+        {
+            "identifier": "dcml"
+        }
+    ],
+    "publication_date": "2023-05-23",
+    "creators": [
+        {
+            "orcid": "0000-0002-1986-9545",
+            "affiliation": "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne",
+            "name": "Johannes Hentschel"
+        },
+        {
+            "orcid": "0000-0002-4323-7257",
+            "affiliation": "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne",
+            "name": "Martin Rohrmeier"
+        }
+    ],
+    "access_right": "open",
+    "related_identifiers": [
+        {
+            "scheme": "url",
+            "identifier": "https://github.com/DCMLab/debussy_piano/tree/v0.9.1",
+            "relation": "isSupplementTo"
+        }
+    ]
+}
