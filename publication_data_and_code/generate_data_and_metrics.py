@@ -36,7 +36,8 @@ import utils
 
 # %% jupyter={"outputs_hidden": false}
 DEBUSSY_REPO = '..'
-DATA_FOLDER = '.'
+DATA_FOLDER = 'pickled_magnitude_phase_matrices'
+os.makedirs(DATA_FOLDER, exist_ok=True)
 DEFAULT_FIGURE_SIZE = 1000 #2286
 EXAMPLE_FNAME = 'l123-08_preludes_ondine'
 how = '0c'
@@ -153,9 +154,7 @@ utils.get_coeff(dfts[EXAMPLE_FNAME], 0, 0, deg=True)
 # `indulge` is an additional normalization that we apply to the magnitude based on the phase. Since magnitudes of 1 are possible only for a prototypical phase sitting on the unit circle, you can set this parameter to True to normalize the magnitudes by the maximally achievable magnitude given the phase which is bounded by straight lines between adjacent prototypes. (Musical prototypes are visualized in the [midiVERTO webApp](https://dcmlab.github.io/midiVERTO/#/analysis)) The pitch class vectors that benefit most from this normalization in terms of magnitude gain are those whose phase is exactly between two prototypes, such as the "octatonic" combination O₀,₁. The maximal "boosting" factors for the first 5 coefficients are `{1: 1.035276, 2: 1.15470, 3: 1.30656, 4: 2.0, 5: 1.035276}`. The sixth coefficient's phase can only be 0 or pi so it remains unchanged. Use this option if you want to compensate for the smaller magnitude space of the middle coefficients.
 
 # %%
-mag_phase_path = os.path.join(DATA_FOLDER, 'pickled_magnitude_phase_matrices') 
-os.makedirs(mag_phase_path, exist_ok=True)
-mag_phase_mx_dict = etl.get_magnitude_phase_matrices(dfts=dfts, data_folder=mag_phase_path, norm_params=norm_method)
+mag_phase_mx_dict = etl.get_magnitude_phase_matrices(dfts=dfts, data_folder=DATA_FOLDER, norm_params=norm_method)
 etl.test_dict_keys(mag_phase_mx_dict, metadata)
 print(f"Shape of the magnitude-phase matrix for {EXAMPLE_FNAME}: {mag_phase_mx_dict[EXAMPLE_FNAME].shape}")
 
