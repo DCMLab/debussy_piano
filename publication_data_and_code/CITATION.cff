@@ -1,0 +1,71 @@
+cff-version: 1.2.0
+message: "Please cite this dataset using the metadata from 'preferred-citation'."
+title: "The Claude Debussy Solo Piano Corpus"
+abstract: "The scores of Claude Debussy's entire oeuvre for piano solo, in uncompressed MuseScore 3 format (.mscx)."
+type: dataset
+authors:
+    - given-names: Sabrina
+      family-names: Laneve
+      email: sisbet@outlook.it
+      affiliation: "State Music Conservatory “Giuseppe Verdi”, Turin"
+    - given-names: Ludovica
+      family-names: Schaerf
+      affiliation: "École Polytechnique Fédérale de Lausanne"
+      orcid: "https://orcid.org/0000-0001-9460-702X"
+    - given-names: Gabriele
+      family-names: Cecchetti
+      email: gabriele.cecchetti@epfl.ch
+      affiliation: "École Polytechnique Fédérale de Lausanne"
+    - given-names: Johannes
+      family-names: Hentschel
+      email: johannes.hentschel@epfl.ch
+      affiliation: "École Polytechnique Fédérale de Lausanne"
+      orcid: "https://orcid.org/0000-0002-1986-9545"
+    - given-names: Martin
+      family-names: Rohrmeier
+      email: martin.rohrmeier@epfl.ch
+      affiliation: "École Polytechnique Fédérale de Lausanne"
+      orcid: "https://orcid.org/0000-0002-4323-7257"
+version: 1.0
+date-released: 2023-06-06
+keywords:
+  - "music theory"
+  - "corpus studies"
+  - "music history"
+  - "claude debussy"
+  - "piano music"
+  - "discrete fourier transform"
+license: "CC-BY-NC-SA-4.0"
+repository: https://github.com/DCMLab/debussy_piano
+preferred-citation:
+  authors:
+    - given-names: Sabrina
+      family-names: Laneve
+      email: sisbet@outlook.it
+      affiliation: "École Polytechnique Fédérale de Lausanne"
+    - given-names: Ludovica
+      family-names: Schaerf
+      affiliation: "École Polytechnique Fédérale de Lausanne"
+      orcid: "https://orcid.org/0000-0001-9460-702X"
+    - given-names: Gabriele
+      family-names: Cecchetti
+      email: gabriele.cecchetti@epfl.ch
+      affiliation: "École Polytechnique Fédérale de Lausanne"
+    - given-names: Johannes
+      family-names: Hentschel
+      email: johannes.hentschel@epfl.ch
+      affiliation: "École Polytechnique Fédérale de Lausanne"
+      orcid: "https://orcid.org/0000-0002-1986-9545"
+    - given-names: Martin
+      family-names: Rohrmeier
+      email: martin.rohrmeier@epfl.ch
+      affiliation: "École Polytechnique Fédérale de Lausanne"
+      orcid: "https://orcid.org/0000-0002-4323-7257"
+  title: "The diachronic development of Debussy’s musical style: a corpus study with Discrete Fourier Transform"
+  doi: 10.1057/s41599-023-01796-7
+  type: article
+  journal: "Humanities and Social Sciences Communications"
+  volume: 10
+  issue: 1
+  year: 2023
+  abstract: "Claude Debussy’s personal style is typically characterised as a departure from earlier diatonic tonality, including a greater variety of pitch-class materials organised in fragmented yet coherent compositions. Exploiting the music-theoretical interpretability of Discrete Fourier Transforms over pitch-class distributions, we performed a corpus study over Debussy’s solo-piano works in order to investigate the diachronic development of such stylistic features across the composer’s lifespan. We propose quantitative heuristics for the prevalence of different pitch-class prototypes, the fragmentation of a piece across different prototypes, as well as some aspect of the overall coherence of a piece. We found strong evidence for a decrease of diatonicity in favour of octatonicity, as well as for an increase of fragmentation accompanied by non-decreasing coherence. These results contribute to the understanding of the historical development of extended-tonal harmony, while representing a fertile testing ground for the interaction of computational corpus-based methods with traditional music analytical approaches."
