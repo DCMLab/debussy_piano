@@ -4,7 +4,7 @@
     * [Installing requirements](#installing-requirements)
     * [Running the code](#running-the-code)
   * [Running the R code](#running-the-r-code)
-* [Generating a file with Pitch Class Vectors (PCVs) for all pieces](#generating-a-file-with-pitch-class-vectors-pcvs-for-all-pieces)
+  * [Re-generating the file with Pitch Class Vectors (PCVs) for all pieces](#re-generating-the-file-with-pitch-class-vectors-pcvs-for-all-pieces)
 <!-- TOC -->
 
 # Code for reproducing data, results, and figures
@@ -72,7 +72,24 @@ The code can be executed in RStudio after loading the required libraries. In ord
 
 The code can be used to reproduce the analyses as reported in the paper (by setting `retrain_models <- FALSE`), or to train the models from scratch (`retrain_models <- TRUE`).
 
-# Generating a file with Pitch Class Vectors (PCVs) for all pieces
+## Re-generating the file with Pitch Class Vectors (PCVs) for all pieces
 
-`dimcat pcvs -q 1.0 -p pc -w 0.5 --fillna 0.0 --round 5`
+If `dimcat==0.3.0` is installed (part of the requirements.txt), you can head to your clone of this repository and run:
 
+```bash
+dimcat pcvs -q 1.0 -p pc -w 0.5 --fillna 0.0 --round 5
+```
+
+This will generate the file `all-1.0q_sliced-w0.5-pc-pcvs.tsv` containing all quarter-note-slice PCVs of all pieces.
+We renamed this file to `debussy-1.0q_sliced-w0.5-pc-pcvs.tsv` and the function `etl.get_pcvs()` is hard-coded to use 
+this one.
+
+The parameters correspond to the following configuration of PCVs (and could be adapted for further studies):
+
+* `-q 1.0` score slices of length 1 quarter
+* `-p pc` using pitch classes 0..11
+* `-w 0.5` weighting grace notes by half of their durations
+* `--fillna 0.0` fills empty fields (=non-occurrent pitch classes) with 0.0
+* `--round 5` rounds the output to 5 (maximum available precision).
+
+The documentation of all parameter options can be accssed via `dimcat pcvs -h`.
