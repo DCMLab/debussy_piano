@@ -10,6 +10,7 @@ authors:
       affiliation: "State Music Conservatory “Giuseppe Verdi”, Turin"
     - given-names: Ludovica
       family-names: Schaerf
+      email: ludovica.schaerf@gmail.com
       affiliation: "École Polytechnique Fédérale de Lausanne"
       orcid: "https://orcid.org/0000-0001-9460-702X"
     - given-names: Gabriele
@@ -53,12 +54,14 @@ preferred-citation:
       affiliation: "École Polytechnique Fédérale de Lausanne"
     - given-names: Ludovica
       family-names: Schaerf
+      email: ludovica.schaerf@gmail.com
       affiliation: "École Polytechnique Fédérale de Lausanne"
       orcid: "https://orcid.org/0000-0001-9460-702X"
     - given-names: Gabriele
       family-names: Cecchetti
       email: gabriele.cecchetti@epfl.ch
       affiliation: "École Polytechnique Fédérale de Lausanne"
+      orcid: "https://orcid.org/0000-0002-1486-1886"
     - given-names: Johannes
       family-names: Hentschel
       email: johannes.hentschel@epfl.ch
