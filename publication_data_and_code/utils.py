@@ -527,7 +527,6 @@ def testing_ols(metadata_matrix : pd.DataFrame, cols : list,
     
     if melted:
         metadata_sm = metadata_sm.reset_index()
-        metadata_sm['fname'] = metadata_sm['index']
         metadata_sm = pd.melt(metadata_sm, id_vars=['fname', 'length_qb', 'year', 'last_mc'], value_vars=cols)
         results = smf.ols(formula='value ~ year * C(variable) + last_mc + 1 ', data=metadata_sm).fit()
         print('testing results')

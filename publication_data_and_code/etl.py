@@ -548,7 +548,11 @@ def print_check_examples(metric_results, metadata, example_filename):
     print('Example results', metric_results[example_filename])
 
 
-def store_correlations(debussy_repo, data_folder, overwrite=False, cores=0, sort=False):
+def store_correlations(debussy_repo,
+                       data_folder,
+                       overwrite=False,
+                       cores=0,
+                       sort=False):
     print("Computing pitch-class-vector triangles...", end=' ')
     pcms = get_pcms(debussy_repo, long=True)
     print('DONE')
@@ -763,4 +767,117 @@ def test_dict_keys(dict_keys: Collection[str], metadata: pd.DataFrame) -> None:
             f"Couldn't find matrices for the following files:\n{metadata.index[~found_fnames].to_list()}.")
 
 
+## used by discarded_ideas.ipynb
 
+def get_correlations(debussy_repo,
+                   data_folder,
+                   parallelized=True,
+                   long: bool = False):
+    """
+    Computes correlations of the PCV matrices with the durational pitch-class profiles computed from the
+    [Mozart Piano Sonatas](https://github.com/DCMLab/mozart_piano_sonatas/) and a value returned by the
+    tritone detector.
+
+    Args:
+        debussy_repo: Path to the local clone of DCMLab/debussy_piano.
+        data_folder: Where to store the pickled matrices.
+        parallelized:
+            By default, the computation is performed on all available CPU cores in parallel.
+            Pass False to prevent that.
+        long:
+            By default, the matrices are 4-dimensional upper triangle matrices with shape (N, N, 6, 2) where N is the number of slices in a piece.
+            If set to True, they will be reduced to 2-dimensional (N*(N+1)/2, 6, 2) matrices, eliminating the 0-padding.
+
+
+    Returns:
+        _description_
+    """
+    cores = multiprocessing.cpu_count() if parallelized else 0
+    store_correlations(
+        debussy_repo=debussy_repo,
+        data_folder=data_folder,
+        overwrite=False,
+        cores=cores,
+        sort=True)
+    result = get_pickeled_correlations(data_folder=data_folder,
+                                       long=long)
+    return result
+
+
+def get_pickeled_correlations(data_folder, long=False):
+    """Returns a dictionary of pickled correlation matrices."""
+    data_folder = resolve_dir(data_folder)
+    result = {}
+    for f in sorted(os.listdir(data_folder)):
+        if f.endswith('-correlations.npy.gz'):
+            fname = f[:-20]
+            corr = load_pickled_file(os.path.join(data_folder, f), long=long)
+            if corr is not None:
+                result[fname] = corr
+    if len(result) == 0:
+        print(
+            f"No pickled numpy matrices with correct file names found in {data_folder}.")
+    return result
+
+def get_most_resonant_penta_dia(mag_phase_mx_dict, ninefold_dict, clf):
+    max_coeff, max_mag, inv_entropy = zip(*(most_resonant_penta_dia(mag_phase_mx_dict[piece][..., 0], ninefold_dict[piece], clf)
+                                            for piece in mag_phase_mx_dict.keys()))
+    return (
+        dict(zip(mag_phase_mx_dict.keys(), max_coeff)),
+        dict(zip(mag_phase_mx_dict.keys(), max_mag)),
+        dict(zip(mag_phase_mx_dict.keys(), inv_entropy))
+    )
+
+
+
+
+def make_feature_vectors(data_folder, norm_params, long=True):
+    """ Return a dictionary with concatenations of magnitude-phase matrices for the
+     selected normalizations with the corresponding correlation matrices.
+
+    Parameters
+    ----------
+    data_folder : str
+        Folder containing the pickled matrices.
+    norm_params : list of tuple
+        The return format depends on whether you pass one or several (how, indulge_prototypes) pairs.
+    long : bool, optional
+        By default, all matrices are loaded in long format. Pass False to cast to square
+        matrices where the lower left triangle beneath the diagonal is zero.
+
+    Returns
+    -------
+    dict of str or dict of dict
+        If norm_params is a (list containing a) single tuple, the result is a {debussy_filename -> feature_matrix}
+        dict. If it contains several tuples, the result is a {debussy_filename -> {norm_params -> feature_matrix}}
+    """
+    norm_params = check_norm_params(norm_params)
+    several = len(norm_params) > 1
+    result = defaultdict(dict) if several else dict()
+    mag_phase_mx_dict = get_pickled_magnitude_phase_matrices(data_folder, norm_params, long=True)
+    correl_dict = get_pickeled_correlations(data_folder, long=True)
+    m_keys, c_keys = set(mag_phase_mx_dict.keys()), set(correl_dict.keys())
+    m_not_c, c_not_m = m_keys.difference(c_keys), c_keys.difference(m_keys)
+    if len(m_not_c) > 0:
+        print(
+            f"No pickled correlations found for the following magnitude-phase matrices: {m_not_c}.")
+    if len(c_not_m) > 0:
+        print(
+            f"No pickled magnitude-phase matrices found for the following correlations: {c_not_m}.")
+    key_intersection = m_keys.intersection(c_keys)
+    for fname in key_intersection:
+        corr = correl_dict[fname]
+        mag_phase = mag_phase_mx_dict[fname]
+        if several:
+            for norm in norm_params:
+                if not norm in mag_phase:
+                    print(f"No pickled magnitude-phase matrix found for the {norm} normalization "
+                          f"of {fname}.")
+                    continue
+                mag_phase_mx = mag_phase[norm][..., 0]
+                features = np.column_stack([mag_phase_mx, corr])
+                result[fname][norm] = features if long else long2utm(features)
+        else:
+            features = np.column_stack([mag_phase[..., 0], corr])
+            result[fname] = features if long else long2utm(features)
+    return result
