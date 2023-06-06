@@ -67,3 +67,13 @@ dimcat pcvs -q 1.0 -p pc -w 0.5 --fillna 0.0 --round 5
 This will generate the file `all-1.0q_sliced-w0.5-pc-pcvs.tsv` containing all quarter-note-slice PCVs of all pieces.
 We renamed this file to `debussy-1.0q_sliced-w0.5-pc-pcvs.tsv` and the function `etl.get_pcvs()` is hard-coded to use 
 this one.
+
+The parameters correspond to the following configuration of PCVs (and could be adapted for further studies):
+
+* `-q 1.0` score slices of length 1 quarter
+* `-p pc` using pitch classes 0..11
+* `-w 0.5` weighting grace notes by half of their durations
+* `--fillna 0.0` fills empty fields (=non-occurrent pitch classes) with 0.0
+* `--round 5` rounds the output to 5 (maximum available precision).
+
+The documentation of all parameter options can be accssed via `dimcat pcvs -h`.
