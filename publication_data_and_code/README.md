@@ -4,7 +4,10 @@
     * [Installing requirements](#installing-requirements)
     * [Running the code](#running-the-code)
   * [Running the R code](#running-the-r-code)
+* [Re-generating auxiliary files](#re-generating-auxiliary-files)
   * [Re-generating the file with Pitch Class Vectors (PCVs) for all pieces](#re-generating-the-file-with-pitch-class-vectors-pcvs-for-all-pieces)
+  * [Re-generating (and inspecting) median durations of matching Spotify recordings](#re-generating-and-inspecting-median-durations-of-matching-spotify-recordings)
+* [Commandline script for creating all wavescapes, including other normalization methods](#commandline-script-for-creating-all-wavescapes-including-other-normalization-methods)
 <!-- TOC -->
 
 # Code for reproducing data, results, and figures
@@ -72,6 +75,8 @@ The code can be executed in RStudio after loading the required libraries. In ord
 
 The code can be used to reproduce the analyses as reported in the paper (by setting `retrain_models <- FALSE`), or to train the models from scratch (`retrain_models <- TRUE`).
 
+# Re-generating auxiliary files
+
 ## Re-generating the file with Pitch Class Vectors (PCVs) for all pieces
 
 If `dimcat==0.3.0` is installed (part of the requirements.txt), you can head to your clone of this repository and run:
@@ -94,7 +99,24 @@ The parameters correspond to the following configuration of PCVs (and could be a
 
 The documentation of all parameter options can be accessed via `dimcat pcvs -h`.
 
-# Commandline script for creating all wavescapes, including other normalization methods
+## Re-generating (and inspecting) median durations of matching Spotify recordings
+
+Within the `generate_data_and_metricy.ipynb` notebook, the `concatenated_metadata.tsv` is enriched with the columns `median_recording` 
+from which the tempo-like indications `qb_per_minute` (quarter beats per minute) and `sounding_notes_per_minute` are computed. 
+The median recording times are stored in `durations/spotify_median_durations.json` and can be re-computed by heading into the 
+`durations` folder, running `pip install -r requirements.txt` in the virtual environment that the Jupyter notebook will have access to, 
+and running the notebook `spotify_durations.ipynb`. By default, it uses the cached search results in `spotify_search_results.json` but
+the notebook can be configured to re-generate these, too, by providing a [Spotify API access token](https://developer.spotify.com/documentation/web-api).
+The notebook also generates an interactive version of the following box plots that summarizes the durations of all matched recordings
+taken into account (in seconds):
+
+![newplot(5)](https://github.com/DCMLab/debussy_piano/assets/42718519/5d366cac-fc3e-4be2-9b58-1d007ac90f22)
+
+By the badly labeled axes you can tell that this code is less maintained (or documented) than the rest. If you encounter any bugs or 
+have questions, feel free to [leave us an issue](https://github.com/DCMLab/debussy_piano/issues).
+
+
+# Extra: Commandline script for creating all wavescapes, including other normalization methods
 
 This script is an additional gimmick and lets you create wavescape figures for all pieces and with settings of your own choice.
 Technically, wavescapes are visualizations of what we call "magnitude-phase matrices" which correspond to upper-triangle matrices (UTM)
