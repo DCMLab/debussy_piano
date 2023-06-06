@@ -564,6 +564,7 @@ def add_to_metrics(metrics_df : pd.DataFrame, dict_metric : dict, name_metrics):
         df_tmp = pd.DataFrame(dict_metric).T
         df_tmp.columns = name_metrics
     metrics_df = metrics_df.merge(df_tmp, left_index=True, right_index=True)
+    metrics_df.index.rename("fname", inplace=True)
     return metrics_df
 
 
