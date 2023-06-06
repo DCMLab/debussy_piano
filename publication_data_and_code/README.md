@@ -1,32 +1,41 @@
 <!-- TOC -->
-* [Code for reproducing results and figures](#code-for-reproducing-results-and-figures)
+* [Code for reproducing data, results, and figures](#code-for-reproducing-data-results-and-figures)
   * [Running the Python code](#running-the-python-code)
     * [Installing requirements](#installing-requirements)
     * [Running the code](#running-the-code)
   * [Running the R code](#running-the-r-code)
-* [Generating a file with Pitch Class Vectors (PCVs) for all pieces](#generating-a-file-with-pitch-class-vectors--pcvs--for-all-pieces)
+* [Generating a file with Pitch Class Vectors (PCVs) for all pieces](#generating-a-file-with-pitch-class-vectors-pcvs-for-all-pieces)
 <!-- TOC -->
 
-# Code for reproducing results and figures
+# Code for reproducing data, results, and figures
 
 The code consists of two components, namely
 
-* the Python code for computing all measures and related figures for section **3. Methodology**.
+* the Python code for computing all measures reported in section **3. Methodology** and some additional figures. 
+  Its outputs are required for running
 * the R script `analyses_metrics.R` that computes the Bayesian mixed-effects models for section
   **4. Results**
 
-Both require you to clone the dataset using the command
-
-    git clone --recurse-submodules -j8 https://github.com/DCMLab/debussy_piano.git
 
 ## Running the Python code
 
-The code can be run in two ways:
+In order to run the code that generates the data and figures you need to install the required Python packages 
+(see the next section) and to clone this repository with all included submodules using the command
 
-* as standalone script `generate_data_and_metrics.py`, or
-* as interactive Jupyter notebook `generate_data_and_metrics.ipynb`.
+    git clone --recurse-submodules -j8 https://github.com/DCMLab/debussy_piano.git
 
-In both cases you need to install the required Python packages first.
+When run, the code needs to be executed from the `publication_data_and_code` directory where it resides and
+in which it will produce the following folders and files:
+
+* `pickled_magnitude_phase_matrices`: containing 82 pickled numpy matrices, one per piece, containing the results of
+  applying the Discrete Fourier Transform to the pitch class vectors under the `0c+indulge` normalization (see section 
+  `Methodology.Wavescapes` in the paper).
+* `results`: containing 
+  * `results.csv`, a copy of the `../concatenated_metadata.tsv` with additional columns that contain the computed 
+    metrics for each piece (82 rows); and 
+  * `results_melted.csv`, the same results in onther formats: the six values for each metric (one per Fourier coefficient) 
+    are reproduced in the same column for analysis in R, resulting in a long-format dataframe with 6 * 82 = 492 rows.
+* `figures`: Some additional figures showing the behaviour of the metrics.
 
 ### Installing requirements
 
@@ -41,13 +50,20 @@ The required packages are listed in `requirements.txt` and can be installed via
 
 ### Running the code
 
-If you want to run the standalone script (generated from the Jupyter notebook via 
-[Jupytext](jupytext.readthedocs.io/)), navigate to the `publication_data_and_code` directory,
-and run
+The code is available in two formats:
+
+* as interactive Jupyter notebook `generate_data_and_metrics.ipynb`, or
+* as standalone script `generate_data_and_metrics.py` (synchronized with the Jupyter notebook via 
+  [Jupytext](jupytext.readthedocs.io/))
+
+To run the standalone script , navigate to the `publication_data_and_code` directory, make sure to have activated your
+virtual environment in which you have installed the required packages, and then run
 
     python generate_data_and_metrics.py
 
-In order to execute the interactive notebook instead, you need to have [Jupyter](http://jupyter.org/install) installed and made sure that you have [installed a kernel](https://ipython.readthedocs.io/en/latest/install/kernel_install.html#kernels-for-different-environments) for the environment with the installed packages.
+In order to execute the interactive notebook instead, you need to have [Jupyter](http://jupyter.org/install) installed and made sure that you have 
+[installed a kernel](https://ipython.readthedocs.io/en/latest/install/kernel_install.html#kernels-for-different-environments) 
+for the environment with the installed packages.
 
 
 ## Running the R code
@@ -59,3 +75,4 @@ The code can be used to reproduce the analyses as reported in the paper (by sett
 # Generating a file with Pitch Class Vectors (PCVs) for all pieces
 
 `dimcat pcvs -q 1.0 -p pc -w 0.5 --fillna 0.0 --round 5`
+
