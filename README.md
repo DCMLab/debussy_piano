@@ -18,11 +18,10 @@ The scores of Claude Debussy's entire oeuvre for piano solo, in uncompressed Mus
 
 ## Cite as
 
-This repository has submodules. In order to clone it, use the command
+This dataset has been released together with the publication
 
-    git clone --recurse-submodules -j8 git@github.com:DCMLab/debussy_piano.git
+> Laneve, S., Schaerf, L., Cecchetti, G., Hentschel, J., & Rohrmeier, M. (2023). The diachronic development of Debussy’s musical style: A corpus study with Discrete Fourier Transform. Humanities and Social Sciences Communications, 10(1), 289. https://doi.org/10.1057/s41599-023-01796-7
 
-`-j8` is available from git >= 2.8 and fetches up to 8 submodules at a time in parallel
 
 ## Abstract
 
