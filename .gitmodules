@@ -1,36 +1,36 @@
 [submodule "debussy_childrens_corner"]
 	path = debussy_childrens_corner
-	url = git@github.com:DCMLab/debussy_childrens_corner.git
+	url = https://github.com/DCMLab/debussy_childrens_corner
 	branch = main
 [submodule "debussy_deux_arabesques"]
 	path = debussy_deux_arabesques
-	url = git@github.com:DCMLab/debussy_deux_arabesques.git
+	url = https://github.com/DCMLab/debussy_deux_arabesques
 	branch = main
 [submodule "debussy_estampes"]
 	path = debussy_estampes
-	url = git@github.com:DCMLab/debussy_estampes.git
+	url = https://github.com/DCMLab/debussy_estampes
 	branch = main
 [submodule "debussy_etudes"]
 	path = debussy_etudes
-	url = git@github.com:DCMLab/debussy_etudes.git
+	url = https://github.com/DCMLab/debussy_etudes
 	branch = main
 [submodule "debussy_images"]
 	path = debussy_images
-	url = git@github.com:DCMLab/debussy_images.git
+	url = https://github.com/DCMLab/debussy_images
 	branch = main
 [submodule "debussy_other_piano_pieces"]
 	path = debussy_other_piano_pieces
-	url = git@github.com:DCMLab/debussy_other_piano_pieces.git
+	url = https://github.com/DCMLab/debussy_other_piano_pieces
 	branch = main
 [submodule "debussy_pour_le_piano"]
 	path = debussy_pour_le_piano
-	url = git@github.com:DCMLab/debussy_pour_le_piano.git
+	url = https://github.com/DCMLab/debussy_pour_le_piano
 	branch = main
 [submodule "debussy_preludes"]
 	path = debussy_preludes
-	url = git@github.com:DCMLab/debussy_preludes.git
+	url = https://github.com/DCMLab/debussy_preludes
 	branch = main
 [submodule "debussy_suite_bergamasque"]
 	path = debussy_suite_bergamasque
-	url = git@github.com:DCMLab/debussy_suite_bergamasque.git
+	url = https://github.com/DCMLab/debussy_suite_bergamasque
 	branch = main
