@@ -309,61 +309,46 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><img alt="Version" src="https://img.shields.io/github/v/release/DCMLab/debussy_piano?display_name=tag" />
-<img alt="DOI" src="https://zenodo.org/badge/563844953.0.svg" />](https://zenodo.org/badge/latestdoi/563844953.0)
+<a class="reference external" href="https://zenodo.org/badge/latestdoi/563844953"><img alt="DOI" src="https://zenodo.org/badge/563844953.svg" /></a>
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/DCMLab/debussy_piano" />
 <img alt="License" src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-9cf" /></p>
 <p>This is a README file for a data repository originating from the <a class="reference external" href="https://github.com/DCMLab/dcml_corpora">DCML corpus initiative</a>
 and serves as welcome page for both</p>
 <ul class="simple">
-<li><p>the GitHub repo https://github.com/DCMLab/debussy_piano and the corresponding</p></li>
-<li><p>documentation page https://dcmlab.github.io/debussy_piano</p></li>
+<li><p>the GitHub repo <a class="github reference external" href="https://github.com/DCMLab/debussy_piano">DCMLab/debussy_piano</a> and the corresponding</p></li>
+<li><p>documentation page <a class="reference external" href="https://dcmlab.github.io/debussy_piano">https://dcmlab.github.io/debussy_piano</a></p></li>
 </ul>
+<p>For information on how to obtain and use the dataset, please refer to <a class="reference external" href="https://dcmlab.github.io/debussy_piano/introduction">this documentation page</a>.</p>
 <section id="the-claude-debussy-solo-piano-corpus">
 <h1>The Claude Debussy Solo Piano Corpus<a class="headerlink" href="#the-claude-debussy-solo-piano-corpus" title="Permalink to this heading">#</a></h1>
+<p>The scores of Claude Debussy’s entire oeuvre for piano solo, in uncompressed MuseScore 3 format (.mscx).</p>
+<section id="cite-as">
+<h2>Cite as<a class="headerlink" href="#cite-as" title="Permalink to this heading">#</a></h2>
+<p>This dataset has been released together with the publication</p>
+<blockquote>
+<div><p>Laneve, S., Schaerf, L., Cecchetti, G., Hentschel, J., &amp; Rohrmeier, M. (2023). The diachronic development of Debussy’s musical style: A corpus study with Discrete Fourier Transform. Humanities and Social Sciences Communications, 10(1), 289. https://doi.org/10.1057/s41599-023-01796-7</p>
+</div></blockquote>
+</section>
+<section id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this heading">#</a></h2>
+<p>Claude Debussy’s personal style is typically characterised as a departure from earlier diatonic tonality, including a greater variety of pitch-class materials organised in fragmented yet coherent compositions. Exploiting the music-theoretical interpretability of Discrete Fourier Transforms over pitch-class distributions, we performed a corpus study over Debussy’s solo-piano works in order to investigate the diachronic development of such stylistic features across the composer’s lifespan. We propose quantitative heuristics for the prevalence of different pitch-class prototypes, the fragmentation of a piece across different prototypes, as well as some aspect of the overall coherence of a piece. We found strong evidence for a decrease of diatonicity in favour of octatonicity, as well as for an increase of fragmentation accompanied by non-decreasing coherence. These results contribute to the understanding of the historical development of extended-tonal harmony, while representing a fertile testing ground for the interaction of computational corpus-based methods with traditional music analytical approaches.</p>
+</section>
 <section id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this heading">#</a></h2>
 <p>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (<a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>).</p>
 </section>
 <section id="naming-convention">
 <h2>Naming convention<a class="headerlink" href="#naming-convention" title="Permalink to this heading">#</a></h2>
-<p>The file names listed in the <span class="xref myst">Overview</span> below refer to the following numbering of the sonatas from 1-32.
-For example, the four movements of sonata no. 1 are named <code class="docutils literal notranslate"><span class="pre">01-1</span></code>, <code class="docutils literal notranslate"><span class="pre">01-2</span></code>, <code class="docutils literal notranslate"><span class="pre">01-3</span></code>, and <code class="docutils literal notranslate"><span class="pre">01-4</span></code>.</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Number</p></th>
-<th class="head"><p>Opus (Name)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Piano Sonata No.1 in F minor</p></td>
-<td><p>Op.2 No.1</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>file_name</p></th>
-<th class="head text-right"><p>measures</p></th>
-<th class="head text-right"><p>labels</p></th>
-<th class="head"><p>standard</p></th>
-<th class="head"><p>annotators</p></th>
-<th class="head"><p>reviewers</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>01-1</p></td>
-<td class="text-right"><p>152</p></td>
-<td class="text-right"><p>241</p></td>
-<td><p>2.3.0</p></td>
-<td><p>Annotator names</p></td>
-<td><p>AN</p></td>
-</tr>
-</tbody>
-</table>
-<p><em>Overview table updated using <a class="reference external" href="https://johentsch.github.io/ms3/">ms3</a> 1.1.1.</em></p>
+<p>The filenames follow the pattern <code class="docutils literal notranslate"><span class="pre">l&lt;###&gt;[-##][_collection]_piece</span></code> where optional components are given in brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>.
+The corresponding regular expression is <code class="docutils literal notranslate"><span class="pre">l(?P&lt;lesure&gt;\d{3})(?:-(?P&lt;mvt&gt;\d{2}))?(?:_(?P&lt;collection&gt;[a-z]+?))?_(?P&lt;piece&gt;[a-z]+)</span></code>.
+The components are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lesure</span></code>: A three-digit, zero-padded number corresponding to the original Lesure (1977) catalog. A mapping to the revised 2003 version can be found <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_compositions_by_Claude_Debussy#Piano_solo">on Wikipedia</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mvt</span></code> (optional): A two-digit movement number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">collection</span></code> (optional): If a piece is part of a collection, the first word of it’s title.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The first word of the piece’s title.</p></li>
+</ul>
+<p>Titles are given in lowercase and without diacritics.</p>
 </section>
 </section>
 
@@ -396,9 +381,10 @@ For example, the four movements of sonata no. 1 are named <code class="docutils 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cite-as">Cite as</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-convention">Naming convention</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 </ul>
   </nav></div>
 
