@@ -29,6 +29,8 @@ Without full version history
 If you are only interested in the current version of the corpus, you can download the ZIP file of each submodule:
 
 
+* `notebooks <https://github.com/DCMLab/notebooks/archive/refs/heads/main.zip>`__
+
 
 
 Data Formats

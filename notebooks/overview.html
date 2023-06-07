@@ -377,7 +377,7 @@ document.write(`
 -----------------
 
 CORPUS_PATH: &#39;/home/runner/work/workflow_deployment/workflow_deployment/DCML/debussy_piano&#39;
-ANNOTATED_ONLY: True
+ANNOTATED_ONLY: False
 </pre></div>
 </div>
 </div>
@@ -405,7 +405,7 @@ ANNOTATED_ONLY: True
 --------------------------
 
 Notebook repository &#39;data_reports&#39; @ 007ea69
-Data repo &#39;debussy_piano&#39; @ b80ea8f
+Data repo &#39;debussy_piano&#39; @ 3a6e42e
 dimcat version 0.3.0
 ms3 version 1.2.5
 </pre></div>
@@ -422,37 +422,37 @@ ms3 version 1.2.5
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[<span class=" -Color -Color-Bold">annotated</span>|all|default]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[<span class=" -Color -Color-Bold">default</span>|all]
 All corpora
 -----------
-View: This view is called &#39;annotated&#39;. It 
+View: This view is called &#39;default&#39;. It 
 	- excludes fnames that are not contained in the metadata,
-	- excludes pieces that do not have at least one file per selected facet,
-	- filters out file extensions requiring conversion (such as .xml),
-	- excludes review files and folders, and
-	- includes only facets containing one of [&#39;measures&#39;, &#39;notes$&#39;, &#39;expanded&#39;].
+	- filters out file extensions requiring conversion (such as .xml), and
+	- excludes review files and folders.
 
-                                has     active measures  notes expanded measures    notes expanded
-                           metadata       view   parsed parsed   parsed detected detected detected
-corpus                                                                                            
-debussy_childrens_corner        yes  annotated        0      0        0        0        0        0
-debussy_deux_arabesques         yes  annotated        0      0        0        0        0        0
-debussy_estampes                yes  annotated        0      0        0        0        0        0
-debussy_etudes                  yes  annotated        0      0        0        0        0        0
-debussy_images                  yes  annotated        0      0        0        0        0        0
-debussy_other_piano_pieces      yes  annotated        0      0        0        0        0        0
-debussy_pour_le_piano           yes  annotated        0      0        0        0        0        0
-debussy_preludes                yes  annotated        0      0        0        0        0        0
-debussy_suite_bergamasque       yes  annotated        4      4        4        4        4        4
+                                has   active   scores measures           notes        expanded       
+                           metadata     view detected detected parsed detected parsed detected parsed
+corpus                                                                                               
+debussy_childrens_corner        yes  default        6        6      6        6      6        0      0
+debussy_deux_arabesques         yes  default        2        2      2        2      2        0      0
+debussy_estampes                yes  default        3        3      3        3      3        0      0
+debussy_etudes                  yes  default       12       12     12       12     12        0      0
+debussy_images                  yes  default        9        9      9        9      9        0      0
+debussy_other_piano_pieces      yes  default       19       19     19       19     19        0      0
+debussy_pour_le_piano           yes  default        3        3      3        3      3        0      0
+debussy_preludes                yes  default       24       24     24       24     24        0      0
+debussy_suite_bergamasque       yes  default        4        4      4        4      4        4      4
 
-9/12 facets are excluded from this view.
+28/860 files are excluded from this view.
+
+28 files have been excluded based on their subdir.
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N = 4 annotated pieces, 12 parsed dataframes.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N = 82 annotated pieces, 168 parsed dataframes.
 </pre></div>
 </div>
 </div>
@@ -479,7 +479,7 @@ debussy_suite_bergamasque       yes  annotated        4      4        4        4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Metadata covers 4 of the 4 scores.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Metadata covers 82 of the 82 scores.
 </pre></div>
 </div>
 </div>
@@ -496,7 +496,7 @@ debussy_suite_bergamasque       yes  annotated        4      4        4        4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Composition dates range from 1890.0 (&#39;debussy_suite_bergamasque&#39;, &#39;l075-01_suite_prelude&#39;) to 1905.0 (&#39;debussy_suite_bergamasque&#39;, &#39;l075-01_suite_prelude&#39;).
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Composition dates range from 1880 (&#39;debussy_other_piano_pieces&#39;, &#39;l009_danse&#39;) to 1917 (&#39;debussy_other_piano_pieces&#39;, &#39;l000_soirs&#39;).
 </pre></div>
 </div>
 </div>
@@ -551,9 +551,9 @@ debussy_suite_bergamasque       yes  annotated        4      4        4        4
         });
         }
         </script>
-        </div><div class="output text_html"><div>                            <div id="0ed0966b-e84f-45f5-b4f8-3a845b148f75" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("0ed0966b-e84f-45f5-b4f8-3a845b148f75")) {                    Plotly.newPlot(                        "0ed0966b-e84f-45f5-b4f8-3a845b148f75",                        [{"alignmentgroup":"True","hovertemplate":"corpus=debussy_suite_bergamasque<br>year=%{x}<br>pieces=%{y}<extra></extra>","legendgroup":"debussy_suite_bergamasque","marker":{"color":"#1F77B4","pattern":{"shape":""}},"name":"debussy_suite_bergamasque","offsetgroup":"debussy_suite_bergamasque","orientation":"v","showlegend":true,"textposition":"auto","x":[1905.0],"xaxis":"x","y":[4],"yaxis":"y","type":"bar","width":5}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"pieces"},"gridcolor":"lightgrey"},"legend":{"title":{"text":"corpus"},"tracegroupgap":0},"margin":{"t":40,"l":40,"r":0,"b":0,"pad":0},"barmode":"relative","font":{"size":15},"paper_bgcolor":"#FFFFFF","plot_bgcolor":"#FFFFFF"},                        {"responsive": true}                    ).then(function(){
+        </div><div class="output text_html"><div>                            <div id="68d2be2f-95cb-4216-ba91-a1decc083895" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("68d2be2f-95cb-4216-ba91-a1decc083895")) {                    Plotly.newPlot(                        "68d2be2f-95cb-4216-ba91-a1decc083895",                        [{"alignmentgroup":"True","hovertemplate":"corpus=debussy_deux_arabesques<br>year=%{x}<br>pieces=%{y}<extra></extra>","legendgroup":"debussy_deux_arabesques","marker":{"color":"#1F77B4","pattern":{"shape":""}},"name":"debussy_deux_arabesques","offsetgroup":"debussy_deux_arabesques","orientation":"v","showlegend":true,"textposition":"auto","x":[1889.5],"xaxis":"x","y":[2],"yaxis":"y","type":"bar","width":5},{"alignmentgroup":"True","hovertemplate":"corpus=debussy_pour_le_piano<br>year=%{x}<br>pieces=%{y}<extra></extra>","legendgroup":"debussy_pour_le_piano","marker":{"color":"#FF7F0E","pattern":{"shape":""}},"name":"debussy_pour_le_piano","offsetgroup":"debussy_pour_le_piano","orientation":"v","showlegend":true,"textposition":"auto","x":[1898.6666666666667],"xaxis":"x","y":[3],"yaxis":"y","type":"bar","width":5},{"alignmentgroup":"True","hovertemplate":"corpus=debussy_images<br>year=%{x}<br>pieces=%{y}<extra></extra>","legendgroup":"debussy_images","marker":{"color":"#2CA02C","pattern":{"shape":""}},"name":"debussy_images","offsetgroup":"debussy_images","orientation":"v","showlegend":true,"textposition":"auto","x":[1901.7777777777778],"xaxis":"x","y":[9],"yaxis":"y","type":"bar","width":5},{"alignmentgroup":"True","hovertemplate":"corpus=debussy_other_piano_pieces<br>year=%{x}<br>pieces=%{y}<extra></extra>","legendgroup":"debussy_other_piano_pieces","marker":{"color":"#D62728","pattern":{"shape":""}},"name":"debussy_other_piano_pieces","offsetgroup":"debussy_other_piano_pieces","orientation":"v","showlegend":true,"textposition":"auto","x":[1902.157894736842],"xaxis":"x","y":[19],"yaxis":"y","type":"bar","width":5},{"alignmentgroup":"True","hovertemplate":"corpus=debussy_estampes<br>year=%{x}<br>pieces=%{y}<extra></extra>","legendgroup":"debussy_estampes","marker":{"color":"#9467BD","pattern":{"shape":""}},"name":"debussy_estampes","offsetgroup":"debussy_estampes","orientation":"v","showlegend":true,"textposition":"auto","x":[1903.0],"xaxis":"x","y":[3],"yaxis":"y","type":"bar","width":5},{"alignmentgroup":"True","hovertemplate":"corpus=debussy_suite_bergamasque<br>year=%{x}<br>pieces=%{y}<extra></extra>","legendgroup":"debussy_suite_bergamasque","marker":{"color":"#8C564B","pattern":{"shape":""}},"name":"debussy_suite_bergamasque","offsetgroup":"debussy_suite_bergamasque","orientation":"v","showlegend":true,"textposition":"auto","x":[1905.0],"xaxis":"x","y":[4],"yaxis":"y","type":"bar","width":5},{"alignmentgroup":"True","hovertemplate":"corpus=debussy_childrens_corner<br>year=%{x}<br>pieces=%{y}<extra></extra>","legendgroup":"debussy_childrens_corner","marker":{"color":"#E377C2","pattern":{"shape":""}},"name":"debussy_childrens_corner","offsetgroup":"debussy_childrens_corner","orientation":"v","showlegend":true,"textposition":"auto","x":[1908.0],"xaxis":"x","y":[6],"yaxis":"y","type":"bar","width":5},{"alignmentgroup":"True","hovertemplate":"corpus=debussy_preludes<br>year=%{x}<br>pieces=%{y}<extra></extra>","legendgroup":"debussy_preludes","marker":{"color":"#7F7F7F","pattern":{"shape":""}},"name":"debussy_preludes","offsetgroup":"debussy_preludes","orientation":"v","showlegend":true,"textposition":"auto","x":[1910.7916666666667],"xaxis":"x","y":[24],"yaxis":"y","type":"bar","width":5},{"alignmentgroup":"True","hovertemplate":"corpus=debussy_etudes<br>year=%{x}<br>pieces=%{y}<extra></extra>","legendgroup":"debussy_etudes","marker":{"color":"#BCBD22","pattern":{"shape":""}},"name":"debussy_etudes","offsetgroup":"debussy_etudes","orientation":"v","showlegend":true,"textposition":"auto","x":[1915.0],"xaxis":"x","y":[12],"yaxis":"y","type":"bar","width":5}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"pieces"},"gridcolor":"lightgrey"},"legend":{"title":{"text":"corpus"},"tracegroupgap":0},"margin":{"t":40,"l":40,"r":0,"b":0,"pad":0},"barmode":"relative","font":{"size":15},"paper_bgcolor":"#FFFFFF","plot_bgcolor":"#FFFFFF"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('0ed0966b-e84f-45f5-b4f8-3a845b148f75');
+var gd = document.getElementById('68d2be2f-95cb-4216-ba91-a1decc083895');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -606,9 +606,9 @@ if (outputEl) {{
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>                            <div id="a68e86c6-8ee5-4fc0-80ae-35fc2e70424f" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("a68e86c6-8ee5-4fc0-80ae-35fc2e70424f")) {                    Plotly.newPlot(                        "a68e86c6-8ee5-4fc0-80ae-35fc2e70424f",                        [{"alignmentgroup":"True","bingroup":"x","hovertemplate":"corpus=Debussy Suite Bergamasque<br>decade=%{x}<br>count=%{y}<extra></extra>","legendgroup":"Debussy Suite Bergamasque","marker":{"color":"#1F77B4","pattern":{"shape":""}},"name":"Debussy Suite Bergamasque","offsetgroup":"Debussy Suite Bergamasque","orientation":"v","showlegend":true,"x":[1905.0,1905.0,1905.0,1905.0],"xaxis":"x","yaxis":"y","type":"histogram","xbins":{"size":10}}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"decade"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"count"},"gridcolor":"lightgrey"},"legend":{"title":{"text":"corpus"},"tracegroupgap":0},"margin":{"t":40,"l":40,"r":0,"b":0,"pad":0},"barmode":"relative","font":{"size":15},"paper_bgcolor":"#FFFFFF","plot_bgcolor":"#FFFFFF"},                        {"responsive": true}                    ).then(function(){
+<div class="output text_html"><div>                            <div id="8584eeb5-8f1a-4a78-8c6a-cd810b74c772" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("8584eeb5-8f1a-4a78-8c6a-cd810b74c772")) {                    Plotly.newPlot(                        "8584eeb5-8f1a-4a78-8c6a-cd810b74c772",                        [{"alignmentgroup":"True","bingroup":"x","hovertemplate":"corpus=Debussy Childrens Corner<br>decade=%{x}<br>count=%{y}<extra></extra>","legendgroup":"Debussy Childrens Corner","marker":{"color":"#E377C2","pattern":{"shape":""}},"name":"Debussy Childrens Corner","offsetgroup":"Debussy Childrens Corner","orientation":"v","showlegend":true,"x":[1908,1908,1908,1908,1908,1908],"xaxis":"x","yaxis":"y","type":"histogram","xbins":{"size":10}},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"corpus=Debussy Deux Arabesques<br>decade=%{x}<br>count=%{y}<extra></extra>","legendgroup":"Debussy Deux Arabesques","marker":{"color":"#1F77B4","pattern":{"shape":""}},"name":"Debussy Deux Arabesques","offsetgroup":"Debussy Deux Arabesques","orientation":"v","showlegend":true,"x":[1888,1891],"xaxis":"x","yaxis":"y","type":"histogram","xbins":{"size":10}},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"corpus=Debussy Estampes<br>decade=%{x}<br>count=%{y}<extra></extra>","legendgroup":"Debussy Estampes","marker":{"color":"#9467BD","pattern":{"shape":""}},"name":"Debussy Estampes","offsetgroup":"Debussy Estampes","orientation":"v","showlegend":true,"x":[1903,1903,1903],"xaxis":"x","yaxis":"y","type":"histogram","xbins":{"size":10}},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"corpus=Debussy Etudes<br>decade=%{x}<br>count=%{y}<extra></extra>","legendgroup":"Debussy Etudes","marker":{"color":"#BCBD22","pattern":{"shape":""}},"name":"Debussy Etudes","offsetgroup":"Debussy Etudes","orientation":"v","showlegend":true,"x":[1915,1915,1915,1915,1915,1915,1915,1915,1915,1915,1915,1915],"xaxis":"x","yaxis":"y","type":"histogram","xbins":{"size":10}},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"corpus=Debussy Images<br>decade=%{x}<br>count=%{y}<extra></extra>","legendgroup":"Debussy Images","marker":{"color":"#2CA02C","pattern":{"shape":""}},"name":"Debussy Images","offsetgroup":"Debussy Images","orientation":"v","showlegend":true,"x":[1894,1894,1894,1904,1904,1905,1907,1907,1907],"xaxis":"x","yaxis":"y","type":"histogram","xbins":{"size":10}},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"corpus=Debussy Other Piano Pieces<br>decade=%{x}<br>count=%{y}<extra></extra>","legendgroup":"Debussy Other Piano Pieces","marker":{"color":"#D62728","pattern":{"shape":""}},"name":"Debussy Other Piano Pieces","offsetgroup":"Debussy Other Piano Pieces","orientation":"v","showlegend":true,"x":[1915,1917,1880,1890,1890,1890,1890,1890,1892,1903,1904,1904,1904,1909,1909,1910,1914,1915,1915],"xaxis":"x","yaxis":"y","type":"histogram","xbins":{"size":10}},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"corpus=Debussy Pour Le Piano<br>decade=%{x}<br>count=%{y}<extra></extra>","legendgroup":"Debussy Pour Le Piano","marker":{"color":"#FF7F0E","pattern":{"shape":""}},"name":"Debussy Pour Le Piano","offsetgroup":"Debussy Pour Le Piano","orientation":"v","showlegend":true,"x":[1901,1894,1901],"xaxis":"x","yaxis":"y","type":"histogram","xbins":{"size":10}},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"corpus=Debussy Preludes<br>decade=%{x}<br>count=%{y}<extra></extra>","legendgroup":"Debussy Preludes","marker":{"color":"#7F7F7F","pattern":{"shape":""}},"name":"Debussy Preludes","offsetgroup":"Debussy Preludes","orientation":"v","showlegend":true,"x":[1909,1909,1909,1910,1909,1909,1910,1910,1910,1910,1910,1910,1912,1912,1912,1912,1912,1912,1912,1912,1912,1912,1912,1912],"xaxis":"x","yaxis":"y","type":"histogram","xbins":{"size":10}},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"corpus=Debussy Suite Bergamasque<br>decade=%{x}<br>count=%{y}<extra></extra>","legendgroup":"Debussy Suite Bergamasque","marker":{"color":"#8C564B","pattern":{"shape":""}},"name":"Debussy Suite Bergamasque","offsetgroup":"Debussy Suite Bergamasque","orientation":"v","showlegend":true,"x":[1905,1905,1905,1905],"xaxis":"x","yaxis":"y","type":"histogram","xbins":{"size":10}}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"decade"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"count"},"gridcolor":"lightgrey"},"legend":{"title":{"text":"corpus"},"tracegroupgap":0},"margin":{"t":40,"l":40,"r":0,"b":0,"pad":0},"barmode":"relative","font":{"size":15},"paper_bgcolor":"#FFFFFF","plot_bgcolor":"#FFFFFF"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('a68e86c6-8ee5-4fc0-80ae-35fc2e70424f');
+var gd = document.getElementById('8584eeb5-8f1a-4a78-8c6a-cd810b74c772');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -708,28 +708,156 @@ if (outputEl) {{
   </thead>
   <tbody>
     <tr>
+      <th>Debussy Childrens Corner</th>
+      <td>6</td>
+      <td>514</td>
+      <td>1672.00</td>
+      <td>6575</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>85.67</td>
+      <td>278.67</td>
+      <td>1095.83</td>
+      <td>0.00</td>
+      <td>3.25</td>
+      <td>12.79</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Debussy Deux Arabesques</th>
+      <td>2</td>
+      <td>217</td>
+      <td>866.00</td>
+      <td>3424</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>108.50</td>
+      <td>433.00</td>
+      <td>1712.00</td>
+      <td>0.00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Debussy Estampes</th>
+      <td>3</td>
+      <td>391</td>
+      <td>1299.00</td>
+      <td>8427</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>130.33</td>
+      <td>433.00</td>
+      <td>2809.00</td>
+      <td>0.00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Debussy Etudes</th>
+      <td>12</td>
+      <td>1072</td>
+      <td>2829.00</td>
+      <td>25076</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>89.33</td>
+      <td>235.75</td>
+      <td>2089.67</td>
+      <td>0.00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Debussy Images</th>
+      <td>9</td>
+      <td>866</td>
+      <td>2819.00</td>
+      <td>20685</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>96.22</td>
+      <td>313.22</td>
+      <td>2298.33</td>
+      <td>0.00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Debussy Other Piano Pieces</th>
+      <td>19</td>
+      <td>2289</td>
+      <td>6764.25</td>
+      <td>34518</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>120.47</td>
+      <td>356.01</td>
+      <td>1816.74</td>
+      <td>0.00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Debussy Pour Le Piano</th>
+      <td>3</td>
+      <td>501</td>
+      <td>1284.12</td>
+      <td>8808</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>167.00</td>
+      <td>428.04</td>
+      <td>2936.00</td>
+      <td>0.00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Debussy Preludes</th>
+      <td>24</td>
+      <td>1811</td>
+      <td>4715.50</td>
+      <td>33662</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>75.46</td>
+      <td>196.48</td>
+      <td>1402.58</td>
+      <td>0.00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <th>Debussy Suite Bergamasque</th>
       <td>4</td>
-      <td>421.0</td>
-      <td>1616.0</td>
+      <td>421</td>
+      <td>1616.00</td>
       <td>8210</td>
-      <td>1013.0</td>
+      <td>1013</td>
       <td>1.0</td>
       <td>105.25</td>
-      <td>404.0</td>
-      <td>2052.5</td>
+      <td>404.00</td>
+      <td>2052.50</td>
       <td>253.25</td>
-      <td>3.84</td>
-      <td>19.5</td>
-      <td>2.41</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>sum</th>
-      <td>4</td>
-      <td>421.0</td>
-      <td>1616.0</td>
-      <td>8210</td>
-      <td>1013.0</td>
+      <td>82</td>
+      <td>8082</td>
+      <td>23864.88</td>
+      <td>149385</td>
+      <td>1013</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -754,7 +882,7 @@ if (outputEl) {{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>421 measures over 4 files.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8119 measures over 82 files.
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -814,14 +942,14 @@ if (outputEl) {{
   </thead>
   <tbody>
     <tr>
-      <th rowspan="5" valign="top">debussy_suite_bergamasque</th>
-      <th rowspan="5" valign="top">l075-01_suite_prelude</th>
+      <th rowspan="5" valign="top">debussy_childrens_corner</th>
+      <th rowspan="5" valign="top">l113-01_childrens_doctor</th>
       <th>[0.0, 4.0)</th>
       <td>1</td>
       <td>1</td>
       <td>0</td>
       <td>4.0</td>
-      <td>-1</td>
+      <td>0</td>
       <td>4/4</td>
       <td>1</td>
       <td>0</td>
@@ -838,14 +966,14 @@ if (outputEl) {{
       <td>2</td>
       <td>4</td>
       <td>4.0</td>
-      <td>-1</td>
+      <td>0</td>
       <td>4/4</td>
       <td>1</td>
       <td>0</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaN</td>
-      <td>&lt;NA&gt;</td>
+      <td>line</td>
       <td>NaN</td>
       <td>(3,)</td>
     </tr>
@@ -855,14 +983,14 @@ if (outputEl) {{
       <td>3</td>
       <td>8</td>
       <td>4.0</td>
-      <td>-1</td>
+      <td>0</td>
       <td>4/4</td>
       <td>1</td>
       <td>0</td>
       <td>&lt;NA&gt;</td>
       <td>&lt;NA&gt;</td>
       <td>NaN</td>
-      <td>line</td>
+      <td>&lt;NA&gt;</td>
       <td>NaN</td>
       <td>(4,)</td>
     </tr>
@@ -872,7 +1000,7 @@ if (outputEl) {{
       <td>4</td>
       <td>12</td>
       <td>4.0</td>
-      <td>-1</td>
+      <td>0</td>
       <td>4/4</td>
       <td>1</td>
       <td>0</td>
@@ -889,7 +1017,7 @@ if (outputEl) {{
       <td>5</td>
       <td>16</td>
       <td>4.0</td>
-      <td>-1</td>
+      <td>0</td>
       <td>4/4</td>
       <td>1</td>
       <td>0</td>
@@ -915,9 +1043,26 @@ if (outputEl) {{
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Distribution of time signatures per XML measure (MC):
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4/4    245
-3/4    104
-9/8     72
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2/4      1763
+3/4      1712
+4/4      1682
+6/8      1079
+3/8       868
+2/2       307
+4/8       234
+3/2       162
+12/16     116
+9/8       111
+6/4        23
+12/8       17
+7/4        15
+5/4        13
+6/16       10
+5/8         2
+2/8         2
+4/2         1
+1/2         1
+9/4         1
 Name: timesig, dtype: int64
 </pre></div>
 </div>
