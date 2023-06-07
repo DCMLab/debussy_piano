@@ -29,7 +29,23 @@ Without full version history
 If you are only interested in the current version of the corpus, you can download the ZIP file of each submodule:
 
 
-* `notebooks <https://github.com/DCMLab/notebooks/archive/refs/heads/main.zip>`__
+* `debussy_childrens_corner <https://github.com/DCMLab/debussy_childrens_corner/archive/refs/heads/main.zip>`__
+
+* `debussy_deux_arabesques <https://github.com/DCMLab/debussy_deux_arabesques/archive/refs/heads/main.zip>`__
+
+* `debussy_estampes <https://github.com/DCMLab/debussy_estampes/archive/refs/heads/main.zip>`__
+
+* `debussy_etudes <https://github.com/DCMLab/debussy_etudes/archive/refs/heads/main.zip>`__
+
+* `debussy_images <https://github.com/DCMLab/debussy_images/archive/refs/heads/main.zip>`__
+
+* `debussy_other_piano_pieces <https://github.com/DCMLab/debussy_other_piano_pieces/archive/refs/heads/main.zip>`__
+
+* `debussy_pour_le_piano <https://github.com/DCMLab/debussy_pour_le_piano/archive/refs/heads/main.zip>`__
+
+* `debussy_preludes <https://github.com/DCMLab/debussy_preludes/archive/refs/heads/main.zip>`__
+
+* `debussy_suite_bergamasque <https://github.com/DCMLab/debussy_suite_bergamasque/archive/refs/heads/main.zip>`__
 
 
 
