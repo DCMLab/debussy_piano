@@ -45,7 +45,7 @@ in which it will produce the following folders and files:
 The code requires Python 3.10. You can check your current version by typing `python --version`.
 
 Before installing the packages you may want to create a dedicated virtual environment, e.g. via
-[virtualenv](www.virtualenv.org) or [conda](www.conda.io).
+[virtualenv](http://www.virtualenv.org) or [conda](http://www.conda.io).
 
 The required packages are listed in `requirements.txt` and can be installed via
 
@@ -57,7 +57,7 @@ The code is available in two formats:
 
 * as interactive Jupyter notebook `generate_data_and_metrics.ipynb`, or
 * as standalone script `generate_data_and_metrics.py` (synchronized with the Jupyter notebook via 
-  [Jupytext](jupytext.readthedocs.io/))
+  [Jupytext](http://jupytext.readthedocs.io/))
 
 To run the standalone script , navigate to the `publication_data_and_code` directory, make sure to have activated your
 virtual environment in which you have installed the required packages, and then run
@@ -136,8 +136,7 @@ computed from the [Mozart Piano Sonatas](https://github.com/DCMLab/mozart_piano_
 Add `-w wavescape_plots` to additionally create wavescapes in the folder `wavescape_plots` (or whatever name you want to pick), too.
 
 **Please be warned that, by default, all your CPU cores will be used in parallel to speed up the computation but that this will 
-likely fill up your entire working memory which might slow down or even crash your computer. Reduce the number of cores using
-the `-c` option, or even set it to -1 to use a for-loop (very slow).**
+likely fill up your entire working memory which might slow down or even crash your computer. Reduce the number of cores using the `-c` option, or even set it to -1 to use a for-loop (very slow). You can also use the `-s` flag to optimize the processing order by sorting the data metrics from shortest to longest.**
 
 You will get 1148 plots for normalization methods 0-3 or 984 plots for normalization methods 4-7:
 
