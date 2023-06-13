@@ -22,10 +22,12 @@ This dataset has been released together with the publication
 
 > Laneve, S., Schaerf, L., Cecchetti, G., Hentschel, J., & Rohrmeier, M. (2023). The diachronic development of Debussy’s musical style: A corpus study with Discrete Fourier Transform. Humanities and Social Sciences Communications, 10(1), 289. https://doi.org/10.1057/s41599-023-01796-7
 
+Data and Code from the article can be found in the [publiction_data_and_code](https://github.com/DCMLab/debussy_piano/tree/main/publication_data_and_code) folder with instructions on how to run it.
 
 ## Abstract
 
 Claude Debussy’s personal style is typically characterised as a departure from earlier diatonic tonality, including a greater variety of pitch-class materials organised in fragmented yet coherent compositions. Exploiting the music-theoretical interpretability of Discrete Fourier Transforms over pitch-class distributions, we performed a corpus study over Debussy’s solo-piano works in order to investigate the diachronic development of such stylistic features across the composer’s lifespan. We propose quantitative heuristics for the prevalence of different pitch-class prototypes, the fragmentation of a piece across different prototypes, as well as some aspect of the overall coherence of a piece. We found strong evidence for a decrease of diatonicity in favour of octatonicity, as well as for an increase of fragmentation accompanied by non-decreasing coherence. These results contribute to the understanding of the historical development of extended-tonal harmony, while representing a fertile testing ground for the interaction of computational corpus-based methods with traditional music analytical approaches.
+
 
 ## License
 
