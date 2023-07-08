@@ -1,0 +1,13 @@
+*.DS_Store
+# MuseScore
+*.mscx,
+*.mscz,
+.mscbackup
+.~*
+*.ipynb_checkpoints
+__pycache__
+.vscode
+.idea
+*figures
+*data
+*pickled_magnitude_phase_matrices

@@ -1,20 +1,28 @@
 {
     "license": "CC-BY-NC-SA-4.0",
-    "description": "<p>This dataset originates from the <a href=\"https://github.com/DCMLab/dcml_corpora\">DCML corpus initiative</a> and contains musicological research data. For more information, please refer to its documentation page <a href=\"https://dcmlab.github.io/debussy_piano\">https://dcmlab.github.io/debussy_piano</a></p>\n\n<p>&nbsp;</p>", 
+    "description": "<p>This dataset originates from the <a href=\"https://github.com/DCMLab/dcml_corpora\">DCML corpus initiative</a> and contains musicological research data. For more information, please refer to its documentation page <a href=\"https://dcmlab.github.io/debussy_piano\">https://dcmlab.github.io/debussy_piano</a></p>\n\n<p>Please cite this dataset as</p>\n\n<pre><code>Laneve, S., Schaerf, L., Cecchetti, G., Hentschel, J., &amp; Rohrmeier, M. (2023). The diachronic development of Debussy's musical style: A corpus study with Discrete Fourier Transform. Humanities and Social Sciences Communications, 10(1), 289. https://doi.org/10.1057/s41599-023-01796-7</code></pre>\n\n<p>The folders in the ZIP file that can be downloaded here from Zenodo are empty because they are submodules in <a href=\"https://github.com/DCMLab/debussy_piano\">the original Git repository</a> which Zenodo is not including. However, the submodules have their own records:</p>\n\n<ul>\n\t<li><a href=\"https://doi.org/10.5281/zenodo.7920474\">debussy_childrens_corner</a></li>\n\t<li><a href=\"https://doi.org/10.5281/zenodo.7963617\">debussy_deux_arabesques</a></li>\n\t<li><a href=\"https://doi.org/10.5281/zenodo.7963639\">debussy_estampes</a></li>\n\t<li><a href=\"https://doi.org/10.5281/zenodo.7963636\">debussy_etudes</a></li>\n\t<li><a href=\"https://doi.org/10.5281/zenodo.7963649\">debussy_images</a></li>\n\t<li><a href=\"https://doi.org/10.5281/zenodo.7963676\">debussy_other_piano_pieces</a></li>\n\t<li><a href=\"https://doi.org/10.5281/zenodo.7963656\">debussy_pour_le_piano</a></li>\n\t<li><a href=\"https://doi.org/10.5281/zenodo.7963660\">debussy_preludes</a></li>\n\t<li><a href=\"https://doi.org/10.5281/zenodo.7473568\">debussy_suite_bergamasque</a></li>\n</ul>\n\n<p>&nbsp;</p>",
     "title": "The Claude Debussy Solo Piano Corpus",
     "keywords": [
         "music research",
+        "music theory",
+        "music history",
+        "corpus studies",
         "corpora",
         "symbolic datasets",
         "scores",
-        "piano",
+        "piano music",
+        "claude debussy",
         "extended tonality",
         "modernism",
-        "impressionism"
+        "impressionism",
+        "discrete fourier transform"
     ],
     "grants": [
         {
             "id": "10.13039/501100001711::105216_182811"
+        },
+        {
+            "id": "10.13039/501100000780::760081"
         }
     ],
     "upload_type": "dataset",
@@ -22,10 +30,28 @@
     "communities": [
         {
             "identifier": "dcml"
+        },
+        {
+            "identifier": "epfl"
         }
     ],
     "publication_date": "2023-05-23",
     "creators": [
+        {
+            "orcid": "0009-0003-2629-5169",
+            "affiliation": "State Music Conservatory \"Giuseppe Verdi\", Turin",
+            "name": "Sabrina Laneve"
+        },
+        {
+            "orcid": "0000-0001-9460-702X",
+            "affiliation": "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne",
+            "name": "Ludovica Schaerf"
+        },
+        {
+            "orcid": "0000-0002-1486-1886",
+            "affiliation": "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne",
+            "name": "Gabriele Cecchetti"
+        },
         {
             "orcid": "0000-0002-1986-9545",
             "affiliation": "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne",
@@ -43,6 +69,12 @@
             "scheme": "url",
             "identifier": "https://github.com/DCMLab/debussy_piano/tree/v0.9.1",
             "relation": "isSupplementTo"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.1057/s41599-023-01796-7",
+            "relation": "isPublishedIn",
+            "resource_type": "publication-article"
         }
     ]
 }
