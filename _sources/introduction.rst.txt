@@ -183,20 +183,20 @@ When you have made changes to the scores and want to update the TSV files accord
 
 .. code:: python
 
-   ms3 extract -M -N -X -D # for measures, notes, expanded annotations, and metadata
+   ms3 extract -M -N -X -F -D # for measures, notes, expanded harmony labels, form labels, and metadata
 
 If, in addition, you want to generate the reviewed scores with out-of-label notes colored in red, you can do
 
 .. code:: python
 
-   ms3 review -M -N -X -D # for extracting measures, notes, expanded annotations, and metadata
+   ms3 review -M -N -X -F -D # for extracting measures, notes, expanded harmony labels, form labels, and metadata
 
 By adding the flag ``-c`` to the review command, it will additionally compare the (potentially modified) annotations in the score with the ones currently present in the harmonies TSV files and reflect the comparison in the reviewed scores.
 
 Questions, Suggestions, Corrections, Bug Reports
 ================================================
 
-For questions, remarks etc., please `create an issue <https://dcmlab.github.io/debussy_piano/issues>`__ and feel free to fork and submit pull requests.
+For questions, remarks etc., please `create an issue <https://github.com/DCMLab/debussy_piano/issues>`__ and feel free to fork and submit pull requests.
 
 License
 =======
