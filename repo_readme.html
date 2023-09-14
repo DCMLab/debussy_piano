@@ -328,6 +328,7 @@ and serves as welcome page for both</p>
 <blockquote>
 <div><p>Laneve, S., Schaerf, L., Cecchetti, G., Hentschel, J., &amp; Rohrmeier, M. (2023). The diachronic development of Debussy’s musical style: A corpus study with Discrete Fourier Transform. Humanities and Social Sciences Communications, 10(1), 289. https://doi.org/10.1057/s41599-023-01796-7</p>
 </div></blockquote>
+<p>Data and Code from the article can be found in the <a class="reference external" href="https://github.com/DCMLab/debussy_piano/tree/main/publication_data_and_code">publiction_data_and_code</a> folder with instructions on how to run it.</p>
 </section>
 <section id="abstract">
 <h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this heading">#</a></h2>
@@ -339,6 +340,7 @@ and serves as welcome page for both</p>
 </section>
 <section id="naming-convention">
 <h2>Naming convention<a class="headerlink" href="#naming-convention" title="Permalink to this heading">#</a></h2>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">l075-01_suite_prelude</span></code>.</p>
 <p>The filenames follow the pattern <code class="docutils literal notranslate"><span class="pre">l&lt;###&gt;[-##][_collection]_piece</span></code> where optional components are given in brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>.
 The corresponding regular expression is <code class="docutils literal notranslate"><span class="pre">l(?P&lt;lesure&gt;\d{3})(?:-(?P&lt;mvt&gt;\d{2}))?(?:_(?P&lt;collection&gt;[a-z]+?))?_(?P&lt;piece&gt;[a-z]+)</span></code>.
 The components are:</p>
@@ -349,6 +351,545 @@ The components are:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The first word of the piece’s title.</p></li>
 </ul>
 <p>Titles are given in lowercase and without diacritics.</p>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<section id="debussy-childrens-corner">
+<h3>debussy_childrens_corner<a class="headerlink" href="#debussy-childrens-corner" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>file_name</p></th>
+<th class="head text-right"><p>measures</p></th>
+<th class="head text-right"><p>labels</p></th>
+<th class="head"><p>standard</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>l113-01_childrens_doctor</p></td>
+<td class="text-right"><p>76</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l113-02_childrens_jimbos</p></td>
+<td class="text-right"><p>81</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l113-03_childrens_serenade</p></td>
+<td class="text-right"><p>124</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l113-04_childrens_snow</p></td>
+<td class="text-right"><p>74</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l113-05_childrens_little</p></td>
+<td class="text-right"><p>31</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l113-06_childrens_golliwoggs</p></td>
+<td class="text-right"><p>128</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="debussy-deux-arabesques">
+<h3>debussy_deux_arabesques<a class="headerlink" href="#debussy-deux-arabesques" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>file_name</p></th>
+<th class="head text-right"><p>measures</p></th>
+<th class="head text-right"><p>labels</p></th>
+<th class="head"><p>standard</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>l066-01_arabesques_premiere</p></td>
+<td class="text-right"><p>107</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l066-02_arabesques_deuxieme</p></td>
+<td class="text-right"><p>110</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="debussy-estampes">
+<h3>debussy_estampes<a class="headerlink" href="#debussy-estampes" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>file_name</p></th>
+<th class="head text-right"><p>measures</p></th>
+<th class="head text-right"><p>labels</p></th>
+<th class="head"><p>standard</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>l100-01_estampes_pagode</p></td>
+<td class="text-right"><p>98</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l100-02_estampes_soiree</p></td>
+<td class="text-right"><p>136</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l100-03_estampes_jardins</p></td>
+<td class="text-right"><p>157</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="debussy-etudes">
+<h3>debussy_etudes<a class="headerlink" href="#debussy-etudes" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>file_name</p></th>
+<th class="head text-right"><p>measures</p></th>
+<th class="head text-right"><p>labels</p></th>
+<th class="head"><p>standard</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>l136-01_etudes_cinq</p></td>
+<td class="text-right"><p>116</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l136-02_etudes_tierces</p></td>
+<td class="text-right"><p>76</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l136-03_etudes_quartes</p></td>
+<td class="text-right"><p>85</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l136-04_etudes_sixtes</p></td>
+<td class="text-right"><p>59</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l136-05_etudes_octaves</p></td>
+<td class="text-right"><p>121</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l136-06_etudes_huit</p></td>
+<td class="text-right"><p>68</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l136-07_etudes_degres</p></td>
+<td class="text-right"><p>88</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l136-08_etudes_agrements</p></td>
+<td class="text-right"><p>52</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l136-09_etudes_notes</p></td>
+<td class="text-right"><p>84</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l136-10_etudes_sonorites</p></td>
+<td class="text-right"><p>75</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l136-11_etudes_arpeges</p></td>
+<td class="text-right"><p>67</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l136-12_etudes_accords</p></td>
+<td class="text-right"><p>181</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="debussy-images">
+<h3>debussy_images<a class="headerlink" href="#debussy-images" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>file_name</p></th>
+<th class="head text-right"><p>measures</p></th>
+<th class="head text-right"><p>labels</p></th>
+<th class="head"><p>standard</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>l087-01_images_lent</p></td>
+<td class="text-right"><p>57</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l087-02_images_souvenir</p></td>
+<td class="text-right"><p>72</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l087-03_images_quelques</p></td>
+<td class="text-right"><p>186</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l110-01_images_reflets</p></td>
+<td class="text-right"><p>95</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l110-02_images_hommage</p></td>
+<td class="text-right"><p>76</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l110-03_images_mouvement</p></td>
+<td class="text-right"><p>177</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l111-01_images_cloches</p></td>
+<td class="text-right"><p>49</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l111-02_images_lune</p></td>
+<td class="text-right"><p>57</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l111-03_images_poissons</p></td>
+<td class="text-right"><p>97</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="debussy-other-piano-pieces">
+<h3>debussy_other_piano_pieces<a class="headerlink" href="#debussy-other-piano-pieces" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>file_name</p></th>
+<th class="head text-right"><p>measures</p></th>
+<th class="head text-right"><p>labels</p></th>
+<th class="head"><p>standard</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>l000_etude</p></td>
+<td class="text-right"><p>71</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l000_soirs</p></td>
+<td class="text-right"><p>23</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l009_danse</p></td>
+<td class="text-right"><p>92</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l067_mazurka</p></td>
+<td class="text-right"><p>138</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l068_reverie</p></td>
+<td class="text-right"><p>101</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l069_tarentelle</p></td>
+<td class="text-right"><p>333</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l070_ballade</p></td>
+<td class="text-right"><p>105</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l071_valse</p></td>
+<td class="text-right"><p>151</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l082_nocturne</p></td>
+<td class="text-right"><p>77</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l099_cahier</p></td>
+<td class="text-right"><p>55</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l105_masques</p></td>
+<td class="text-right"><p>381</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l106_isle</p></td>
+<td class="text-right"><p>255</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l108_morceau</p></td>
+<td class="text-right"><p>27</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l114_petit</p></td>
+<td class="text-right"><p>87</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l115_hommage</p></td>
+<td class="text-right"><p>118</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l121_plus</p></td>
+<td class="text-right"><p>148</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l132_berceuse</p></td>
+<td class="text-right"><p>68</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l133_page</p></td>
+<td class="text-right"><p>38</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l138_elegie</p></td>
+<td class="text-right"><p>21</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="debussy-pour-le-piano">
+<h3>debussy_pour_le_piano<a class="headerlink" href="#debussy-pour-le-piano" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>file_name</p></th>
+<th class="head text-right"><p>measures</p></th>
+<th class="head text-right"><p>labels</p></th>
+<th class="head"><p>standard</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>l095-01_pour_prelude</p></td>
+<td class="text-right"><p>163</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l095-02_pour_sarabande</p></td>
+<td class="text-right"><p>72</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l095-03_pour_toccata</p></td>
+<td class="text-right"><p>266</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="debussy-preludes">
+<h3>debussy_preludes<a class="headerlink" href="#debussy-preludes" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>file_name</p></th>
+<th class="head text-right"><p>measures</p></th>
+<th class="head text-right"><p>labels</p></th>
+<th class="head"><p>standard</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>l117-01_preludes_danseuses</p></td>
+<td class="text-right"><p>31</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l117-02_preludes_voiles</p></td>
+<td class="text-right"><p>64</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l117-03_preludes_vent</p></td>
+<td class="text-right"><p>59</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l117-04_preludes_sons</p></td>
+<td class="text-right"><p>53</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l117-05_preludes_collines</p></td>
+<td class="text-right"><p>96</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l117-06_preludes_pas</p></td>
+<td class="text-right"><p>36</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l117-07_preludes_ce</p></td>
+<td class="text-right"><p>70</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l117-08_preludes_fille</p></td>
+<td class="text-right"><p>39</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l117-09_preludes_serenade</p></td>
+<td class="text-right"><p>137</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l117-10_preludes_cathedrale</p></td>
+<td class="text-right"><p>89</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l117-11_preludes_danse</p></td>
+<td class="text-right"><p>96</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l117-12_preludes_minstrels</p></td>
+<td class="text-right"><p>89</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l123-01_preludes_brouillards</p></td>
+<td class="text-right"><p>52</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l123-02_preludes_feuilles</p></td>
+<td class="text-right"><p>52</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l123-03_preludes_puerta</p></td>
+<td class="text-right"><p>90</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l123-04_preludes_fees</p></td>
+<td class="text-right"><p>127</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l123-05_preludes_bruyeres</p></td>
+<td class="text-right"><p>51</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l123-06_preludes_general</p></td>
+<td class="text-right"><p>109</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l123-07_preludes_terrasse</p></td>
+<td class="text-right"><p>45</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l123-08_preludes_ondine</p></td>
+<td class="text-right"><p>74</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l123-09_preludes_hommage</p></td>
+<td class="text-right"><p>54</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l123-10_preludes_canope</p></td>
+<td class="text-right"><p>33</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>l123-11_preludes_tierces</p></td>
+<td class="text-right"><p>165</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>l123-12_preludes_feux</p></td>
+<td class="text-right"><p>100</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="debussy-suite-bergamasque">
+<h3>debussy_suite_bergamasque<a class="headerlink" href="#debussy-suite-bergamasque" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>file_name</p></th>
+<th class="head text-right"><p>measures</p></th>
+<th class="head text-right"><p>labels</p></th>
+<th class="head"><p>standard</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>l075-01_suite_prelude</p></td>
+<td class="text-right"><p>89</p></td>
+<td class="text-right"><p>274</p></td>
+<td><p>2.3.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>l075-02_suite_menuet</p></td>
+<td class="text-right"><p>104</p></td>
+<td class="text-right"><p>305</p></td>
+<td><p>2.3.0</p></td>
+</tr>
+<tr class="row-even"><td><p>l075-03_suite_clair</p></td>
+<td class="text-right"><p>72</p></td>
+<td class="text-right"><p>150</p></td>
+<td><p>2.3.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>l075-04_suite_passepied</p></td>
+<td class="text-right"><p>156</p></td>
+<td class="text-right"><p>284</p></td>
+<td><p>2.3.0</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 </section>
 
@@ -385,6 +926,18 @@ The components are:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-convention">Naming convention</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debussy-childrens-corner">debussy_childrens_corner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debussy-deux-arabesques">debussy_deux_arabesques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debussy-estampes">debussy_estampes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debussy-etudes">debussy_etudes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debussy-images">debussy_images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debussy-other-piano-pieces">debussy_other_piano_pieces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debussy-pour-le-piano">debussy_pour_le_piano</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debussy-preludes">debussy_preludes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debussy-suite-bergamasque">debussy_suite_bergamasque</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
