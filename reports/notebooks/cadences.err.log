@@ -1,46 +1,103 @@
 Traceback (most recent call last):
-  File "/home/runner/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/home/runner/.local/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 1314, in execute
+  File "/home/runner/.local/lib/python3.12/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/home/runner/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
-  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
     return future.result()
-  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+           ^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/home/runner/.local/lib/python3.12/site-packages/nbclient/client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/home/runner/.local/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/home/runner/.local/lib/python3.12/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-annotated_view = dataset.data.get_view('annotated')
-annotated_view.include('facets', 'expanded')
-annotated_view.fnames_with_incomplete_facets = False
-dataset.data.set_view(annotated_view)
-dataset.data.parse_tsv(choose='auto')
-dataset.get_indices()
-dataset.data
+D = utils.get_dataset("debussy_piano", corpus_release="v0.9.1")
+package = D.inputs.get_package()
+package_info = package._package.custom
+git_tag = package_info.get("git_tag")
+utils.print_heading("Data and software versions")
+print("The Claude Debussy Solo Piano Corpus version v0.9.1")
+print(f"Datapackage '{package.package_name}' @ {git_tag}")
+print(f"dimcat version {dc.__version__}\n")
+D
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mDeprecationWarning[0m                        Traceback (most recent call last)
-Cell [0;32mIn[5], line 3[0m
-[1;32m      1[0m annotated_view [38;5;241m=[39m dataset[38;5;241m.[39mdata[38;5;241m.[39mget_view([38;5;124m'[39m[38;5;124mannotated[39m[38;5;124m'[39m)
-[1;32m      2[0m annotated_view[38;5;241m.[39minclude([38;5;124m'[39m[38;5;124mfacets[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mexpanded[39m[38;5;124m'[39m)
-[0;32m----> 3[0m [43mannotated_view[49m[38;5;241;43m.[39;49m[43mfnames_with_incomplete_facets[49m [38;5;241m=[39m [38;5;28;01mFalse[39;00m
-[1;32m      4[0m dataset[38;5;241m.[39mdata[38;5;241m.[39mset_view(annotated_view)
-[1;32m      5[0m dataset[38;5;241m.[39mdata[38;5;241m.[39mparse_tsv(choose[38;5;241m=[39m[38;5;124m'[39m[38;5;124mauto[39m[38;5;124m'[39m)
+[31m---------------------------------------------------------------------------[39m
+[31mHTTPError[39m                                 Traceback (most recent call last)
+[36mFile [39m[32m~/work/workflow_deployment/debussy_piano/tmp_corpus_docs/notebooks/utils.py:3604[39m, in [36mget_dataset.<locals>.download_if_missing[39m[34m(filename, filepath)[39m
+[32m   3603[39m         url = [33mf[39m[33m"[39m[33mhttps://github.com/DCMLab/[39m[38;5;132;01m{[39;00mcorpus_name[38;5;132;01m}[39;00m[33m/[39m[38;5;132;01m{[39;00murl_release_component[38;5;132;01m}[39;00m[33m/[39m[38;5;132;01m{[39;00mfilename[38;5;132;01m}[39;00m[33m"[39m
+[32m-> [39m[32m3604[39m         [43murlretrieve[49m[43m([49m[43murl[49m[43m,[49m[43m [49m[43mfilepath[49m[43m)[49m
+[32m   3605[39m [38;5;28;01mexcept[39;00m HTTPError [38;5;28;01mas[39;00m e:
 
-File [0;32m~/.local/lib/python3.10/site-packages/ms3/view.py:124[0m, in [0;36mView.fnames_with_incomplete_facets[0;34m(self, value)[0m
-[1;32m    122[0m [38;5;129m@fnames_with_incomplete_facets[39m[38;5;241m.[39msetter
-[1;32m    123[0m [38;5;28;01mdef[39;00m [38;5;21mfnames_with_incomplete_facets[39m([38;5;28mself[39m, value):
-[0;32m--> 124[0m     [38;5;28;01mraise[39;00m [38;5;167;01mDeprecationWarning[39;00m(
-[1;32m    125[0m         [38;5;124m"[39m[38;5;124m'[39m[38;5;124mfnames_with_incomplete_facets[39m[38;5;124m'[39m[38;5;124m was renamed to  [39m[38;5;124m'[39m[38;5;124mpieces_with_incomplete_facets[39m[38;5;124m'[39m[38;5;124m in [39m[38;5;124m"[39m
-[1;32m    126[0m         [38;5;124m"[39m[38;5;124mms3 v2.[39m[38;5;124m"[39m
-[1;32m    127[0m     )
+[36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:240[39m, in [36murlretrieve[39m[34m(url, filename, reporthook, data)[39m
+[32m    238[39m url_type, path = _splittype(url)
+[32m--> [39m[32m240[39m [38;5;28;01mwith[39;00m contextlib.closing([43murlopen[49m[43m([49m[43murl[49m[43m,[49m[43m [49m[43mdata[49m[43m)[49m) [38;5;28;01mas[39;00m fp:
+[32m    241[39m     headers = fp.info()
 
-[0;31mDeprecationWarning[0m: 'fnames_with_incomplete_facets' was renamed to  'pieces_with_incomplete_facets' in ms3 v2.
+[36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:215[39m, in [36murlopen[39m[34m(url, data, timeout, cafile, capath, cadefault, context)[39m
+[32m    214[39m     opener = _opener
+[32m--> [39m[32m215[39m [38;5;28;01mreturn[39;00m [43mopener[49m[43m.[49m[43mopen[49m[43m([49m[43murl[49m[43m,[49m[43m [49m[43mdata[49m[43m,[49m[43m [49m[43mtimeout[49m[43m)[49m
+
+[36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:521[39m, in [36mOpenerDirector.open[39m[34m(self, fullurl, data, timeout)[39m
+[32m    520[39m     meth = [38;5;28mgetattr[39m(processor, meth_name)
+[32m--> [39m[32m521[39m     response = [43mmeth[49m[43m([49m[43mreq[49m[43m,[49m[43m [49m[43mresponse[49m[43m)[49m
+[32m    523[39m [38;5;28;01mreturn[39;00m response
+
+[36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:630[39m, in [36mHTTPErrorProcessor.http_response[39m[34m(self, request, response)[39m
+[32m    629[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m ([32m200[39m <= code < [32m300[39m):
+[32m--> [39m[32m630[39m     response = [38;5;28;43mself[39;49m[43m.[49m[43mparent[49m[43m.[49m[43merror[49m[43m([49m
+[32m    631[39m [43m        [49m[33;43m'[39;49m[33;43mhttp[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[43mrequest[49m[43m,[49m[43m [49m[43mresponse[49m[43m,[49m[43m [49m[43mcode[49m[43m,[49m[43m [49m[43mmsg[49m[43m,[49m[43m [49m[43mhdrs[49m[43m)[49m
+[32m    633[39m [38;5;28;01mreturn[39;00m response
+
+[36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:559[39m, in [36mOpenerDirector.error[39m[34m(self, proto, *args)[39m
+[32m    558[39m args = ([38;5;28mdict[39m, [33m'[39m[33mdefault[39m[33m'[39m, [33m'[39m[33mhttp_error_default[39m[33m'[39m) + orig_args
+[32m--> [39m[32m559[39m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43m_call_chain[49m[43m([49m[43m*[49m[43margs[49m[43m)[49m
+
+[36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:492[39m, in [36mOpenerDirector._call_chain[39m[34m(self, chain, kind, meth_name, *args)[39m
+[32m    491[39m func = [38;5;28mgetattr[39m(handler, meth_name)
+[32m--> [39m[32m492[39m result = [43mfunc[49m[43m([49m[43m*[49m[43margs[49m[43m)[49m
+[32m    493[39m [38;5;28;01mif[39;00m result [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+[36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:639[39m, in [36mHTTPDefaultErrorHandler.http_error_default[39m[34m(self, req, fp, code, msg, hdrs)[39m
+[32m    638[39m [38;5;28;01mdef[39;00m [34mhttp_error_default[39m([38;5;28mself[39m, req, fp, code, msg, hdrs):
+[32m--> [39m[32m639[39m     [38;5;28;01mraise[39;00m HTTPError(req.full_url, code, msg, hdrs, fp)
+
+[31mHTTPError[39m: HTTP Error 404: Not Found
+
+The above exception was the direct cause of the following exception:
+
+[31mRuntimeError[39m                              Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m D = [43mutils[49m[43m.[49m[43mget_dataset[49m[43m([49m[33;43m"[39;49m[33;43mdebussy_piano[39;49m[33;43m"[39;49m[43m,[49m[43m [49m[43mcorpus_release[49m[43m=[49m[33;43m"[39;49m[33;43mv0.9.1[39;49m[33;43m"[39;49m[43m)[49m
+[32m      2[39m package = D.inputs.get_package()
+[32m      3[39m package_info = package._package.custom
+
+[36mFile [39m[32m~/work/workflow_deployment/debussy_piano/tmp_corpus_docs/notebooks/utils.py:3617[39m, in [36mget_dataset[39m[34m(corpus_name, target_dir, corpus_release)[39m
+[32m   3613[39m zip_name, json_name = [33mf[39m[33m"[39m[38;5;132;01m{[39;00mcorpus_name[38;5;132;01m}[39;00m[33m.zip[39m[33m"[39m, [33mf[39m[33m"[39m[38;5;132;01m{[39;00mcorpus_name[38;5;132;01m}[39;00m[33m.datapackage.json[39m[33m"[39m
+[32m   3614[39m zip_path, json_path = os.path.join(target_dir, zip_name), os.path.join(
+[32m   3615[39m     target_dir, json_name
+[32m   3616[39m )
+[32m-> [39m[32m3617[39m [43mdownload_if_missing[49m[43m([49m[43mzip_name[49m[43m,[49m[43m [49m[43mzip_path[49m[43m)[49m
+[32m   3618[39m download_if_missing(json_name, json_path)
+[32m   3619[39m [38;5;28;01mreturn[39;00m dc.Dataset.from_package(json_path)
+
+[36mFile [39m[32m~/work/workflow_deployment/debussy_piano/tmp_corpus_docs/notebooks/utils.py:3606[39m, in [36mget_dataset.<locals>.download_if_missing[39m[34m(filename, filepath)[39m
+[32m   3604[39m         urlretrieve(url, filepath)
+[32m   3605[39m [38;5;28;01mexcept[39;00m HTTPError [38;5;28;01mas[39;00m e:
+[32m-> [39m[32m3606[39m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m(
+[32m   3607[39m         [33mf[39m[33m"[39m[33mRetrieving [39m[38;5;132;01m{[39;00mcorpus_name[38;5;132;01m!r}[39;00m[33m@[39m[38;5;132;01m{[39;00mcorpus_release[38;5;132;01m!r}[39;00m[33m from [39m[38;5;132;01m{[39;00murl[38;5;132;01m!r}[39;00m[33m failed: [39m[38;5;132;01m{[39;00me[38;5;132;01m}[39;00m[33m"[39m
+[32m   3608[39m     ) [38;5;28;01mfrom[39;00m [34;01me[39;00m
+[32m   3609[39m [38;5;28;01massert[39;00m os.path.exists(
+[32m   3610[39m     filepath
+[32m   3611[39m ), [33mf[39m[33m"[39m[33mAn error occured and [39m[38;5;132;01m{[39;00mfilepath[38;5;132;01m}[39;00m[33m is not available.[39m[33m"[39m
+
+[31mRuntimeError[39m: Retrieving 'debussy_piano'@'v0.9.1' from 'https://github.com/DCMLab/debussy_piano/releases/download/v0.9.1/debussy_piano.zip' failed: HTTP Error 404: Not Found
 
