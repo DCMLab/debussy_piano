@@ -34,36 +34,36 @@ D
 [31mHTTPError[39m                                 Traceback (most recent call last)
 [36mFile [39m[32m~/work/workflow_deployment/debussy_piano/tmp_corpus_docs/notebooks/utils.py:3604[39m, in [36mget_dataset.<locals>.download_if_missing[39m[34m(filename, filepath)[39m
 [32m   3603[39m         url = [33mf[39m[33m"[39m[33mhttps://github.com/DCMLab/[39m[38;5;132;01m{[39;00mcorpus_name[38;5;132;01m}[39;00m[33m/[39m[38;5;132;01m{[39;00murl_release_component[38;5;132;01m}[39;00m[33m/[39m[38;5;132;01m{[39;00mfilename[38;5;132;01m}[39;00m[33m"[39m
-[32m-> [39m[32m3604[39m         [43murlretrieve[49m[43m([49m[43murl[49m[43m,[49m[43m [49m[43mfilepath[49m[43m)[49m
+[32m-> [39m[32m3604[39m         [30;43murlretrieve[39;49m[30;43m([39;49m[30;43murl[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mfilepath[39;49m[30;43m)[39;49m
 [32m   3605[39m [38;5;28;01mexcept[39;00m HTTPError [38;5;28;01mas[39;00m e:
 
 [36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:240[39m, in [36murlretrieve[39m[34m(url, filename, reporthook, data)[39m
 [32m    238[39m url_type, path = _splittype(url)
-[32m--> [39m[32m240[39m [38;5;28;01mwith[39;00m contextlib.closing([43murlopen[49m[43m([49m[43murl[49m[43m,[49m[43m [49m[43mdata[49m[43m)[49m) [38;5;28;01mas[39;00m fp:
+[32m--> [39m[32m240[39m [38;5;28;01mwith[39;00m contextlib.closing([30;43murlopen[39;49m[30;43m([39;49m[30;43murl[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mdata[39;49m[30;43m)[39;49m) [38;5;28;01mas[39;00m fp:
 [32m    241[39m     headers = fp.info()
 
 [36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:215[39m, in [36murlopen[39m[34m(url, data, timeout, cafile, capath, cadefault, context)[39m
 [32m    214[39m     opener = _opener
-[32m--> [39m[32m215[39m [38;5;28;01mreturn[39;00m [43mopener[49m[43m.[49m[43mopen[49m[43m([49m[43murl[49m[43m,[49m[43m [49m[43mdata[49m[43m,[49m[43m [49m[43mtimeout[49m[43m)[49m
+[32m--> [39m[32m215[39m [38;5;28;01mreturn[39;00m [30;43mopener[39;49m[30;43m.[39;49m[30;43mopen[39;49m[30;43m([39;49m[30;43murl[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mdata[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mtimeout[39;49m[30;43m)[39;49m
 
 [36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:521[39m, in [36mOpenerDirector.open[39m[34m(self, fullurl, data, timeout)[39m
 [32m    520[39m     meth = [38;5;28mgetattr[39m(processor, meth_name)
-[32m--> [39m[32m521[39m     response = [43mmeth[49m[43m([49m[43mreq[49m[43m,[49m[43m [49m[43mresponse[49m[43m)[49m
+[32m--> [39m[32m521[39m     response = [30;43mmeth[39;49m[30;43m([39;49m[30;43mreq[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mresponse[39;49m[30;43m)[39;49m
 [32m    523[39m [38;5;28;01mreturn[39;00m response
 
 [36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:630[39m, in [36mHTTPErrorProcessor.http_response[39m[34m(self, request, response)[39m
 [32m    629[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m ([32m200[39m <= code < [32m300[39m):
-[32m--> [39m[32m630[39m     response = [38;5;28;43mself[39;49m[43m.[49m[43mparent[49m[43m.[49m[43merror[49m[43m([49m
-[32m    631[39m [43m        [49m[33;43m'[39;49m[33;43mhttp[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[43mrequest[49m[43m,[49m[43m [49m[43mresponse[49m[43m,[49m[43m [49m[43mcode[49m[43m,[49m[43m [49m[43mmsg[49m[43m,[49m[43m [49m[43mhdrs[49m[43m)[49m
+[32m--> [39m[32m630[39m     response = [30;43mself[39;49m[30;43m.[39;49m[30;43mparent[39;49m[30;43m.[39;49m[30;43merror[39;49m[30;43m([39;49m
+[32m    631[39m [30;43m        [39;49m[30;43m'[39;49m[30;43mhttp[39;49m[30;43m'[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mrequest[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mresponse[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mcode[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mmsg[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mhdrs[39;49m[30;43m)[39;49m
 [32m    633[39m [38;5;28;01mreturn[39;00m response
 
 [36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:559[39m, in [36mOpenerDirector.error[39m[34m(self, proto, *args)[39m
 [32m    558[39m args = ([38;5;28mdict[39m, [33m'[39m[33mdefault[39m[33m'[39m, [33m'[39m[33mhttp_error_default[39m[33m'[39m) + orig_args
-[32m--> [39m[32m559[39m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43m_call_chain[49m[43m([49m[43m*[49m[43margs[49m[43m)[49m
+[32m--> [39m[32m559[39m [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m.[39;49m[30;43m_call_chain[39;49m[30;43m([39;49m[30;43m*[39;49m[30;43margs[39;49m[30;43m)[39;49m
 
 [36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:492[39m, in [36mOpenerDirector._call_chain[39m[34m(self, chain, kind, meth_name, *args)[39m
 [32m    491[39m func = [38;5;28mgetattr[39m(handler, meth_name)
-[32m--> [39m[32m492[39m result = [43mfunc[49m[43m([49m[43m*[49m[43margs[49m[43m)[49m
+[32m--> [39m[32m492[39m result = [30;43mfunc[39;49m[30;43m([39;49m[30;43m*[39;49m[30;43margs[39;49m[30;43m)[39;49m
 [32m    493[39m [38;5;28;01mif[39;00m result [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
 
 [36mFile [39m[32m/usr/lib/python3.12/urllib/request.py:639[39m, in [36mHTTPDefaultErrorHandler.http_error_default[39m[34m(self, req, fp, code, msg, hdrs)[39m
@@ -76,16 +76,17 @@ The above exception was the direct cause of the following exception:
 
 [31mRuntimeError[39m                              Traceback (most recent call last)
 [36mCell[39m[36m [39m[32mIn[3][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m D = [43mutils[49m[43m.[49m[43mget_dataset[49m[43m([49m[33;43m"[39;49m[33;43mdebussy_piano[39;49m[33;43m"[39;49m[43m,[49m[43m [49m[43mcorpus_release[49m[43m=[49m[33;43m"[39;49m[33;43mv0.9.1[39;49m[33;43m"[39;49m[43m)[49m
+[32m----> [39m[32m1[39m D = utils.get_dataset([33m"debussy_piano"[39m, corpus_release=[33m"v0.9.1"[39m)
 [32m      2[39m package = D.inputs.get_package()
 [32m      3[39m package_info = package._package.custom
+[32m      4[39m git_tag = package_info.get([33m"git_tag"[39m)
 
 [36mFile [39m[32m~/work/workflow_deployment/debussy_piano/tmp_corpus_docs/notebooks/utils.py:3617[39m, in [36mget_dataset[39m[34m(corpus_name, target_dir, corpus_release)[39m
 [32m   3613[39m zip_name, json_name = [33mf[39m[33m"[39m[38;5;132;01m{[39;00mcorpus_name[38;5;132;01m}[39;00m[33m.zip[39m[33m"[39m, [33mf[39m[33m"[39m[38;5;132;01m{[39;00mcorpus_name[38;5;132;01m}[39;00m[33m.datapackage.json[39m[33m"[39m
 [32m   3614[39m zip_path, json_path = os.path.join(target_dir, zip_name), os.path.join(
 [32m   3615[39m     target_dir, json_name
 [32m   3616[39m )
-[32m-> [39m[32m3617[39m [43mdownload_if_missing[49m[43m([49m[43mzip_name[49m[43m,[49m[43m [49m[43mzip_path[49m[43m)[49m
+[32m-> [39m[32m3617[39m [30;43mdownload_if_missing[39;49m[30;43m([39;49m[30;43mzip_name[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mzip_path[39;49m[30;43m)[39;49m
 [32m   3618[39m download_if_missing(json_name, json_path)
 [32m   3619[39m [38;5;28;01mreturn[39;00m dc.Dataset.from_package(json_path)
 
